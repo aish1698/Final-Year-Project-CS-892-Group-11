@@ -1,0 +1,146 @@
+
+<div style="padding-top: 50px;  padding-bottom: 50px;"  class="outer-container">
+    <div class="image-container"><div class="image1"><img class="image" src="../../../assets/images/Mask_Group_2.png"/></div></div>
+    <div class="form-container">
+      <form class ="form" name="RegForm" action="/submit.php" method="post">
+        <div class="container">
+          <div>
+            <p style="font-size: 25px;">Welcome,Teachers,
+              Let's get you onboarded!</p>
+            <p style="font-size: 20px;">Teachers' Sign up</p>
+            <div>
+              <label for="fullName"><b>Name</b></label>
+              <input
+                type="text"
+                placeholder="Enter Full Name"
+                name="fullName"
+                required
+                
+                [(ngModel)]="fullName"
+              />
+             
+            </div>
+            <div>
+              <label for="userid"><b>User-ID</b></label>
+              <input
+                type="text"
+                placeholder="Enter User-ID"
+                name="userid"
+                required
+                [(ngModel)]="userid"
+                
+                
+                
+              />
+            
+            </div>
+            <div>
+              <label for="dept"><b>Department</b></label>
+              <input
+                type="text"
+                placeholder="Enter Department"
+                name="dept"
+                required
+                
+                [(ngModel)]="dept"
+              />
+             
+            </div>
+  
+            <div>
+              <label for="reg_id"><b>Registration ID</b></label>
+              <input
+                type="text"
+                placeholder="Enter Registration ID"
+                name="reg_id"
+                required
+                
+                [(ngModel)]="reg_id"
+              />
+             
+            </div>
+  
+            <div>
+              <label for="sem"><b>Semester</b></label>
+              <input
+                type="text"
+                placeholder="Enter Sem"
+                name="sem"
+                required
+                
+                [(ngModel)]="sem"
+              />
+             
+            </div>
+
+            <div>
+                <label for="subject"><b>Subject</b></label>
+                <input
+                  type="text"
+                  placeholder="Enter subject"
+                  name="subject"
+                  required
+                  
+                  [(ngModel)]="subject"
+                />
+               
+              </div>
+  
+            <div>
+              <label for="mobile"><b>Mobile</b></label>
+              <input
+                type="text"
+                placeholder="Enter Mobile no."
+                name="mobile"
+                
+                required
+                [(ngModel)]="mobile"
+              />
+            </div>
+            <div>
+              <label for="email"><b>Email</b></label>
+              <input
+                type="text"
+                placeholder="Enter Email ID"
+                name="email"
+                required
+                [(ngModel)]="email"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="password"><b>Password</b></label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="password"
+            
+              required
+              [(ngModel)]="password"
+            />
+          </div>
+  
+          <button type="submit" (click)="registerHandler()">Sign Up</button>
+        </div>
+  
+        <div class="link-container">
+          
+          <p>OR</p>
+          <p>Sign Up with</p>
+          <div>
+            <!-- Add icon library -->
+            <link
+              rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            />
+  
+            <!-- Add font awesome icons -->
+            <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+  
+            <a href="https://myaccount.google.com" class="fa fa-google"></a>
+            <a href="https://twitter.com" class="fa fa-twitter"></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

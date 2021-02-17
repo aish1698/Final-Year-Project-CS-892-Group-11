@@ -1,0 +1,49 @@
+:host {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  
+  .main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  
+  .root {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  
+  footer {
+    background: #374147;
+    color: #ccc;
+    flex: 0 0 40px;
+    text-align: center;
+    line-height: 40px;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .loader {
+    animation: rotate 0.8s infinite linear;
+    border: 8px solid #ff4081;
+    border-right-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    height: 100px;
+    width: 100px;
+  }
+  
+  

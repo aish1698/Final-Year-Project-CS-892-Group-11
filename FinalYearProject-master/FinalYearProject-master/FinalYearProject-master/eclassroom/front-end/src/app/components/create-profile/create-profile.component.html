@@ -1,0 +1,22 @@
+<div class="container-fluid hi">
+    
+    <h1>Choose Files</h1>
+    
+    <form [formGroup]="form" (submit)="onSubmit()">
+      <div>
+        <input formControlName="name" type="text" placeholder="Name of the file" />
+      </div>
+      <div>
+        <input (change)="onFileSelect($event)" type="file" multiple=true />
+      </div>
+      <div *ngIf="imageData">
+        <img [src]="imageData" [alt]="form.value.name" />
+      </div>
+    </form>
+    
+      <div>
+        <button type="submit">Upload</button><br>
+       
+      </div>
+    
+    </div>
