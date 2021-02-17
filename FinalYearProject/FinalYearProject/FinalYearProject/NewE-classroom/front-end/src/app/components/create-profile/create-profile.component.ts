@@ -29,7 +29,7 @@ export class CreateProfileComponent implements OnInit {
     //console.log(file);
     
     this.form.patchValue({ image: file });
-    const allowedMimeTypes = ["image/png", "image/jpeg", "image/jpg","text/html"];
+    const allowedMimeTypes = ["image/png", "image/jpeg", "image/jpg","application/pdf"];
     if (file && allowedMimeTypes.includes(file.type)) {
       const reader = new FileReader();
       reader.onload = () => {
@@ -40,7 +40,7 @@ export class CreateProfileComponent implements OnInit {
   }
 
   onSubmit() {
-    
+    console.log("submit");
     this.profileService.addProfile(this.form.value.name, this.form.value.image);
     this.form.reset();
     this.imageData =" ";

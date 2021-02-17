@@ -43,6 +43,7 @@ export class ProfileService {
     this.http
       .post<{ profile: Profile }>(this.url, profileData)
       .subscribe((profileData) => {
+        console.log(profileData)
         const profile: Profile = {
           _id: profileData.profile._id,
           name: name,
@@ -50,6 +51,9 @@ export class ProfileService {
         };
         this.profiles.push(profile);
         this.profiles$.next(this.profiles);
-      });
+      },
+      err=>{console.log(err)}
+      
+      );
   }
 }

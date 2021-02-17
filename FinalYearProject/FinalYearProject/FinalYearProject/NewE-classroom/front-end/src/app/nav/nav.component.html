@@ -11,11 +11,13 @@
           <ul class="nav navbar-nav navbar-right">
             <li>
               
-              <a  routerLink="/sign-in"><i class="fa fa-fw fa-user"></i> Sign in &nbsp;</a>
-              <a  routerLink="/student-sign-up"><i class="fa fa-fw fa-user"></i> Student Sign up &nbsp;</a>
-              <a  routerLink="/teacher-sign-up"><i class="fa fa-fw fa-user"></i> Teacher Sign up &nbsp;</a>
+              <a *ngIf="!loggedIn()" routerLink="/sign-in"><i class="fa fa-fw fa-user"></i> Sign in &nbsp;</a>
+              <a *ngIf="!loggedIn()" routerLink="/student-sign-up"><i class="fa fa-fw fa-user"></i> Student Sign up &nbsp;</a>
+              <a *ngIf="!loggedIn()" routerLink="/teacher-sign-up"><i class="fa fa-fw fa-user"></i> Teacher Sign up &nbsp;</a>
               <a  routerLink="/create-profile"  ><i class="fa fa-upload" aria-hidden="true"></i> Upload &nbsp;</a>
-              <a  routerLink="/all-profiles"><i class="fas fa-file"></i> Files </a>
+              <a  routerLink="/all-profiles"><i class="fas fa-file"></i> Download &nbsp; </a>
+              <a *ngIf="loggedIn()" routerLink="/home" (click)="onLogout()"><i class="fas fa-sign-out-alt"></i> Logout &nbsp;</a>
+
              </li>
           </ul>
         </div>

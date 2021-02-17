@@ -20,11 +20,14 @@ export class LoginService {
     return !!localStorage.getItem('token')
   }
 
-
-  logoutUser() {
-    localStorage.removeItem('token')
-    this.router.navigate(['/sign-in'])
+  deleteToken() {
+    localStorage.removeItem('token');
   }
+
+  // logoutUser() {
+  //   localStorage.removeItem('token')
+  //   this.router.navigate(['/sign-in'])
+  // }
 
 
 }

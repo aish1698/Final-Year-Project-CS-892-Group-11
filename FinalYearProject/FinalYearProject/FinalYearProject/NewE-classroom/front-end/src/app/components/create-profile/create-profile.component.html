@@ -2,7 +2,7 @@
     
     <h1>Choose Files</h1>
     
-    <form [formGroup]="form" (submit)="onSubmit()">
+    <form [formGroup]="form" >
       <div>
         <input formControlName="name" type="text" placeholder="Name of the file" />
       </div>
@@ -15,7 +15,7 @@
     </form>
     
       <div>
-        <button type="submit">Upload</button><br>
+        <button type="submit" (click)="onSubmit()">Upload</button><br>
        
       </div>
     
