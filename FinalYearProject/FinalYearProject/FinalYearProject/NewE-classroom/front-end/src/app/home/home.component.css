@@ -5,7 +5,11 @@
   }
   .home {
     
+<<<<<<< HEAD
       background: url('D:\New-Final-Year-Project\FinalYearProject\FinalYearProject\FinalYearProject\NewE-classroom\front-end\src\assets\images\class.jpg');
+=======
+      background: url('C:\Users\91801\OneDrive\Documents\GitHub\New-Final-Year-Project\FinalYearProject\FinalYearProject\FinalYearProject\NewE-classroom\front-end\src\assets\images\class.jpg');
+>>>>>>> 32cac83eb70c6d13a9b4904e3944365556d41225
       background-size: cover;
       color: #fff;
       display: flex;
