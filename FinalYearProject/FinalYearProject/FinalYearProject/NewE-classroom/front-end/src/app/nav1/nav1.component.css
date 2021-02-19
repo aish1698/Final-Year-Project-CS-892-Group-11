@@ -1,0 +1,22 @@
+a {
+    color: #fff;
+    text-decoration: none;
+  }
+ 
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .brand {
+    margin-right: 10px;
+  }
+  
+  
+  
+  .img-responsive {
+    height: auto;
+    width: auto;
+    max-height: 45px;
+    max-width: 250px;
+   
+}

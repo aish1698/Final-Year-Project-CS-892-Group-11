@@ -10,6 +10,8 @@ import { ContactComponent } from './contact/contact.component';
 import { CreateProfileComponent } from './components/create-profile/create-profile.component';
 import { AllProfilesComponent } from './components/all-profiles/all-profiles.component';
 
+import { SignupComponent } from './signup/signup.component';
+import { Nav1Component } from './nav1/nav1.component';
 
 const routes: Routes = [
   {
@@ -44,10 +46,21 @@ const routes: Routes = [
     path: 'all-profiles',component: AllProfilesComponent,
     canActivate:[AuthGuard]
   },
+
+  {
+    path: 'signup',
+    component: SignupComponent
+  },
+
+  {
+    path: 'nav1',
+    component: Nav1Component
+  },
   {
     path: '**',
     component: HomeComponent
   }
+  
 ];
 
 @NgModule({

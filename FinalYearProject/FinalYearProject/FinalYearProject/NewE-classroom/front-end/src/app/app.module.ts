@@ -20,6 +20,8 @@ import { HomeComponent } from './home/home.component';
 import { AllProfilesComponent } from './components/all-profiles/all-profiles.component';
 import { CreateProfileComponent } from './components/create-profile/create-profile.component';
 import { teacherregistrationComponent } from './teacherregistration/teacherregistration.component';
+import { SignupComponent } from './signup/signup.component';
+import { Nav1Component } from './nav1/nav1.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,9 @@ import { teacherregistrationComponent } from './teacherregistration/teacherregis
     
     AllProfilesComponent,
     CreateProfileComponent,
-    teacherregistrationComponent
+    teacherregistrationComponent,
+    SignupComponent,
+    Nav1Component
   ],
   imports: [
     BrowserModule,

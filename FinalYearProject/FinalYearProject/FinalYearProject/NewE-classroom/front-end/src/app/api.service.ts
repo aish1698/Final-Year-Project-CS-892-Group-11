@@ -8,7 +8,7 @@ export class ApiService {
 
   constructor(private http:HttpClient) { }
 
-  login(u,p)
+  login( u: any, p: any)
   {
     return this.http.post(`http://localhost:3000/User/login`, {userid: u, password: p})
   }
