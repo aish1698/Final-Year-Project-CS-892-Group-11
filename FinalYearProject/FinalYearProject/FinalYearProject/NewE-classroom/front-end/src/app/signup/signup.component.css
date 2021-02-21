@@ -1,62 +1,73 @@
 *{
 
     margin: 0px;
-  
+
     margin: 0;
-  
+
     padding: 0;
     list-style: none;
     text-decoration: none;
-    
+
   }
-  
- 
-  
-   
-    
-  
+
+
+.heading{
+  font-size: 55px;
+  padding-left: 170px;
+  padding-top: 0%;
+  font-stretch: expanded;
+}
+
+
   .content{
     height: 100vh;
     width: 100%;
-    margin: 0;
-    background-image: url("D:\New-Final-Year-Project\FinalYearProject\FinalYearProject\FinalYearProject\NewE-classroom\front-end\src\assets\images\Mask_Group_2@2x.png");
-    
-    
+    margin:0;
+color:white;
+font-weight: bolder;
+line-height: 1.5;
+background-image: url("C:\Users\admin\Desktop\nomura\New-Final-Year-Project-main\FinalYearProject\FinalYearProject\FinalYearProject\NewE-classroom\front-end\src\assets\images\classroom.jpg");
+background-color: #8ee4af;
+background-repeat: no-repeat;
+background-position: right;
+background-size: 50% 100%;
+
   }
-  
+  #container{
+    position:relative;
+    right:380px;
+  bottom:30px;
+
+  }
+.btn{
+  border-radius: 100px;
+
+}
   button {
-  
-   
-    width: 500px;
-    
-  
+
+
+    width: 550px;
+
+
     margin: auto 100px auto auto ;
     border-radius: 6px;
-    color: black;
+    color: white;
     text-decoration: solid;
     padding: 10px 50px;
     text-align: center;
-   
+
     display: inline-block;
     font-size: 20px;
     cursor: pointer;
     border-color: 2px black;
   }
-  
+
+
   .button a:hover{
-    color: white;
+    color: black;
   }
 
-  
+
   .button :hover{
     background-color: darkslategrey;
   }
-  
-  
-  
-  
-  
-  
-  
-   
-    

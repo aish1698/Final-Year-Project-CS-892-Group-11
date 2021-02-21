@@ -4,52 +4,55 @@
     flex-direction: column;
   }
   .home {
-    
-<<<<<<< HEAD
-      background: url('D:\New-Final-Year-Project\FinalYearProject\FinalYearProject\FinalYearProject\NewE-classroom\front-end\src\assets\images\class.jpg');
-=======
-      background: url('C:\Users\91801\OneDrive\Documents\GitHub\New-Final-Year-Project\FinalYearProject\FinalYearProject\FinalYearProject\NewE-classroom\front-end\src\assets\images\class.jpg');
->>>>>>> 32cac83eb70c6d13a9b4904e3944365556d41225
+
+
+      background: url('C:\Users\admin\Desktop\nomura\New-Final-Year-Project-main\FinalYearProject\FinalYearProject\FinalYearProject\NewE-classroom\front-end\src\assets\images\class.jpg');
+
+
+
       background-size: cover;
       color: #fff;
       display: flex;
       flex: 1;
       text-align: center;
+      margin-bottom: 40px;
     }
-    
+
     .home-content {
       padding: 20px;
       margin: auto;
     }
-    
+
     .home h1 {
       font-size: 60px;
       margin: 0 0 20px 0;
     }
-    
+
     .home h2 {
       margin: 0 0 30px 0;
       font-size: 30px;
     }
-    
+
     .home a {
       color: #ff4081;
     }
-    
+
     .columns {
       padding: 30px 20px 30px 20px;
+      margin-bottom: 40px;
     }
-    
+
     .column {
       text-align: center;
     }
-    
-    .column mat-icon {
-      font-size: 40px;
-      height: 40px;
-      width: 40px;
-      color: blue;
-    }
+.btn{
+width:350px;
+height:150px;
+font-size: 150px;
+  border-radius:300px;
+  font-weight: bolder;
+}
+
     @media (min-width: 768px) {
       .columns {
         display: flex;
@@ -59,4 +62,3 @@
         flex: 1;
       }
     }
-    
