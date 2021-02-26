@@ -15,15 +15,7 @@ var teacherSchema = new mongoose.Schema({
   reg_id: {
     type: String,
   },
-  subject: {
-    type: String,
-    
-  },
-  
-  sem: {
-    type: String,
-    
-  },
+ 
   mobile: {
     type: String,
     
@@ -36,6 +28,9 @@ var teacherSchema = new mongoose.Schema({
     type: String,
     
   },
+  securitycode: {
+    type : String,
+  }
 
 });
 

@@ -60,31 +60,7 @@
              
             </div>
   
-            <div>
-              <label for="sem"><b>Semester</b></label>
-              <input
-                type="text"
-                placeholder="Enter Sem"
-                name="sem"
-                required
-                
-                [(ngModel)]="sem"
-              />
-             
-            </div>
-
-            <div>
-                <label for="subject"><b>Subject</b></label>
-                <input
-                  type="text"
-                  placeholder="Enter subject"
-                  name="subject"
-                  required
-                  
-                  [(ngModel)]="subject"
-                />
-               
-              </div>
+            
   
             <div>
               <label for="mobile"><b>Mobile</b></label>
@@ -119,7 +95,20 @@
               [(ngModel)]="password"
             />
           </div>
-  
+
+          <div>
+            <label for="securitycode"><b>Security Code</b></label>
+            <input
+              type="password"
+              placeholder="Enter Security Code For Extra Security"
+              name="securitycode"
+            
+              required
+              [(ngModel)]="securitycode"
+            />
+         </div>
+        </div>
+         <div>
           <button type="submit" (click)="registerHandler()">Sign Up</button>
         </div>
   
@@ -141,6 +130,6 @@
             <a href="https://twitter.com" class="fa fa-twitter"></a>
           </div>
         </div>
-      </form>
+      </form> 
     </div>
   </div>

@@ -12,8 +12,8 @@ import { Router} from '@angular/router';
 export class teacherregistrationComponent implements OnInit {
   [x: string]: any;
   
-  showSucessMessage: boolean;
-  serverErrorMessages: string;
+  showSucessMessage: boolean | undefined;
+  serverErrorMessages: string | undefined;
   fullName = '';
     userid = '';
     dept = '';
@@ -23,7 +23,7 @@ export class teacherregistrationComponent implements OnInit {
     email = '';
     mobile = '';
     password = '';
-
+    securitycode = '';
 
   constructor(public service: teacherregistrationService ,private router : Router) {
   
@@ -63,6 +63,7 @@ export class teacherregistrationComponent implements OnInit {
       email : '',
       mobile : '',
       password : '',
+      securitycode : '',
     };
     form.resetForm();
     this.serverErrorMessages = '';
@@ -78,6 +79,7 @@ export class teacherregistrationComponent implements OnInit {
     var email =  document.forms["RegForm"]["email"];  
     var mobile = document.forms["RegForm"]["mobile"];
     var password = document.forms["RegForm"]["password"];
+    var securitycode = document.forms["RegForm"]["securitycode"];
     var ph= /^\d{10}$/;
     var e=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (fullName.value == "")                                  
@@ -154,7 +156,7 @@ export class teacherregistrationComponent implements OnInit {
     } 
    
     
-  return this.service.teacherregistration( this.fullName, this.userid,this.dept,this.reg_id,this.sem,this.subject,this.email,this.mobile,this.password ).subscribe(() => {console.log('sign up successful!'); this.router.navigateByUrl('/login');}, err =>{console.log(err)})
+  return this.service.teacherregistration( this.fullName, this.userid,this.dept,this.reg_id,this.sem,this.subject,this.email,this.mobile,this.password,this.securitycode ).subscribe(() => {console.log('sign up successful!'); this.router.navigateByUrl('/login');}, err =>{console.log(err)})
   
   };
 

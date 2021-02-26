@@ -106,7 +106,17 @@
             [(ngModel)]="password"
           />
         </div>
-
+        <div>
+          <label for="securitycode"><b>Security Code</b></label>
+          <input
+            type="password"
+            placeholder="Enter Security Code For Extra Security"
+            name="securitycode"
+          
+            required
+            [(ngModel)]="securitycode"
+          />
+        </div>
         <button  type="submit" (click)="registerHandler()">Sign Up</button>
       </div>
 

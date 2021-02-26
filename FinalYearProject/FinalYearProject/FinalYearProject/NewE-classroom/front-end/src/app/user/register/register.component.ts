@@ -12,8 +12,8 @@ import { Router} from '@angular/router';
 export class registerComponent implements OnInit {
   [x: string]: any;
   
-  showSucessMessage: boolean;
-  serverErrorMessages: string;
+  showSucessMessage: boolean | undefined;
+  serverErrorMessages: string | undefined;
   fullName = '';
     userid = '';
     dept = '';
@@ -22,7 +22,7 @@ export class registerComponent implements OnInit {
     email = '';
     mobile = '';
     password = '';
-
+    securitycode = '';
 
   constructor(public service: RegisterService ,private router : Router) {
   
@@ -35,13 +35,13 @@ export class registerComponent implements OnInit {
     console.log(form.value)
     this.userService.postUser(form.value).subscribe
     (
-       res => {
+      (       res: { token: string; }) => {
         this.showSucessMessage = true;
         setTimeout(() => this.showSucessMessage = false, 4000);
         this.resetForm(form);
         localStorage.setItem('token' , res.token)
       },
-      err => {
+      (      err: { status: number; error: any[]; }) => {
         if (err.status === 422) {
           this.serverErrorMessages = err.error.join('<br/>');
         }
@@ -61,6 +61,7 @@ export class registerComponent implements OnInit {
       email : '',
       mobile : '',
       password : '',
+      securitycode : '',
     };
     form.resetForm();
     this.serverErrorMessages = '';
@@ -75,6 +76,7 @@ export class registerComponent implements OnInit {
     var email =  document.forms["RegForm"]["email"];  
     var mobile = document.forms["RegForm"]["mobile"];
     var password = document.forms["RegForm"]["password"];
+    var securitycode = document.forms["RegForm"]["securitycode"];
     var ph= /^\d{10}$/;
     var e=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (fullName.value == "")                                  
@@ -143,9 +145,14 @@ export class registerComponent implements OnInit {
         password.focus(); 
         return false; 
     } 
-   
+    if (securitycode.value == "")                        
+    { 
+        window.alert("Please enter your securitycode"); 
+        password.focus(); 
+        return false; 
+    } 
     
-  return this.service.register( this.fullName, this.userid,this.dept,this.class_roll,this.sem,this.email,this.mobile, this.password ).subscribe(() => {console.log('sign up successful!'); this.router.navigateByUrl('/login');}, err =>{console.log(err)})
+  return this.service.register( this.fullName, this.userid,this.dept,this.class_roll,this.sem,this.email,this.mobile, this.password ,this.securitycode).subscribe(() => {console.log('sign up successful!'); this.router.navigateByUrl('/home');}, err =>{console.log(err)})
   
   };
 

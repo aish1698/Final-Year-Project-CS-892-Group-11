@@ -33,7 +33,8 @@ router.post("/register", (req, res) => {
     sem : req.body.sem,
     email : req.body.email,
     mobile : req.body.mobile,
-    password : req.body.password
+    password : req.body.password,
+    securitycode : req.body.securitycode
   });
 
   user.save().then(createdUser => {
@@ -56,11 +57,10 @@ router.post("/teacherregister", (req, res) => {
     userid : req.body.userid,
     dept : req.body.dept,
     reg_id : req.body.reg_id,
-    subject : req.body.subject,
-    sem : req.body.sem,
     email : req.body.email,
     mobile : req.body.mobile,
-    password : req.body.password
+    password : req.body.password,
+    securitycode : req.body.securitycode
   });
 
   teacher.save().then(createdUser => {

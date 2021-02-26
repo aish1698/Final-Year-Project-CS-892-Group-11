@@ -8,10 +8,12 @@ import { AuthGuard } from './auth.guard';
 import { ContactComponent } from './contact/contact.component';
 
 import { CreateProfileComponent } from './components/create-profile/create-profile.component';
-import { AllProfilesComponent } from './components/all-profiles/all-profiles.component';
 
+import { AllProfilesComponent } from './components/all-profiles/all-profiles.component';
+import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { Nav1Component } from './nav1/nav1.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 const routes: Routes = [
   {
@@ -37,7 +39,10 @@ const routes: Routes = [
     path: 'contact',
     component: ContactComponent
   },
-  
+  {
+    path:'forgotpassword',component:ForgotpasswordComponent
+  },
+
   {
     path: 'create-profile',component: CreateProfileComponent,
     canActivate:[AuthGuard]
@@ -50,6 +55,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'signin',
+    component: SigninComponent
   },
 
   {

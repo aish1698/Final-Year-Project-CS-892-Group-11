@@ -22,6 +22,8 @@ import { CreateProfileComponent } from './components/create-profile/create-profi
 import { teacherregistrationComponent } from './teacherregistration/teacherregistration.component';
 import { SignupComponent } from './signup/signup.component';
 import { Nav1Component } from './nav1/nav1.component';
+import { SigninComponent } from './signin/signin.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,9 @@ import { Nav1Component } from './nav1/nav1.component';
     CreateProfileComponent,
     teacherregistrationComponent,
     SignupComponent,
-    Nav1Component
+    Nav1Component,
+    SigninComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,
