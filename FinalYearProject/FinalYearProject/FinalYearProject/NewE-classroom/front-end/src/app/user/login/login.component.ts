@@ -34,5 +34,7 @@ export class loginComponent {
     }
     
     )}
-    
+    onPress(){
+      this.router.navigate(['/forgotpassword']);
+    }
 }

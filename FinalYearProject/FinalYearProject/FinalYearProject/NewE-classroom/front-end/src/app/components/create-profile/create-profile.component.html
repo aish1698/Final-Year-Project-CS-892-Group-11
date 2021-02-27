@@ -1,11 +1,22 @@
-<div class="container-fluid hi">
-    
-    <h1>Choose Files</h1>
-    
+
+  <div style="padding-left: 22%;" class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+       
     <form [formGroup]="form" >
-      <div>
+      
+      <label style="padding-top: 20%; padding-left: 65px;"><h1>Upload Your File</h1></label>
+      <div >
         <input formControlName="name" type="text" placeholder="Name of the file" />
       </div>
+      <div class="form-group files">
+       
+        <br><br>
+      </div>
+
+      <br><br><br> 
+     
       <div>
         <input (change)="onFileSelect($event)" type="file" multiple=true />
       </div>
@@ -14,9 +25,11 @@
       </div>
     </form>
     
-      <div>
-        <button type="submit" (click)="onSubmit()">Upload</button><br>
+      <div style="padding-bottom: 50px;">
+        <button  type="submit" (click)="onSubmit()">Upload</button><br>
        
       </div>
     
     </div>
+    </div>
+  </div>
