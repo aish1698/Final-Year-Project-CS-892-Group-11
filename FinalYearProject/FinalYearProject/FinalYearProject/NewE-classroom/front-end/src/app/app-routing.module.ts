@@ -14,6 +14,8 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { Nav1Component } from './nav1/nav1.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { TeachingComponent } from './teaching/teaching.component';
+
 
 const routes: Routes = [
   {
@@ -64,6 +66,10 @@ const routes: Routes = [
   {
     path: 'nav1',
     component: Nav1Component
+  },
+  {
+    path: 'teaching',
+    component: TeachingComponent
   },
   {
     path: '**',
