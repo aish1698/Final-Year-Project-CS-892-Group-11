@@ -36,13 +36,13 @@ export class teacherregistrationComponent implements OnInit {
     console.log(form.value)
     this.userService.postUser(form.value).subscribe
     (
-       res => {
+      (       res: { token: string; }) => {
         this.showSucessMessage = true;
         setTimeout(() => this.showSucessMessage = false, 4000);
         this.resetForm(form);
         localStorage.setItem('token' , res.token)
       },
-      err => {
+      (      err: { status: number; error: any[]; }) => {
         if (err.status === 422) {
           this.serverErrorMessages = err.error.join('<br/>');
         }
@@ -58,8 +58,6 @@ export class teacherregistrationComponent implements OnInit {
       userid : '',
       dept : '',
       reg_id : '',
-      sem : '',
-      subject : '',
       email : '',
       mobile : '',
       password : '',
@@ -74,8 +72,7 @@ export class teacherregistrationComponent implements OnInit {
     var userid = document.forms["RegForm"]["userid"]; 
     var dept =   document.forms["RegForm"]["dept"];  
     var reg_id =   document.forms["RegForm"]["reg_id"]; 
-    var sem =   document.forms["RegForm"]["sem"]; 
-    var subject =   document.forms["RegForm"]["subject"]; 
+   
     var email =  document.forms["RegForm"]["email"];  
     var mobile = document.forms["RegForm"]["mobile"];
     var password = document.forms["RegForm"]["password"];
@@ -107,18 +104,7 @@ export class teacherregistrationComponent implements OnInit {
         reg_id.focus(); 
         return false; 
     } 
-    if (sem.value == "")                               
-    { 
-        window.alert("Please Enter Sem"); 
-        sem.focus(); 
-        return false; 
-    } 
-    if (subject.value == "")                               
-    { 
-        window.alert("Please Enter Subject"); 
-        subject.focus(); 
-        return false; 
-    }
+   
     if (mobile.value == "")                                   
     { 
         window.alert("Please enter phone number."); 
