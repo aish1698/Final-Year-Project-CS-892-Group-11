@@ -15,7 +15,8 @@ import { SignupComponent } from './signup/signup.component';
 import { Nav1Component } from './nav1/nav1.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { TeachingComponent } from './teaching/teaching.component';
-
+import { loginteacherComponent } from './user/loginteacher/loginteacher.component';
+import{ForgotpasswordteacherComponent} from './forgotpasswordteacher/forgotpasswordteacher.component'
 
 const routes: Routes = [
   {
@@ -38,13 +39,19 @@ const routes: Routes = [
     
   },
   {
+    path: 'teacher-sign-in',component: loginteacherComponent
+    
+  },
+  {
     path: 'contact',
     component: ContactComponent
   },
   {
     path:'forgotpassword',component:ForgotpasswordComponent
   },
-
+  {
+    path:'forgotpasswordteacher',component : ForgotpasswordteacherComponent
+  },
   {
     path: 'create-profile',component: CreateProfileComponent,
     canActivate:[AuthGuard]

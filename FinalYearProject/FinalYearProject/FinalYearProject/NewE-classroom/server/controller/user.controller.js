@@ -23,6 +23,23 @@ router.post("/login", (req,res) => {
     return res.status(200).send({token});
   })
 })
+router.post("/loginteacher", (req,res) => {
+
+  var userid = req.body.userid; 
+  var password = req.body.password;
+  Teacher.findOne({userid:userid,password:password},function(err,user){
+    if(err){
+      console.log(err)
+      return res.status(500).send();
+    }
+    if(!user){
+      return res.status(404).send();
+    }
+    let payload = { subject :user._id}
+    let token = jwt.sign(payload, 'secretKey')
+    return res.status(200).send({token});
+  })
+})
 router.post("/register", (req, res) => {
 
   var user = new User({

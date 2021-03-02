@@ -2,9 +2,11 @@
 import { HttpClientModule } from '@angular/common/http' ;
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule,FormsModule} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';  // <<<< import it here
+
 // components imports
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,8 +17,8 @@ import { LoginService } from './user/login/login.service';
 import { ContactComponent } from './contact/contact.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
-
-
+import{ForgotpasswordteacherComponent} from './forgotpasswordteacher/forgotpasswordteacher.component'
+import { loginteacherComponent } from './user/loginteacher/loginteacher.component';
 import { AllProfilesComponent } from './components/all-profiles/all-profiles.component';
 import { CreateProfileComponent } from './components/create-profile/create-profile.component';
 import { teacherregistrationComponent } from './teacherregistration/teacherregistration.component';
@@ -42,7 +44,9 @@ import { TeachingComponent } from './teaching/teaching.component';
     Nav1Component,
     SigninComponent,
     ForgotpasswordComponent,
-    TeachingComponent
+    ForgotpasswordteacherComponent,
+    TeachingComponent,
+    loginteacherComponent
   ],
   imports: [
     BrowserModule,

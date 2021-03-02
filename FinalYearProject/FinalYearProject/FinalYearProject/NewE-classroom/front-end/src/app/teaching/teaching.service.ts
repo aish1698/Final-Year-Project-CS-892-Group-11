@@ -14,7 +14,7 @@ export class TeachingService {
 
   private profiles: Profiles[] = [];
   private profiles$ = new Subject<Profiles[]>();
-  readonly url = "http://localhost:3000/api/profiles";
+  readonly url = "http://localhost:3000/api/profiles/teaching";
 
   constructor(private http: HttpClient) {}
 

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/api.service';
 import { Router } from "@angular/router";
 import { ForgotpasswordService } from 'src/app/forgotpassword/forgotpassword.service';
 @Component({

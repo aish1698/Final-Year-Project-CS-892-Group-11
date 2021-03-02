@@ -7,9 +7,13 @@ exports.getProfiles = async (req, res) => {
 };
 
 exports.postProfile = async (req, res) => {
+  const {sem} = req.body;
+  const {subject} = req.body;
   const { name } = req.body;
   const imagePath = 'http://localhost:3000/images/' + req.file.filename; // Note: set path dynamically
   const profile = new Profile({
+    sem,
+    subject,
     name,
     imagePath,
   });
