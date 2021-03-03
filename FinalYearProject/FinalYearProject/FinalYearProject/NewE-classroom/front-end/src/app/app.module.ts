@@ -23,7 +23,7 @@ import { AllProfilesComponent } from './components/all-profiles/all-profiles.com
 import { CreateProfileComponent } from './components/create-profile/create-profile.component';
 import { teacherregistrationComponent } from './teacherregistration/teacherregistration.component';
 import { SignupComponent } from './signup/signup.component';
-import { Nav1Component } from './nav1/nav1.component';
+
 import { SigninComponent } from './signin/signin.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { TeachingComponent } from './teaching/teaching.component';
@@ -42,7 +42,7 @@ import { LearningComponent } from './learning/learning.component';
     CreateProfileComponent,
     teacherregistrationComponent,
     SignupComponent,
-    Nav1Component,
+   
     SigninComponent,
     ForgotpasswordComponent,
     ForgotpasswordteacherComponent,

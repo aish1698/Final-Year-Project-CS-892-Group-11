@@ -11,12 +11,12 @@
           <ul class="nav navbar-nav navbar-right">
             <li>
 
-              <a *ngIf="!loggedIn()" routerLink="/sign-in"><i class="fa fa-fw fa-user"></i> Sign in &nbsp;</a>
-              <a *ngIf="!loggedIn()" routerLink="/student-sign-up"><i class="fa fa-fw fa-user"></i> Student Sign up &nbsp;</a>
-              <a *ngIf="!loggedIn()" routerLink="/teacher-sign-up"><i class="fa fa-fw fa-user"></i> Teacher Sign up &nbsp;</a>
-              <a  routerLink="/create-profile"  ><i class="fa fa-upload" aria-hidden="true"></i> Upload &nbsp;</a>
-              <a  routerLink="/all-profiles"><i class="fas fa-file"></i> Download &nbsp; </a>
-              <a *ngIf="loggedIn()" routerLink="/home" (click)="onLogout()"><i class="fas fa-sign-out-alt"></i> Logout &nbsp;</a>
+              <!-- <a *ngIf="!loggedIn()" routerLink="/sign-in"><i class="fa fa-fw fa-user"></i> Sign in &nbsp;</a> -->
+              <!-- <a *ngIf="!loggedIn()" routerLink="/student-sign-up"><i class="fa fa-fw fa-user"></i> Student Sign up &nbsp;</a> -->
+              <a *ngIf="!loggedIn()" routerLink="/signup"><i class="fa fa-fw fa-user"></i> Sign up &nbsp;</a>
+              <!-- <a  routerLink="/create-profile"  ><i class="fa fa-upload" aria-hidden="true"></i> Upload &nbsp;</a> -->
+              <a *ngIf="loggedIn()"  routerLink="/all-profiles"><i class="fas fa-file"></i> Download &nbsp; </a>
+              <a  *ngIf="loggedIn()" routerLink="/home" (click)="onLogout()"><i class="fas fa-sign-out-alt"></i> Logout &nbsp;</a>
 
              </li>
           </ul>

@@ -6,7 +6,7 @@
        
     <form [formGroup]="form" >
       
-      <label style="padding-top: 20%; padding-left: 65px;"><h1>Upload Your File</h1></label>
+      <label style="padding-top: 20%; padding-left: 25px;"><h1>Upload Your File</h1></label>
       <div >
         <input formControlName="sem" type="text" placeholder="Please enter respective semester " />
       </div>
@@ -16,24 +16,22 @@
       <div >
         <input formControlName="name" type="text" placeholder="Name of the file" />
       </div>
+      <br>
+      
 
-      <div class="form-group files">
-       
-        <br><br>
-      </div>
-
-      <br><br><br> 
+      <br>
      
-      <div>
+      <div style="padding-left: 15px;">
         <input (change)="onFileSelect($event)" type="file" multiple=true />
       </div>
       <div *ngIf="imageData">
         <img [src]="imageData" [alt]="form.value.name" />
       </div>
     </form>
+    <br>
     
       <div style="padding-bottom: 50px;">
-        <button  type="submit" (click)="onSubmit()">Upload</button><br>
+        <button  type="submit"  class="btn btn-dark" (click)="onSubmit()">Upload</button><br>
        
       </div>
     
