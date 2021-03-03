@@ -27,6 +27,7 @@ import { Nav1Component } from './nav1/nav1.component';
 import { SigninComponent } from './signin/signin.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { TeachingComponent } from './teaching/teaching.component';
+import { LearningComponent } from './learning/learning.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,8 @@ import { TeachingComponent } from './teaching/teaching.component';
     ForgotpasswordComponent,
     ForgotpasswordteacherComponent,
     TeachingComponent,
-    loginteacherComponent
+    loginteacherComponent,
+    LearningComponent
   ],
   imports: [
     BrowserModule,

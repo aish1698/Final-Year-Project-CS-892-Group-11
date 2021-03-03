@@ -17,6 +17,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { TeachingComponent } from './teaching/teaching.component';
 import { loginteacherComponent } from './user/loginteacher/loginteacher.component';
 import{ForgotpasswordteacherComponent} from './forgotpasswordteacher/forgotpasswordteacher.component'
+import { LearningComponent } from './learning/learning.component';
 
 const routes: Routes = [
   {
@@ -77,6 +78,10 @@ const routes: Routes = [
   {
     path: 'teaching',
     component: TeachingComponent
+  },
+  {
+    path: 'learning',
+    component: LearningComponent
   },
   {
     path: '**',
