@@ -57,10 +57,12 @@ router.post("/register", (req, res) => {
   user.save().then(createdUser => {
     let payload = { subject: createdUser._id}
     let token= jwt.sign(payload, 'secretKey')
+    // console.log("saved successfully")
     return res.send({ error: false, result: {token}, message: "User Successfully Created" })
     
 
   }).catch(err => {
+    // console.log("not saved successfully")
     console.log(err)
     return res.send({ error: true, message: "Server Error" })
   })
