@@ -28,6 +28,7 @@ import { SigninComponent } from './signin/signin.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { TeachingComponent } from './teaching/teaching.component';
 import { LearningComponent } from './learning/learning.component';
+import { LearningstudentComponent } from './learningstudent/learningstudent.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,8 @@ import { LearningComponent } from './learning/learning.component';
     ForgotpasswordteacherComponent,
     TeachingComponent,
     loginteacherComponent,
-    LearningComponent
+    LearningComponent,
+    LearningstudentComponent
   ],
   imports: [
     BrowserModule,

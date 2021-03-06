@@ -18,6 +18,7 @@ import { TeachingComponent } from './teaching/teaching.component';
 import { loginteacherComponent } from './user/loginteacher/loginteacher.component';
 import{ForgotpasswordteacherComponent} from './forgotpasswordteacher/forgotpasswordteacher.component'
 import { LearningComponent } from './learning/learning.component';
+import { LearningstudentComponent } from './learningstudent/learningstudent.component';
 
 const routes: Routes = [
   {
@@ -79,6 +80,10 @@ const routes: Routes = [
   {
     path: 'learning',
     component: LearningComponent
+  },
+  {
+    path: 'learningstudent/:sem/:subject',
+    component: LearningstudentComponent
   },
   {
     path: '**',
