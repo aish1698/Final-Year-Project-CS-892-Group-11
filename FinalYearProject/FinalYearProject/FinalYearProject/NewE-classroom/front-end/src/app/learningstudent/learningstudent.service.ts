@@ -21,17 +21,18 @@ export class LearningstudentService {
     constructor(private http: HttpClient) {}
   
     getProfiles(s :any,su: any) {
-      this.http
+      return  this.http
         .post<any>("http://localhost:3000/learning/learningstudent",{sem:s,subject:su})
-        .pipe(
-          map((profileData) => {
-            return profileData.profiles;
-          })
-        )
-        .subscribe((profiles) => {
-          this.profiles = profiles;
-          this.profiles$.next(this.profiles);
-        });
+        // .pipe(
+        //   map((profileData) => {
+        //     return profileData.profiles;
+        //   })
+        // )
+        // .subscribe((profiles) => {
+        //   console.log(profiles);
+        //   this.profiles = profiles;
+        //   this.profiles$.next(this.profiles);
+        // });
     }
   
     getProfilesStream() {

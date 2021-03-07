@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit,ChangeDetectorRef, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs";
 
 import { ProfileService } from "src/app/services/profile.service";

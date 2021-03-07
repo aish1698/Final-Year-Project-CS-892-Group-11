@@ -1,12 +1,14 @@
-<div class="info">
+<div class="info container" >
 <form action="/action_page.php">
-<label for="sem">Enter respective Semester:</label>
+<label for="sem">Enter  Semester:</label>
 <input type="text" id="sem" name="sem" required
 [(ngModel)]="sem"><br><br>
-<label for="subject">Enter respective Subject:</label>
+<label for="subject">Enter  Subject:</label>
 <input type="text" id="subject" name="subject" required
 [(ngModel)]="subject"><br><br>
-<div class="search"><input type="submit"(click)="click()" value="Search"></div>
+<div class="search">
+    <input type="submit"(click)="click()" value="Search">
+</div>
 
 </form>
 </div>

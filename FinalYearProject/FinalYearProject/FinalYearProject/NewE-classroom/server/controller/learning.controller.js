@@ -11,9 +11,10 @@ router.post("/learningstudent", (req,res) =>
    
     Profiles.find({sem:sem ,subject:subject},function(err,learn){
         if (err) console.log(err)
-        learn.forEach(learn=>lr.push({imagePath:learn.imagePath}))
+        learn.forEach(learn=>lr.push({imagePath:learn.imagePath,name:learn.name}))
         res.send(lr);
         console.log(lr);
+        
     })
 
 
