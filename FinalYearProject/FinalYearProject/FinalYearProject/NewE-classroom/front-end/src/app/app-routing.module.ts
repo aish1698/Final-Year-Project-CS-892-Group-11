@@ -11,6 +11,8 @@ import { CreateProfileComponent } from './components/create-profile/create-profi
 
 import { AllProfilesComponent } from './components/all-profiles/all-profiles.component';
 import { SigninComponent } from './signin/signin.component';
+import { TeacherComponent } from './teacher/teacher.component';
+import { StudentComponent } from './student/student.component';
 import { SignupComponent } from './signup/signup.component';
 
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
@@ -34,15 +36,15 @@ const routes: Routes = [
   },
   {
     path: 'student-sign-up',component: registerComponent
-    
+
   },
   {
     path: 'teacher-sign-up',component: teacherregistrationComponent
-    
+
   },
   {
     path: 'teacher-sign-in',component: loginteacherComponent
-    
+
   },
   {
     path: 'contact',
@@ -68,11 +70,19 @@ const routes: Routes = [
     component: SignupComponent
   },
   {
+    path: 'teacher',
+    component: TeacherComponent
+  },
+  {
+    path: 'student',
+    component: StudentComponent
+  },
+  {
     path: 'signin',
     component: SigninComponent
   },
 
- 
+
   {
     path: 'teaching',
     component: TeachingComponent
@@ -89,7 +99,7 @@ const routes: Routes = [
     path: '**',
     component: HomeComponent
   }
-  
+
 ];
 
 @NgModule({

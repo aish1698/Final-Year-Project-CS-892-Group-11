@@ -23,7 +23,8 @@ import { AllProfilesComponent } from './components/all-profiles/all-profiles.com
 import { CreateProfileComponent } from './components/create-profile/create-profile.component';
 import { teacherregistrationComponent } from './teacherregistration/teacherregistration.component';
 import { SignupComponent } from './signup/signup.component';
-
+import { TeacherComponent } from './teacher/teacher.component';
+import { StudentComponent } from './student/student.component';
 import { SigninComponent } from './signin/signin.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { TeachingComponent } from './teaching/teaching.component';
@@ -37,13 +38,14 @@ import { LearningstudentComponent } from './learningstudent/learningstudent.comp
     ContactComponent,
     NavComponent,
     HomeComponent,
-   
-    
+
+
     AllProfilesComponent,
     CreateProfileComponent,
     teacherregistrationComponent,
     SignupComponent,
-   
+   TeacherComponent,
+   StudentComponent,
     SigninComponent,
     ForgotpasswordComponent,
     ForgotpasswordteacherComponent,
@@ -66,4 +68,3 @@ providers: [AuthGuard, LoginService],
 bootstrap: [AppComponent]
 })
 export class AppModule { }
-

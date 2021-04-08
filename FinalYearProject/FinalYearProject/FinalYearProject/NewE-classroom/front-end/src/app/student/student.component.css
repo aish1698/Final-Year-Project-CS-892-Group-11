@@ -1,15 +1,24 @@
 h2{
   text-align:center;
-  color: white;
+
   margin-top: 60px;
   margin-bottom: 90px;
-  font-size: 40px;
+  font-size: 60px;
   font-family: sans-serif;
   font-weight: bolder;
+  color:#1F51FF;
 }
-body{
+.content{
+  padding-top:20px;
+    padding-bottom: 40px;
+margin-top:40px;
+  margin-bottom: 40px;
+text-align:center;
 
-  background-color:  #F88379;
+  background-image: url("src\assets\images\stcet_students.jpg");
+  background-repeat: no-repeat;
+
+  background-size:100%;
 }
 
 .btn{
@@ -25,5 +34,6 @@ font-weight: bolder;
 
 }
 #container{
-  margin-bottom:50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
