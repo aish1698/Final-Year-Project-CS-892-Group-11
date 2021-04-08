@@ -32,6 +32,10 @@
       margin: 0 0 30px 0;
       font-size: 30px;
     }
+    .home h3 {
+      margin: 30px 30px 30px 0;
+
+    }
 
     .home a {
       color: #ff4081;
@@ -46,10 +50,10 @@
       text-align: center;
     }
 .btn{
-width:350px;
+width:500px;
 height:150px;
 font-size: 150px;
-  border-radius:300px;
+  border-radius:80px;
   font-weight: bolder;
 }
 

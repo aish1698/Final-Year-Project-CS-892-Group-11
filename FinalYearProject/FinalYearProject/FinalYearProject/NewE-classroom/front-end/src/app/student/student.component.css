@@ -1,0 +1,29 @@
+h2{
+  text-align:center;
+  color: white;
+  margin-top: 60px;
+  margin-bottom: 90px;
+  font-size: 40px;
+  font-family: sans-serif;
+  font-weight: bolder;
+}
+body{
+
+  background-color:  #F88379;
+}
+
+.btn{
+margin:auto;
+text-align: center;
+height: 90px;
+width:500px;
+display:block;
+align-items: center;
+border-radius: 35px;
+font-size: 20px;
+font-weight: bolder;
+
+}
+#container{
+  margin-bottom:50px;
+}
