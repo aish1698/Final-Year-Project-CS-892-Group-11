@@ -1,19 +1,20 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
 import { Profile } from "src/app/models/profile";
-import { TeachingService } from "src/app/teaching/teaching.service";
-@Component({
-  selector: 'app-teaching',
-  templateUrl: './teaching.component.html',
-  styleUrls: ['./teaching.component.css']
-})
-export class TeachingComponent implements OnInit {
+import {AssignmentUploadService} from "src/app/assignment-upload/assignment-upload.service";
 
+@Component({
+  selector: 'app-assignment-upload',
+  templateUrl: './assignment-upload.component.html',
+  styleUrls: ['./assignment-upload.component.css']
+})
+export class AssignmentUploadComponent implements OnInit {
   form!: FormGroup;
   profile!: Profile; 
   imageData!: string;
 
-  constructor(private teachingService: TeachingService) {}
+
+  constructor(private assignmentuploadService: AssignmentUploadService) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -24,7 +25,6 @@ export class TeachingComponent implements OnInit {
 
     });
   }
-
   onFileSelect(event:any) {
     console.log(event.target.files);
     const file =event.target.files[0]; //(event.target as HTMLInputElement).files[0] | null;
@@ -44,7 +44,7 @@ export class TeachingComponent implements OnInit {
 
   onSubmit() {
     console.log("submit");
-    this.teachingService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image);
+    this.assignmentuploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image);
     this.form.reset();
     this.imageData =" ";
   }

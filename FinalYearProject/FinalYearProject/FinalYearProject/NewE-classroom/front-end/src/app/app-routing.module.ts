@@ -21,6 +21,7 @@ import { loginteacherComponent } from './user/loginteacher/loginteacher.componen
 import{ForgotpasswordteacherComponent} from './forgotpasswordteacher/forgotpasswordteacher.component'
 import { LearningComponent } from './learning/learning.component';
 import { LearningstudentComponent } from './learningstudent/learningstudent.component';
+import { AssignmentUploadComponent } from './assignment-upload/assignment-upload.component';
 
 const routes: Routes = [
   {
@@ -74,6 +75,9 @@ const routes: Routes = [
     component: TeacherComponent
   },
   {
+    path:'assignment-upload',component:AssignmentUploadComponent
+  },
+  {
     path: 'student',
     component: StudentComponent
   },
@@ -81,8 +85,6 @@ const routes: Routes = [
     path: 'signin',
     component: SigninComponent
   },
-
-
   {
     path: 'teaching',
     component: TeachingComponent

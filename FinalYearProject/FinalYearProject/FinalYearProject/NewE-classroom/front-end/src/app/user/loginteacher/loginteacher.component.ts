@@ -38,4 +38,5 @@ export class loginteacherComponent {
     onPress(){
       this.router.navigate(['/forgotpasswordteacher']);
     }
+    
 }

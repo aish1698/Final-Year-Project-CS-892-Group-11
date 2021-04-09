@@ -32,19 +32,12 @@ export class LearningstudentComponent implements OnInit,OnDestroy {
     this.subject= this.route.snapshot.paramMap.get('subject');
     this.service.getProfiles(this.sem,this.subject)
     .subscribe((profiles: any) => {
-          console.log("hello")
+         
           console.log(profiles);
            this.profiles = profiles;
          
       });
-    // this.profileSubscription = this.service
-    //   .getProfiles()
-    //   .subscribe((profiles: any) => {
-    //     console.log("hello")
-    //     console.log(profiles);
-    //     this.profiles = profiles;
-       
-    //   });
+    
   }
 
      

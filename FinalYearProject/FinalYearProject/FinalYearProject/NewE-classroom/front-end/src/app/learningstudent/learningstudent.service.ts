@@ -11,33 +11,18 @@ import { setMaxListeners } from 'process';
 })
 export class LearningstudentService {
 
-  
-
-  
     private profiles: Profile[] = [];
     private profiles$ = new Subject<Profile[]>();
-   
-  
+
     constructor(private http: HttpClient) {}
   
     getProfiles(s :any,su: any) {
       return  this.http
-        .post<any>("http://localhost:3000/learning/learningstudent",{sem:s,subject:su})
-        // .pipe(
-        //   map((profileData) => {
-        //     return profileData.profiles;
-        //   })
-        // )
-        // .subscribe((profiles) => {
-        //   console.log(profiles);
-        //   this.profiles = profiles;
-        //   this.profiles$.next(this.profiles);
-        // });
+        .post<any>("http://localhost:3000/learning/learningstudent",{sem:s,subject:su})  
     }
   
     getProfilesStream() {
       return this.profiles$.asObservable();
-    }
-      
+    }   
   }
 
