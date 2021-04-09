@@ -25,7 +25,7 @@ export class loginteacherComponent {
     console.log( this.userid, this.password)
 
     // this.service.login(this.userid,this.password).subscribe(data => {console.log('success');this.router.navigate(['menu',this.userid]);}, err => {console.log(err);
-    this.service.loginteacher(this.userid,this.password).subscribe((data:any) => {console.log('success');this.router.navigate(['teaching']);
+    this.service.loginteacher(this.userid,this.password).subscribe((data:any) => {console.log('success');this.router.navigate(['teacher']);
     localStorage.setItem('token', data.token)
     localStorage.setItem('userid',this.userid)
   }, 
