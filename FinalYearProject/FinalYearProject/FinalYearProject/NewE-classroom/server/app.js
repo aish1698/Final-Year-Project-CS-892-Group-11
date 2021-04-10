@@ -9,6 +9,7 @@ const userController = require("./controller/user.controller");
 const forgotpassController = require("./controller/forgotpass.controller");
 const learningController = require("./controller/learning.controller");
 const profilesRoutes = require('./routes/profiles.router');
+const assignmentdownloadController = require("./controller/assignmentdownload.controller");
 const assignmentRoutes= require('./routes/assignment.router');
 const path = require('path');
 var app = express();
@@ -20,6 +21,7 @@ app.use("/User", userController);
 app.use("/forgotpassword", forgotpassController);
 app.use('/images', express.static(path.join('images')));
 app.use("/learning",learningController);
+app.use("/assignmentdown",assignmentdownloadController);
 app.use('/api/profiles', profilesRoutes);
 app.use('/api/assignmentques', assignmentRoutes);
 app.listen(port, () => {

@@ -15,6 +15,10 @@ export class ApiService {
   {
     return this.http.post(`http://localhost:3000/User/login`, {userid: u, password: p})
   }
+  assignmentdownload( s: any, su: any)
+  {
+    return this.http.post(`http://localhost:3000/assignmentdown/assignmentdownload`, {sem: s, subject: su})
+  }
   learning( s: any, su: any)
   {
     return this.http.post(`http://localhost:3000/learning/learningstudent`, {sem: s, subject: su})

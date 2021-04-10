@@ -31,6 +31,8 @@ import { TeachingComponent } from './teaching/teaching.component';
 import { LearningComponent } from './learning/learning.component';
 import { LearningstudentComponent } from './learningstudent/learningstudent.component';
 import { AssignmentUploadComponent } from './assignment-upload/assignment-upload.component';
+import { AssignmentdownComponent } from './assignmentdown/assignmentdown.component';
+import { AssignmentdownloadComponent } from './assignmentdownload/assignmentdownload.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +56,8 @@ import { AssignmentUploadComponent } from './assignment-upload/assignment-upload
     loginteacherComponent,
     LearningComponent,
     LearningstudentComponent,
+    AssignmentdownComponent,
+    AssignmentdownloadComponent,
     AssignmentUploadComponent
   ],
   imports: [

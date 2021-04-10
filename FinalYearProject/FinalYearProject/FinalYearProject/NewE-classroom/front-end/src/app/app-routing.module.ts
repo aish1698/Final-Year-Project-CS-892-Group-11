@@ -22,7 +22,8 @@ import{ForgotpasswordteacherComponent} from './forgotpasswordteacher/forgotpassw
 import { LearningComponent } from './learning/learning.component';
 import { LearningstudentComponent } from './learningstudent/learningstudent.component';
 import { AssignmentUploadComponent } from './assignment-upload/assignment-upload.component';
-
+import { AssignmentdownComponent } from './assignmentdown/assignmentdown.component';
+import { AssignmentdownloadComponent } from './assignmentdownload/assignmentdownload.component';
 const routes: Routes = [
   {
     path: '', redirectTo: '/home', pathMatch: 'full'
@@ -92,6 +93,14 @@ const routes: Routes = [
   {
     path: 'learning',
     component: LearningComponent
+  },
+  {
+    path: 'assignmentdown',
+    component: AssignmentdownComponent
+  },
+  {
+    path: 'assignmentdownload/:sem/:subject',
+    component: AssignmentdownloadComponent
   },
   {
     path: 'learningstudent/:sem/:subject',

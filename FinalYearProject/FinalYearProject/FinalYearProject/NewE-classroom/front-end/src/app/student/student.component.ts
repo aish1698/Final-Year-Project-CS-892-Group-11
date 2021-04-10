@@ -14,5 +14,7 @@ export class StudentComponent implements OnInit {
   materialdHandler(){
     this.router.navigate(['/learning']);
   }
-
+  assignmentdownloadHandler(){
+    this.router.navigate(['/assignmentdown']);
+  }
 }
