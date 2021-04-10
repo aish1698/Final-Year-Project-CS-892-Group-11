@@ -9,6 +9,7 @@ const userController = require("./controller/user.controller");
 const forgotpassController = require("./controller/forgotpass.controller");
 const learningController = require("./controller/learning.controller");
 const profilesRoutes = require('./routes/profiles.router');
+const assignmentRoutes= require('./routes/assignment.router');
 const path = require('path');
 var app = express();
 var port=3000;
@@ -20,6 +21,7 @@ app.use("/forgotpassword", forgotpassController);
 app.use('/images', express.static(path.join('images')));
 app.use("/learning",learningController);
 app.use('/api/profiles', profilesRoutes);
+app.use('/api/assignmentques', assignmentRoutes);
 app.listen(port, () => {
     console.log(`express server started at port : ${port}`);
   });

@@ -13,7 +13,7 @@ export class AssignmentUploadService {
 
   private profiles: Profiles[] = [];
   private profiles$ = new Subject<Profiles[]>();
-  readonly url = "http://localhost:3000/api/profiles/assignment-upload";
+  readonly url = "http://localhost:3000/api/assignmentques/assignment";
 
   constructor(private http: HttpClient) {}
   getProfiles() {
