@@ -5,7 +5,7 @@
           <div class="navbar-header">
             <a class="navbar-brand" >
               <img src="\assets\images\logo.png" class="img-responsive" alt=""><strong> <a  routerLink="/home"> Stcet Classroom</a></strong></a>
-            <a href="/home"><i class="fa fa-fw fa-home"></i> Home &nbsp;</a>
+            <a *ngIf="!loggedIn()" routerLink="/home"><i class="fa fa-fw fa-home"></i> Home &nbsp;</a>
             <a routerLink="/contact"><i class="fa fa-fw fa-envelope"></i> Contact us &nbsp;</a>
         </div>
           <ul class="nav navbar-nav navbar-right">

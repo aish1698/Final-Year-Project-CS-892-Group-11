@@ -24,10 +24,7 @@ export class LoginService {
     localStorage.removeItem('token');
   }
 
-  // logoutUser() {
-  //   localStorage.removeItem('token')
-  //   this.router.navigate(['/sign-in'])
-  // }
+  
 
 
 }

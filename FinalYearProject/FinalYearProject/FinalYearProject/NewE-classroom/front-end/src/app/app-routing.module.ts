@@ -5,6 +5,7 @@ import { registerComponent } from 'src/app/user/register/register.component';
 import { loginComponent } from './user/login/login.component';
 import { teacherregistrationComponent } from './teacherregistration/teacherregistration.component';
 import { AuthGuard } from './auth.guard';
+import {AuthTeacherGuard} from './auth-teacher.guard';
 import { ContactComponent } from './contact/contact.component';
 
 import { CreateProfileComponent } from './components/create-profile/create-profile.component';
@@ -24,13 +25,15 @@ import { LearningstudentComponent } from './learningstudent/learningstudent.comp
 import { AssignmentUploadComponent } from './assignment-upload/assignment-upload.component';
 import { AssignmentdownComponent } from './assignmentdown/assignmentdown.component';
 import { AssignmentdownloadComponent } from './assignmentdownload/assignmentdownload.component';
+import { AuthHomeGuard } from './auth-home.guard';
 const routes: Routes = [
   {
     path: '', redirectTo: '/home', pathMatch: 'full'
 },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate:[AuthHomeGuard]
   },
 
   {
@@ -73,14 +76,17 @@ const routes: Routes = [
   },
   {
     path: 'teacher',
-    component: TeacherComponent
+    component: TeacherComponent,
+    canActivate:[AuthTeacherGuard]
   },
   {
-    path:'assignment-upload',component:AssignmentUploadComponent
+    path:'assignment-upload',component:AssignmentUploadComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'student',
-    component: StudentComponent
+    component: StudentComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'signin',
@@ -88,23 +94,29 @@ const routes: Routes = [
   },
   {
     path: 'teaching',
-    component: TeachingComponent
+    component: TeachingComponent,
+    canActivate:[AuthTeacherGuard]
   },
   {
     path: 'learning',
-    component: LearningComponent
+    component: LearningComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'assignmentdown',
-    component: AssignmentdownComponent
+    component: AssignmentdownComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'assignmentdownload/:sem/:subject',
-    component: AssignmentdownloadComponent
+    component: AssignmentdownloadComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'learningstudent/:sem/:subject',
-    component: LearningstudentComponent
+    component: LearningstudentComponent,
+    canActivate:[AuthGuard]
+    
   },
   {
     path: '**',
