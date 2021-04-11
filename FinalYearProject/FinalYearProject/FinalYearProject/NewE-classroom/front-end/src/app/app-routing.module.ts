@@ -8,9 +8,7 @@ import { AuthGuard } from './auth.guard';
 import {AuthTeacherGuard} from './auth-teacher.guard';
 import { ContactComponent } from './contact/contact.component';
 
-import { CreateProfileComponent } from './components/create-profile/create-profile.component';
 
-import { AllProfilesComponent } from './components/all-profiles/all-profiles.component';
 import { SigninComponent } from './signin/signin.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { StudentComponent } from './student/student.component';
@@ -25,7 +23,11 @@ import { LearningstudentComponent } from './learningstudent/learningstudent.comp
 import { AssignmentUploadComponent } from './assignment-upload/assignment-upload.component';
 import { AssignmentdownComponent } from './assignmentdown/assignmentdown.component';
 import { AssignmentdownloadComponent } from './assignmentdownload/assignmentdownload.component';
+
 import { AuthHomeGuard } from './auth-home.guard';
+import { AnswerUploadComponent } from './answer-upload/answer-upload.component';
+import { AnswerdownComponent } from './answerdown/answerdown.component';
+import { AnswerdownloadComponent } from './answerdownload/answerdownload.component';
 const routes: Routes = [
   {
     path: '', redirectTo: '/home', pathMatch: 'full'
@@ -61,14 +63,7 @@ const routes: Routes = [
   {
     path:'forgotpasswordteacher',component : ForgotpasswordteacherComponent
   },
-  {
-    path: 'create-profile',component: CreateProfileComponent,
-    canActivate:[AuthGuard]
-  },
-  {
-    path: 'all-profiles',component: AllProfilesComponent,
-    canActivate:[AuthGuard]
-  },
+  
 
   {
     path: 'signup',
@@ -82,6 +77,9 @@ const routes: Routes = [
   {
     path:'assignment-upload',component:AssignmentUploadComponent,
     canActivate:[AuthGuard]
+  },
+  {
+    path:'answer-upload',component:AnswerUploadComponent
   },
   {
     path: 'student',
@@ -111,6 +109,14 @@ const routes: Routes = [
     path: 'assignmentdownload/:sem/:subject',
     component: AssignmentdownloadComponent,
     canActivate:[AuthGuard]
+  },
+  {
+    path: 'answerdown',
+    component: AnswerdownComponent
+  },
+  {
+    path: 'answerdownload/:sem/:subject',
+    component: AnswerdownloadComponent
   },
   {
     path: 'learningstudent/:sem/:subject',

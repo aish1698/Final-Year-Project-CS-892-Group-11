@@ -31,8 +31,11 @@ import { TeachingComponent } from './teaching/teaching.component';
 import { LearningComponent } from './learning/learning.component';
 import { LearningstudentComponent } from './learningstudent/learningstudent.component';
 import { AssignmentUploadComponent } from './assignment-upload/assignment-upload.component';
+import { AnswerUploadComponent } from './answer-upload/answer-upload.component';
 import { AssignmentdownComponent } from './assignmentdown/assignmentdown.component';
 import { AssignmentdownloadComponent } from './assignmentdownload/assignmentdownload.component';
+import { AnswerdownComponent } from './answerdown/answerdown.component';
+import { AnswerdownloadComponent } from './answerdownload/answerdownload.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +61,10 @@ import { AssignmentdownloadComponent } from './assignmentdownload/assignmentdown
     LearningstudentComponent,
     AssignmentdownComponent,
     AssignmentdownloadComponent,
-    AssignmentUploadComponent
+    AnswerdownComponent,
+    AnswerdownloadComponent,
+    AssignmentUploadComponent,
+    AnswerUploadComponent
   ],
   imports: [
     BrowserModule,

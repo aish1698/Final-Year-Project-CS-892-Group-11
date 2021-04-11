@@ -16,5 +16,8 @@ export class TeacherComponent implements OnInit {
   materialHandler(){
     this.router.navigate(['/assignment-upload']);
   }
+  answerdownHandler(){
+    this.router.navigate(['/assignmentdown']);
+  }
 
 }
