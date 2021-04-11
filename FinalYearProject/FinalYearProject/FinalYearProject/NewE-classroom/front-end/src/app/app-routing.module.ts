@@ -27,6 +27,8 @@ import { AssignmentdownloadComponent } from './assignmentdownload/assignmentdown
 import { AuthHomeGuard } from './auth-home.guard';
 import { AnswerUploadComponent } from './answer-upload/answer-upload.component';
 import { AnswerdownComponent } from './answerdown/answerdown.component';
+import { VideoCallComponent } from './video-call/video-call.component';
+
 import { AnswerdownloadComponent } from './answerdownload/answerdownload.component';
 const routes: Routes = [
   {
@@ -63,7 +65,7 @@ const routes: Routes = [
   {
     path:'forgotpasswordteacher',component : ForgotpasswordteacherComponent
   },
-  
+
 
   {
     path: 'signup',
@@ -106,6 +108,10 @@ const routes: Routes = [
     canActivate:[AuthGuard]
   },
   {
+    path: 'video-call',
+    component: VideoCallComponent
+  },
+  {
     path: 'assignmentdownload/:sem/:subject',
     component: AssignmentdownloadComponent,
     canActivate:[AuthGuard]
@@ -122,7 +128,7 @@ const routes: Routes = [
     path: 'learningstudent/:sem/:subject',
     component: LearningstudentComponent,
     canActivate:[AuthGuard]
-    
+
   },
   {
     path: '**',

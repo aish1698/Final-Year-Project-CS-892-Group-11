@@ -1,0 +1,20 @@
+
+<p>video-call works!</p>
+<h2>Welcome to Live Interactive Video Session</h2>
+<h3>My unique id is <u> {{mypeerid}} </u></h3>
+<div id="container">
+
+<div>
+
+
+<input class="inp" type="text" name="" value="" [(ngModel)]="anotherId">
+<br>
+</div>
+<button  class="btn btn-primary" (click)="connect()">Connect</button>
+<br>
+<button  class="btn btn-primary" (click)="videoconnect()">Start Video-Call</button>
+<br>
+<video #myvideo class="vid">
+
+</video>
+</div>
