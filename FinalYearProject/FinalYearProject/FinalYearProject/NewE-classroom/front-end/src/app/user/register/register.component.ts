@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm,Validators } from '@angular/forms';
+
 import { UserService} from '../../shared/user.service';
 import { RegisterService } from 'src/app/user/register/register.service';
 import { Router} from '@angular/router';
