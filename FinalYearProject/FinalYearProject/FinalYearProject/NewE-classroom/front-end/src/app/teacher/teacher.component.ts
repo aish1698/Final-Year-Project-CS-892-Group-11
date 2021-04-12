@@ -17,7 +17,10 @@ export class TeacherComponent implements OnInit {
     this.router.navigate(['/assignment-upload']);
   }
   answerdownHandler(){
-    this.router.navigate(['/assignmentdown']);
+    this.router.navigate(['/answerdown']);
+  }
+  videocallHandler(){
+    this.router.navigate(['/video-call']);
   }
 
 }
