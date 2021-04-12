@@ -11,11 +11,10 @@ import { setMaxListeners } from 'process';
 })
 export class AnswerdownloadService {
 
-    private profiles: Profile[] = [];
-    private profiles$ = new Subject<Profile[]>();
+  private profiles: Profile[] = [];
+  private profiles$ = new Subject<Profile[]>();
 
-    constructor(private http: HttpClient) {}
-  
+  constructor(private http: HttpClient) {}
     getProfiles(s :any,su: any) {
       return  this.http
         .post<any>("http://localhost:3000/answerdown/answerdownload",{sem:s,subject:su})  

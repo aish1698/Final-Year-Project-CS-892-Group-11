@@ -24,6 +24,6 @@ export class AssignmentdownComponent implements OnInit {
   }
   click(){
     // console.log(this.sem,this.subject);
-    this.router.navigate(['/assignmentdownload',this.sem,this.subject]);
+    this.router.navigate(['/answerdownload',this.sem,this.subject]);
 }
 }
