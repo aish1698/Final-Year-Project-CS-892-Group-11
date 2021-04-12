@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';  // <<<< import it here
 
+
 // components imports
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +20,7 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import{ForgotpasswordteacherComponent} from './forgotpasswordteacher/forgotpasswordteacher.component'
 import { loginteacherComponent } from './user/loginteacher/loginteacher.component';
-
+import { VideoCallComponent } from './video-call/video-call.component';
 import { teacherregistrationComponent } from './teacherregistration/teacherregistration.component';
 import { SignupComponent } from './signup/signup.component';
 import { TeacherComponent } from './teacher/teacher.component';
@@ -45,7 +46,8 @@ import { AnswerdownloadComponent } from './answerdownload/answerdownload.compone
     HomeComponent,
 
 
-  
+
+
     teacherregistrationComponent,
     SignupComponent,
    TeacherComponent,
@@ -62,6 +64,7 @@ import { AnswerdownloadComponent } from './answerdownload/answerdownload.compone
     AnswerdownComponent,
     AnswerdownloadComponent,
     AssignmentUploadComponent,
+    VideoCallComponent,
     AnswerUploadComponent
   ],
   imports: [
