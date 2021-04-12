@@ -41,18 +41,23 @@ const routes: Routes = [
   },
 
   {
-    path: 'sign-in',component: loginComponent
+    path: 'sign-in',component: loginComponent,
+    canActivate:[AuthHomeGuard]
   },
   {
-    path: 'student-sign-up',component: registerComponent
+    path: 'student-sign-up',component: registerComponent,
+    canActivate:[AuthHomeGuard]
 
   },
   {
-    path: 'teacher-sign-up',component: teacherregistrationComponent
+    path: 'teacher-sign-up',component: teacherregistrationComponent,
+    canActivate:[AuthHomeGuard]
+
 
   },
   {
-    path: 'teacher-sign-in',component: loginteacherComponent
+    path: 'teacher-sign-in',component: loginteacherComponent,
+    canActivate:[AuthHomeGuard]
 
   },
   {
@@ -60,7 +65,8 @@ const routes: Routes = [
     component: ContactComponent
   },
   {
-    path:'forgotpassword',component:ForgotpasswordComponent
+    path:'forgotpassword',component:ForgotpasswordComponent,
+    
   },
   {
     path:'forgotpasswordteacher',component : ForgotpasswordteacherComponent
@@ -69,7 +75,8 @@ const routes: Routes = [
 
   {
     path: 'signup',
-    component: SignupComponent
+    component: SignupComponent,
+    canActivate:[AuthHomeGuard]
   },
   {
     path: 'teacher',
@@ -78,10 +85,12 @@ const routes: Routes = [
   },
   {
     path:'assignment-upload',component:AssignmentUploadComponent,
-    canActivate:[AuthGuard]
+    canActivate:[AuthTeacherGuard]
   },
   {
-    path:'answer-upload',component:AnswerUploadComponent
+    path:'answer-upload',component:AnswerUploadComponent,
+    canActivate:[AuthGuard]
+
   },
   {
     path: 'student',
@@ -90,7 +99,9 @@ const routes: Routes = [
   },
   {
     path: 'signin',
-    component: SigninComponent
+    component: SigninComponent,
+    canActivate:[AuthHomeGuard]
+
   },
   {
     path: 'teaching',
@@ -118,11 +129,13 @@ const routes: Routes = [
   },
   {
     path: 'answerdown',
-    component: AnswerdownComponent
+    component: AnswerdownComponent,
+    canActivate:[AuthTeacherGuard]
   },
   {
     path: 'answerdownload/:sem/:subject',
-    component: AnswerdownloadComponent
+    component: AnswerdownloadComponent,
+    canActivate:[AuthTeacherGuard]
   },
   {
     path: 'learningstudent/:sem/:subject',
