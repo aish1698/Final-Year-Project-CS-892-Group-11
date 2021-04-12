@@ -20,4 +20,7 @@ export class StudentComponent implements OnInit {
   assignmentdownloadHandler(){
     this.router.navigate(['/assignmentdown']);
   }
+  videocallHandler(){
+    this.router.navigate(['/video-call']);
+  }
 }
