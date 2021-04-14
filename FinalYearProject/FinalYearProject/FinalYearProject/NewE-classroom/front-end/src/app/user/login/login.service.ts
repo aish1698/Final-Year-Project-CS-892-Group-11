@@ -23,6 +23,9 @@ export class LoginService {
   deleteToken() {
     localStorage.removeItem('token');
   }
+  isStudent(){
+    return localStorage.getItem("student")=="T"
+  }
 
   
 

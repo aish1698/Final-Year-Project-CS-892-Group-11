@@ -42,7 +42,7 @@ const routes: Routes = [
 
   {
     path: 'sign-in',component: loginComponent,
-    canActivate:[AuthHomeGuard]
+    
   },
   {
     path: 'student-sign-up',component: registerComponent,
@@ -57,7 +57,7 @@ const routes: Routes = [
   },
   {
     path: 'teacher-sign-in',component: loginteacherComponent,
-    canActivate:[AuthHomeGuard]
+   
 
   },
   {

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
-
 import {LoginTeacherService} from './user/login/login-teacher.service';
 
 
@@ -16,7 +15,7 @@ export class AuthTeacherGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    if (this._LogintService.loggedInt())  {
+    if (this._LogintService.loggedInt()  && this._LogintService.isStudent())  {
       return true
     } else {
       this._router.navigate(['/teacher-sign-in'])

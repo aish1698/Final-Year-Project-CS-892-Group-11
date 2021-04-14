@@ -23,6 +23,10 @@ export class LoginteacherService {
   deleteToken() {
     localStorage.removeItem('token');
   }
+  isStudent(){
+    return localStorage.getItem("student")=="F"
+  }
+
 
   // logoutUser() {
   //   localStorage.removeItem('token')

@@ -27,6 +27,7 @@ export class loginComponent {
     this.service.login(this.userid,this.password).subscribe((data:any) => {console.log('success');this.router.navigate(['student']);
     localStorage.setItem('token', data.token)
     localStorage.setItem('userid',this.userid)
+    localStorage.setItem("student","T");
   }, 
   err => {console.log(err);
     alert("Wrong UserID or Password. Try again! ");

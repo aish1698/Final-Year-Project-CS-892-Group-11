@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
 import { Profile } from "src/app/models/profile";
 import {AnswerUploadService} from "src/app/answer-upload/answer-upload.service";
+import { CurrentrouteService } from "../currentroute.service";
+import { LoginService } from "../user/login/login.service";
 
 @Component({
   selector: 'app-answer-upload',
@@ -14,7 +16,7 @@ export class AnswerUploadComponent implements OnInit {
   imageData!: string;
 
 
-  constructor(private answerUploadService: AnswerUploadService) {}
+  constructor(private answerUploadService: AnswerUploadService,private currentroute:CurrentrouteService,private login:LoginService) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -24,6 +26,10 @@ export class AnswerUploadComponent implements OnInit {
       image: new FormControl(null),
 
     });
+    this.currentroute.setcurrentroute();
+   if(this.login.isStudent()){
+     console.log("student");
+   }
   }
   onFileSelect(event:any) {
     console.log(event.target.files);

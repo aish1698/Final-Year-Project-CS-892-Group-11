@@ -6,6 +6,8 @@ import { Router} from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import{LearningstudentService} from "src/app/learningstudent/learningstudent.service"
 import { Profile } from "src/app/models/profile";
+import { CurrentrouteService } from '../currentroute.service';
+import { LoginService } from '../user/login/login.service';
 @Component({
   selector: 'app-learningstudent',
   templateUrl: './learningstudent.component.html',
@@ -22,7 +24,7 @@ export class LearningstudentComponent implements OnInit,OnDestroy {
    private service: LearningstudentService,
     private route:ActivatedRoute,
     private router : Router,
-    private ref: ChangeDetectorRef) { }
+    private ref: ChangeDetectorRef,private currentroute:CurrentrouteService,private login:LoginService) { }
   ngOnDestroy(): void {
     throw new Error('Method not implemented.');
   }
@@ -37,6 +39,10 @@ export class LearningstudentComponent implements OnInit,OnDestroy {
            this.profiles = profiles;
          
       });
+      this.currentroute.setcurrentroute();
+   if(this.login.isStudent()){
+     console.log("student");
+   }
     
   }
 

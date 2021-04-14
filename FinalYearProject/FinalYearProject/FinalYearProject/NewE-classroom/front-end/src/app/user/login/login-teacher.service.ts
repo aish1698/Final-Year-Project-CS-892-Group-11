@@ -9,7 +9,7 @@ export class LoginTeacherService {
   [x: string]: any;
   constructor(private http: HttpClient,
     private _router: Router) {}
-    login(u: any,p: any)
+    logint(u: any,p: any)
   {
     return this.http.post(`http://localhost:3000/User/loginteacher`, {userid: u, password: p})
   }
@@ -22,5 +22,9 @@ export class LoginTeacherService {
   deleteToken() {
     localStorage.removeItem('token');
   }
+  isStudent(){
+    return localStorage.getItem("student")=="F"
+  }
+
 
 }

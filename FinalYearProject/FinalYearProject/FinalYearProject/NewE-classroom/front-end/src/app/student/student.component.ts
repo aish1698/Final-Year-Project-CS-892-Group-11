@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
+import { CurrentrouteService } from '../currentroute.service';
+import { LoginService } from '../user/login/login.service';
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',
@@ -7,9 +9,14 @@ import { Router } from "@angular/router";
 })
 export class StudentComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private currentroute:CurrentrouteService,private login:LoginService) { }
 
   ngOnInit(): void {
+    this.currentroute.setcurrentroute();
+    if(this.login.isStudent()){
+      console.log("student");
+    }
+
   }
   materialdHandler(){
     this.router.navigate(['/learning']);

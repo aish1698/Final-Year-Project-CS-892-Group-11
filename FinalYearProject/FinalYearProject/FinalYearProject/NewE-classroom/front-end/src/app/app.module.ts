@@ -5,8 +5,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';  // <<<< import it here
-
+import { FormsModule } from '@angular/forms';  
 
 // components imports
 import { AppRoutingModule } from './app-routing.module';
@@ -36,6 +35,10 @@ import { AssignmentdownComponent } from './assignmentdown/assignmentdown.compone
 import { AssignmentdownloadComponent } from './assignmentdownload/assignmentdownload.component';
 import { AnswerdownComponent } from './answerdown/answerdown.component';
 import { AnswerdownloadComponent } from './answerdownload/answerdownload.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { AuthTeacherGuard } from './auth-teacher.guard';
+import {AuthHomeGuard} from './auth-home.guard';
+import { LoginteacherService } from './user/loginteacher/loginteacher.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,10 +47,6 @@ import { AnswerdownloadComponent } from './answerdownload/answerdownload.compone
     ContactComponent,
     NavComponent,
     HomeComponent,
-
-
-
-
     teacherregistrationComponent,
     SignupComponent,
    TeacherComponent,
@@ -74,10 +73,10 @@ import { AnswerdownloadComponent } from './answerdownload/answerdownload.compone
     FormsModule,
     HttpClientModule,
    ReactiveFormsModule,
-   MatIconModule
-
+   MatIconModule,
+   MatProgressBarModule
   ],
-providers: [AuthGuard, LoginService],
+providers: [AuthGuard,AuthTeacherGuard,AuthHomeGuard,LoginteacherService,LoginService],
 bootstrap: [AppComponent]
 })
 export class AppModule { }

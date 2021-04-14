@@ -11,9 +11,6 @@ export class VideoCallComponent implements  OnInit{
    anotherId:any;
    mypeerid:any;
 
-
-
-
   constructor() { }
 
   ngOnInit(): void {

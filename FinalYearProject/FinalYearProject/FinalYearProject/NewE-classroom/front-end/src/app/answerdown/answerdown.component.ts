@@ -4,6 +4,8 @@ import { ActivatedRoute }  from "@angular/router";
 import { ApiService } from 'src/app/api.service';
 import { Router} from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { CurrentrouteService } from '../currentroute.service';
+import { LoginteacherService } from '../user/loginteacher/loginteacher.service';
 @Component({
   selector: 'app-answerdown',
   templateUrl: './answerdown.component.html',
@@ -18,9 +20,13 @@ export class AnswerdownComponent implements OnInit {
     private service:ApiService,
     private route:ActivatedRoute,
     private router : Router,
-    private ref: ChangeDetectorRef) { }
+    private ref: ChangeDetectorRef,private currentroute:CurrentrouteService,private logint:LoginteacherService) { }
 
   ngOnInit(): void {
+    this.currentroute.setcurrentroute();
+   if(this.logint.isStudent()){
+     console.log("student");
+   }
   }
   click(){
     // console.log(this.sem,this.subject);

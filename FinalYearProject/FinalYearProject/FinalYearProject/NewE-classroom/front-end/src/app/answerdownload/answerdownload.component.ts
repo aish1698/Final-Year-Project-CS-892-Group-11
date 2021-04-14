@@ -6,6 +6,8 @@ import { Router} from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Profile } from "src/app/models/profile";
 import{AnswerdownloadService} from "src/app/answerdownload/answerdownload.service"
+import { CurrentrouteService } from '../currentroute.service';
+import { LoginteacherService } from '../user/loginteacher/loginteacher.service';
 @Component({
   selector: 'app-answerdownload',
   templateUrl: './answerdownload.component.html',
@@ -22,7 +24,7 @@ export class AnswerdownloadComponent implements OnInit,OnDestroy {
    private service: AnswerdownloadService,
     private route:ActivatedRoute,
     private router : Router,
-    private ref: ChangeDetectorRef) { }
+    private ref: ChangeDetectorRef,private currentroute:CurrentrouteService,private logint:LoginteacherService) { }
   ngOnDestroy(): void {
     throw new Error('Method not implemented.');
   }
@@ -37,6 +39,10 @@ export class AnswerdownloadComponent implements OnInit,OnDestroy {
            this.profiles = profiles;
          
       });
+      this.currentroute.setcurrentroute();
+      if(this.logint.isStudent()){
+        console.log("student");
+      }
     
   }
 

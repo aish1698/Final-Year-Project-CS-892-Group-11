@@ -5,7 +5,7 @@ import { FormGroup,FormControl,Validator}  from "@angular/forms";
 
 import { NgForm } from '@angular/forms';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
-import { LoginService } from '../login/login.service';
+
 
 @Component({
   selector: 'app-loginteacher',
@@ -28,7 +28,9 @@ export class loginteacherComponent {
     this.service.loginteacher(this.userid,this.password).subscribe((data:any) => {console.log('success');this.router.navigate(['teacher']);
     localStorage.setItem('token', data.token)
     localStorage.setItem('userid',this.userid)
+    localStorage.setItem("student","F");
   }, 
+
   err => {console.log(err);
     alert("Wrong UserID or Password. Try again! ");
 

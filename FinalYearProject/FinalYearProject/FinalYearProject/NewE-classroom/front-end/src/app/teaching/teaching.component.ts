@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
 import { Profile } from "src/app/models/profile";
 import { TeachingService } from "src/app/teaching/teaching.service";
+import { CurrentrouteService } from "../currentroute.service";
+import { LoginteacherService } from "../user/loginteacher/loginteacher.service";
 @Component({
   selector: 'app-teaching',
   templateUrl: './teaching.component.html',
@@ -13,7 +15,7 @@ export class TeachingComponent implements OnInit {
   profile!: Profile; 
   imageData!: string;
 
-  constructor(private teachingService: TeachingService) {}
+  constructor(private teachingService: TeachingService,private currentroute:CurrentrouteService,private logint:LoginteacherService) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -23,6 +25,10 @@ export class TeachingComponent implements OnInit {
       image: new FormControl(null),
 
     });
+    this.currentroute.setcurrentroute();
+    if(this.logint.isStudent()){
+      console.log("student");
+    }
   }
 
   onFileSelect(event:any) {
