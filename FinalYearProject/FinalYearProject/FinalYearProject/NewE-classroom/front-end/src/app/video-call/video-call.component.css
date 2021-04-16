@@ -40,7 +40,15 @@ u{
 }
 .vid{
   margin-bottom: 30px;
-  margin-left:400px;
-  height:600px;
-  width:600px;
+  margin-left:300px;
+  height:400px;
+  width:400px;
+
+}
+#VidTwo{
+  margin-bottom:220px;
+  margin-right:50px;
+
+  height:180px;
+  width:180px;
 }

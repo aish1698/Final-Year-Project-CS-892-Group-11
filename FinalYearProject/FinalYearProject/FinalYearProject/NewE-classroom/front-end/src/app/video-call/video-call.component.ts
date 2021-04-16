@@ -21,11 +21,16 @@ export class VideoCallComponent implements  OnInit{
       console.log("Your unique id is"+this.mypeerid);
     },3000)
     this.peer.on('connection', function(conn:any) {
+
+
       conn.on('data', function(data:any){
         // Will print 'hi!'
         alert(data);
       });
+
+
     });
+
     var n=<any>navigator;
      n.mediaDevices.getUserMedia = n.getUserMedia || n.webkitGetUserMedia || n.mozGetUserMedia||n.msGetUserMedia;
      this.peer.on('call', function(call:any) {
@@ -33,19 +38,12 @@ export class VideoCallComponent implements  OnInit{
 
   n.getUserMedia({video
     : true, audio: true}, function(stream:any) {
-    call.answer(stream); // Answer the call with an A/V stream.
+    call.answer(stream);
+   // Answer the call with an A/V stream.
     call.on('stream', function(remotestream:any) {
       video.srcObject=remotestream;
-var playPromise=video.play();
-      if(playPromise !==undefined){
-        playPromise.then(function() {call.on('close',function(){
-          alert("video is closed!");
+video.play();
 
-
-        })
-
-          })
-      }
 
 
         // Show stream in some video/canvas element.
@@ -92,37 +90,25 @@ n.getUserMedia({video: true, audio: true}, function(stream:any) {
 }
 videoDisconnect(){
 
-
-  let video=this.myVideo.nativeElement;
-  var localid=this.peer;
-  var otherid=this.anotherId;
-
-  var n=<any>navigator;
-   n.mediaDevices.getUserMedia = n.getUserMedia || n.webkitGetUserMedia || n.mozGetUserMedia ||n.msGetUserMedia;
-n.getUserMedia({video: true, audio: true}, function(stream:any) {
-  var call = localid.call(otherid, stream);
-
-
-  call.on('stream', function(remotestream:any) {
-    video.srcObject=remotestream;
-  var playPromise=  video.play();
-if(playPromise !==undefined){
-  playPromise.then(function() {
+location.reload();
 
 
 
-  call.close();
 
-
- })
 }
-      // Show stream in some video/canvas element.
-    });
+autoConnect(){
+var v=document.getElementById('VidTwo') as HTMLVideoElement;
+var k=<any>navigator
+k.getUserMedia=k.getUserMedia||k.webkitGetUserMedia || k.mozGetUserMedia ||k.msGetUserMedia;
+if(navigator.getUserMedia){
+navigator.getUserMedia({video:true,audio:true},handleVideo,videoError);
 
-  },function(err:any) {
-    console.log('Failed to get local stream' ,err);
-
-
-});
 }
+function handleVideo(stream: any){
+v.srcObject=stream;
+v.play();
+}
+function videoError(e: any){
+console.log("Failed to get video stream",e);
+}}
 }

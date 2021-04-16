@@ -9,14 +9,18 @@
 <input class="inp" type="text" name="" value="" [(ngModel)]="anotherId">
 <br>
 </div>
-<button  class="btn btn-primary" (click)="connect()">Connect</button>
+<button  class="btn btn-primary" (click)="connect()" >Connect</button>
 <br>
-<button  class="btn btn-primary" (click)="videoconnect()">Start Video-Call</button>
+<button  class="btn btn-primary" (click)="videoconnect()"(click)="autoConnect()" >Start Video-Call</button>
 <br>
-<button  class="btn btn-primary"  (click)="videoDisconnect()">Disconnect Video-Call</button>
+<button  class="btn btn-primary" id="dis"  (click)="videoDisconnect()" >Disconnect Video-Call</button>
 <br>
 
 <video #myvideo class="vid" >
 
 </video>
+<video  id="VidTwo" >
+
+</video>
+
 </div>
