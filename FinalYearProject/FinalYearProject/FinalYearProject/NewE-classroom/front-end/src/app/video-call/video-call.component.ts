@@ -101,7 +101,7 @@ var v=document.getElementById('VidTwo') as HTMLVideoElement;
 var k=<any>navigator
 k.getUserMedia=k.getUserMedia||k.webkitGetUserMedia || k.mozGetUserMedia ||k.msGetUserMedia;
 if(navigator.getUserMedia){
-navigator.getUserMedia({video:true,audio:true},handleVideo,videoError);
+navigator.getUserMedia({video:true},handleVideo,videoError);
 
 }
 function handleVideo(stream: any){
