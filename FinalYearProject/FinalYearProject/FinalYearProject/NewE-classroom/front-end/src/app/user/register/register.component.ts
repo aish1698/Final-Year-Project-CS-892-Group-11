@@ -80,6 +80,8 @@ export class registerComponent implements OnInit {
     var securitycode = document.forms["RegForm"]["securitycode"];
     var ph= /^\d{10}$/;
     var e=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    
+
     if (fullName.value == "")                                  
     { 
         window.alert("Please enter your Full Name."); 
@@ -87,12 +89,33 @@ export class registerComponent implements OnInit {
         return false; 
     } 
    
-    if (userid.value == "")                               
-    { 
-        window.alert("Please Enter UserID"); 
-        userid.focus(); 
-        return false; 
-    } 
+    // if (userid.value == "")                               
+    // { 
+    //     window.alert("Please Enter UserID"); 
+    //     userid.focus(); 
+    //     return false; 
+    // } 
+    if(!(userid.value.match("^[0-9]{2}/[0-9]{3}$")))
+    {
+      window.alert("Please enter valid UserID");
+      userid.focus();
+      return false;
+    }
+    
+    // if (userid.charAt(2) != "/")
+    // {
+    //   window.alert("Please enter valid UserID");
+    //   userid.focus();
+    //   return false;
+    // }
+    // else{
+    //   var batch=/^[1-99]+$/;
+    //   var batchnum=userid.split("/",1);
+    //   if(batchnum.value.match(batch))
+    //   {
+    //     if
+    //   }
+    // }
     if (dept.value == "")                               
     { 
         window.alert("Please Enter Department"); 

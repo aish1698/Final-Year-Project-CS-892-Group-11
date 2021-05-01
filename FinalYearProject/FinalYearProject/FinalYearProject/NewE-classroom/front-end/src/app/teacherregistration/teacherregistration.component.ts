@@ -86,10 +86,16 @@ export class teacherregistrationComponent implements OnInit {
         return false; 
     } 
    
-    if (userid.value == "")                               
+    // if (userid.value == "")                               
+    // { 
+    //     window.alert("Please Enter UserID"); 
+    //     userid.focus(); 
+    //     return false; 
+    // } 
+    if (!(userid.value.match("^[0-9]{2}/[0-9]{3}$") ))                                   
     { 
-        window.alert("Please Enter UserID"); 
-        userid.focus(); 
+        window.alert("Please enter valid UserID."); 
+        mobile.focus(); 
         return false; 
     } 
     if (dept.value == "")                               
