@@ -51,6 +51,9 @@ export class AnswerUploadComponent implements OnInit {
   onSubmit() {
     console.log("submit");
     this.answerUploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image);
+    alert(
+      "Answer uploaded successfully"
+    )
     this.form.reset();
     this.imageData =" ";
   }

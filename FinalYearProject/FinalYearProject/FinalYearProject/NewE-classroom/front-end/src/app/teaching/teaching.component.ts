@@ -51,6 +51,9 @@ export class TeachingComponent implements OnInit {
   onSubmit() {
     console.log("submit");
     this.teachingService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image);
+    alert(
+      "Material uploaded successfully"
+    )
     this.form.reset();
     this.imageData =" ";
   }
