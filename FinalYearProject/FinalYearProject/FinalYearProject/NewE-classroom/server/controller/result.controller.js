@@ -30,7 +30,7 @@ router.post("/resultupload", (req, res) => {
     var class_roll=req.body.class_roll;
     var subject=req.body.subject;
    
-    Result.find({sem:sem,dept:dept,class_roll,subject:subject},function(err,result){
+    Result.find({sem:sem,dept:dept,class_roll:class_roll,subject:subject},function(err,result){
       if(err){
         console.log(err)
       }

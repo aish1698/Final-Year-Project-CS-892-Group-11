@@ -5,7 +5,6 @@ const resultSchema = mongoose.Schema({
   subject: { type: String, required: true },
   dept:  { type: String, required: true },
   name: { type: String, required: true },
- 
   class_roll: { type: String, required: true },
   scores:{type: String, required: true},
 });
