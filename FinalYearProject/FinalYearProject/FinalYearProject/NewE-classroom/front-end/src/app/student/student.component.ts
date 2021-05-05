@@ -30,4 +30,8 @@ export class StudentComponent implements OnInit {
   videocallHandler(){
     this.router.navigate(['/video-call']);
   }
+  resultHandler(){
+    this.router.navigate(['/downloadresult']);
+
+  }
 }

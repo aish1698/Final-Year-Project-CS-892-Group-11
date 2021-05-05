@@ -1,0 +1,25 @@
+<div class="info container" >
+    <form action="/action_page.php">
+        <label for="name">Enter  Name:</label>
+        <input type="text" id="name" name="name" required
+        [(ngModel)]="name"><br><br>
+        <label for="sem">Enter  Semester:</label>
+        <input type="text" id="sem" name="sem" required
+        [(ngModel)]="sem"><br><br>
+        <label for="subject">Enter  Subject:</label>
+        <input type="text" id="subject" name="subject" required
+        [(ngModel)]="subject"><br><br>
+        <label for="dept">Enter  Department:</label>
+        <input type="text" id="dept" name="dept" required
+        [(ngModel)]="dept"><br><br>
+        <label for="class_roll">Enter Class Roll:</label>
+        <input type="text" id="class_roll" name="class_roll" required
+        [(ngModel)]="class_roll"><br><br>
+        <label for="scores">Enter  Score:</label>
+        <input type="text" id="scores" name="scores" required
+        [(ngModel)]="scores"><br><br>
+        <div style="padding-bottom: 60px;">
+        <button  type="submit"  class="btn btn-dark" (click)="uploadHandler()">Submit</button>
+        </div>
+      </form>
+    </div>

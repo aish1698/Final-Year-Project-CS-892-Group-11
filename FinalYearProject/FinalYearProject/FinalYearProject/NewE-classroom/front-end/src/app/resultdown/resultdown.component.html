@@ -1,0 +1,24 @@
+<div  class="container-fluid hi">
+  
+ <table>
+   <tr>
+     <th>Name:</th>
+     <th>Department:</th>
+     <th>Subject:</th>
+     <th>Semester:</th>
+     <th>ClassRoll:</th>
+     <th>Score:</th>
+   </tr>
+   <tr *ngFor="let res of list">
+    <td>{{res.name}}</td>
+    <td>{{res.dept}}</td>
+    <td>{{res.subject}}</td>
+     <td>{{res.sem}}</td>
+     <td>{{res.class_roll}}</td>
+     <td>{{res.scores}}</td>
+   </tr>
+
+ </table>
+   
+
+    </div>

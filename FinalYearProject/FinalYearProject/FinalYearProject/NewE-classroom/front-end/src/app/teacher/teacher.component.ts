@@ -30,5 +30,8 @@ export class TeacherComponent implements OnInit {
   videocallHandler(){
     this.router.navigate(['/video-call']);
   }
+  resultHandler(){
+    this.router.navigate(['/uploadresult']);
+  }
 
 }

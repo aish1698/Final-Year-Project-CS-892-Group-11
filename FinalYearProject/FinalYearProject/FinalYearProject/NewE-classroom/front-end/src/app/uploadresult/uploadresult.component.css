@@ -1,0 +1,29 @@
+
+  /* Set a style for all buttons */
+  button {
+
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 95%;
+    border-radius:50px;
+  }
+  button {
+    opacity: 0.8;
+  }
+
+  button:hover {
+    opacity: 1.0;
+  }
+  .info{
+    margin-top: 85px;
+    margin-left: 35px;
+}
+ 
+  
+ 
+  
+  
+  
+  

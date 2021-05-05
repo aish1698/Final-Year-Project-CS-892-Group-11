@@ -18,7 +18,7 @@ export class LearningstudentComponent implements OnInit,OnDestroy {
  subject:any;
  profiles: Profile[] = [];
   private profileSubscription: Subscription = new Subscription;
-  ApiService: any;
+  ApiService: any;  
 
   constructor(private http:HttpClient,
    private service: LearningstudentService,

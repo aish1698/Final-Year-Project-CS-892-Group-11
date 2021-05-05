@@ -17,7 +17,7 @@ export class AssignmentUploadComponent implements OnInit {
   imageData!: string;
 
 
-  constructor(private assignmentuploadService: AssignmentUploadService,private currentroute:CurrentrouteService,private logint:LoginteacherService) {}
+constructor(private assignmentuploadService: AssignmentUploadService,private currentroute:CurrentrouteService,private logint:LoginteacherService) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({

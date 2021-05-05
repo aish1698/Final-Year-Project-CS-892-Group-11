@@ -176,7 +176,8 @@ export class registerComponent implements OnInit {
         return false; 
     } 
     
-  return this.service.register( this.fullName, this.userid,this.dept,this.class_roll,this.sem,this.email,this.mobile, this.password ,this.securitycode).subscribe(() => {console.log('sign up successful!'); this.router.navigateByUrl('/home');}, err =>{console.log(err)})
+  return this.service.register( this.fullName, this.userid,this.dept,this.class_roll,this.sem,this.email,this.mobile, this.password ,this.securitycode)
+  .subscribe(() => {console.log('sign up successful!'); this.router.navigateByUrl('/home');}, err =>{console.log(err)})
   
   };
 

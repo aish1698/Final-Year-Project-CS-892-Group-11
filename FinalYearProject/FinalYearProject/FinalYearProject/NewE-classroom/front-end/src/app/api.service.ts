@@ -32,5 +32,9 @@ export class ApiService {
   {
     return this.http.post(`http://localhost:3000/learning/learningstudent`, {sem: s, subject: su})
   }
-  
+
+  // result(s:any,su:any,d:any,c:any){
+  //   return this.http.post('http://localhost:3000/result/resultdownload',{sem:s,subject:su,dept:d,class_roll:c})
+
+  // }
 }

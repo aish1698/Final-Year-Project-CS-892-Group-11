@@ -1,0 +1,19 @@
+    <div class="info container" >
+    <form action="/action_page.php">
+    <label for="sem">Enter  Semester:</label>
+    <input type="text" id="sem" name="sem" required
+    [(ngModel)]="sem"><br><br>
+    <label for="subject">Enter  Subject:</label>
+    <input type="text" id="subject" name="subject" required
+    [(ngModel)]="subject"><br><br>
+    <label for="dept">Enter  Department:</label>
+    <input type="text" id="dept" name="dept" required
+    [(ngModel)]="dept"><br><br>
+    <label for="class_roll">Enter Class Roll:</label>
+    <input type="text" id="class_roll" name="class_roll" required
+    [(ngModel)]="class_roll"><br><br>
+    <div class="search">
+    <input type="submit"(click)="click()" value="Search">
+    </div>
+    </form>
+    </div>
