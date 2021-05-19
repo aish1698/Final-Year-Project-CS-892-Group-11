@@ -15,6 +15,7 @@ export class AssignmentdownComponent implements OnInit {
 
   sem: any;
   subject: any;
+  chapter:any;
 
   constructor(private http:HttpClient,
     private service:ApiService,
@@ -29,7 +30,7 @@ export class AssignmentdownComponent implements OnInit {
     }
   }
   click(){
-    // console.log(this.sem,this.subject);
-    this.router.navigate(['/assignmentdownload',this.sem,this.subject]);
+  
+    this.router.navigate(['/assignmentdownload',this.sem,this.subject,this.chapter]);
 }
 }

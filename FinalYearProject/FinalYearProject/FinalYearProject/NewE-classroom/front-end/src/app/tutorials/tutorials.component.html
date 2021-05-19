@@ -1,0 +1,30 @@
+<div style="padding-top: 5%;" class="list row">
+    
+    <div class="col-md-6">
+      <h4>Tutorials List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let tutorial of tutorials; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveTutorial(tutorial, i)"
+        >
+          {{ tutorial.chapter }}
+        </li>
+      </ul>
+  
+      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
+        Remove All
+      </button>
+    </div>
+    <div class="col-md-6">
+      
+  
+        <a class="badge badge-warning" routerLink="/tutorials/{{ currentTutorial._id }}">
+          Edit
+        </a>
+      </div>
+  
+      
+    </div>
+  

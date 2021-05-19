@@ -33,5 +33,8 @@ export class TeacherComponent implements OnInit {
   resultHandler(){
     this.router.navigate(['/uploadresult']);
   }
+  materialupdater(){
+    this.router.navigate(['/updatetutorial'])
+  }
 
 }

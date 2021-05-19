@@ -35,7 +35,7 @@ export class AnswerdownloadComponent implements OnInit,OnDestroy {
     this.service.getProfiles(this.sem,this.subject)
     .subscribe((profiles: any) => {
          
-          console.log(profiles);
+          //console.log(profiles);
            this.profiles = profiles;
          
       });

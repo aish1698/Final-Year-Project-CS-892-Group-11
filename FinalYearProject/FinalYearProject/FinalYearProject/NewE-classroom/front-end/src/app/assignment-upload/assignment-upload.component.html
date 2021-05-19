@@ -16,10 +16,13 @@
       <div >
         <input formControlName="name" type="text" placeholder="Assignment number" />
       </div>
+      <div >
+        <input formControlName="chapter" type="text" placeholder="Name of the chapter" />
+      </div>
       <br>
       
 
-      <br>
+      
      
       <div style="padding-left: 15px;">
         <input (change)="onFileSelect($event)" type="file" multiple=true />
@@ -31,7 +34,7 @@
     <br>
     
       <div style="padding-bottom: 50px;">
-        <button  type="submit"  class="btn btn-dark" (click)="onSubmit()">Upload</button><br>
+        <button  type="submit"  class="btn btn-primary" (click)="onSubmit()">Upload</button><br>
        
       </div>
     

@@ -5,6 +5,7 @@ const profileSchema = mongoose.Schema({
   subject: { type: String, required: true },
   name: { type: String, required: true },
   imagePath: { type: String, required: true },
+  chapter:{ type: String, required:true },
 });
 
 module.exports = mongoose.model('Profile', profileSchema);

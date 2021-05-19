@@ -15,6 +15,7 @@ export class AnswerdownComponent implements OnInit {
 
   sem: any;
   subject: any;
+  chapter:any;
 
   constructor(private http:HttpClient,
     private service:ApiService,
@@ -30,6 +31,6 @@ export class AnswerdownComponent implements OnInit {
   }
   click(){
     // console.log(this.sem,this.subject);
-    this.router.navigate(['/answerdownload',this.sem,this.subject]);
+    this.router.navigate(['/answerdownload',this.sem,this.subject,this.chapter]);
 }
 }

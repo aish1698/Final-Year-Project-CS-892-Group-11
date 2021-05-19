@@ -33,6 +33,7 @@ import { AnswerdownloadComponent } from './answerdownload/answerdownload.compone
 import { DownloadresultComponent } from './downloadresult/downloadresult.component';
 import { UploadresultComponent } from './uploadresult/uploadresult.component';
 import { ResultdownComponent } from './resultdown/resultdown.component';
+import { TutorialsComponent } from './tutorials/tutorials.component';
 
 const routes: Routes = [
   {
@@ -127,7 +128,7 @@ const routes: Routes = [
     component: VideoCallComponent
   },
   {
-    path: 'assignmentdownload/:sem/:subject',
+    path: 'assignmentdownload/:sem/:subject/:chapter',
     component: AssignmentdownloadComponent,
     canActivate:[AuthGuard]
   },
@@ -137,7 +138,7 @@ const routes: Routes = [
     canActivate:[AuthTeacherGuard]
   },
   {
-    path: 'answerdownload/:sem/:subject',
+    path: 'answerdownload/:sem/:subject/:chapter',
     component: AnswerdownloadComponent,
     canActivate:[AuthTeacherGuard]
   },
@@ -162,6 +163,11 @@ const routes: Routes = [
     path:'resultdown/:sem/:subject/:dept/:class_roll',
     component:ResultdownComponent,
     canActivate:[AuthGuard]
+  },
+  {
+
+    path:'updatetutorial',component:TutorialsComponent,
+    canActivate:[AuthTeacherGuard]
   },
   
   {

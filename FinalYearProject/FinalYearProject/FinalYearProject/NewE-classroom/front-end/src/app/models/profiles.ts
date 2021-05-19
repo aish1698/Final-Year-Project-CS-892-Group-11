@@ -4,4 +4,5 @@ export interface Profiles {
     subject: string;
     name: string;
     imagePath: string;
+    chapter:string;
   }

@@ -1,7 +1,7 @@
 export class Results{
-    sem:String;
-    subject:String;
-    dept:String;
-    class_roll:String;
+    sem ?:String;
+    subject?:String;
+    dept?:String;
+    class_roll?:String;
 
 }

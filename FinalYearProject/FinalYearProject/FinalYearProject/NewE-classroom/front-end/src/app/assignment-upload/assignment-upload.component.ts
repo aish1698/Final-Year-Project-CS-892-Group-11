@@ -25,6 +25,7 @@ constructor(private assignmentuploadService: AssignmentUploadService,private cur
       subject: new FormControl(null),
       name: new FormControl(null),
       image: new FormControl(null),
+      chapter:new FormControl(null),
 
     });
     this.currentroute.setcurrentroute();
@@ -53,7 +54,7 @@ constructor(private assignmentuploadService: AssignmentUploadService,private cur
 
   onSubmit() {
     console.log("submit");
-    this.assignmentuploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image);
+    this.assignmentuploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter);
     alert(
       "Assignment uploaded successfully"
     )

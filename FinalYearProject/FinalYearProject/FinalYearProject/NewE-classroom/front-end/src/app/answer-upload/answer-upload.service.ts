@@ -34,7 +34,7 @@ export class AnswerUploadService {
     return this.profiles$.asObservable();
   }
 
-  addProfile(sem: string, subject:string, name: string, image: File): void {
+  addProfile(sem: string, subject:string, name: string, image: File,chapter:string): void {
     const profileData = new FormData();
     profileData.append("sem", sem);
     profileData.append("subject", subject);
@@ -50,6 +50,7 @@ export class AnswerUploadService {
           subject: subject,
           name: name,
           imagePath: profileData.profile.imagePath,
+          chapter:chapter,
         };
         this.profiles.push(profile);
         this.profiles$.next(this.profiles);

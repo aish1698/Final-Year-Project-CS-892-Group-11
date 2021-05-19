@@ -5,7 +5,7 @@ import { Profile } from "src/app/models/profile";
 import { Subject } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { Router } from '@angular/router';
-import { setMaxListeners } from 'process';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,9 +16,9 @@ export class AssignmentdownloadService {
 
     constructor(private http: HttpClient) {}
   
-    getProfiles(s :any,su: any) {
+    getProfiles(s :any,su: any,c:any) {
       return  this.http
-        .post<any>("http://localhost:3000/assignmentdown/assignmentdownload",{sem:s,subject:su})  
+        .post<any>("http://localhost:3000/assignmentdown/assignmentdownload",{sem:s,subject:su,chapter:c})  
     }
   
     getProfilesStream() {

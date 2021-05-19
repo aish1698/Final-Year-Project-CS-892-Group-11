@@ -24,6 +24,7 @@ export class AnswerUploadComponent implements OnInit {
       subject: new FormControl(null),
       name: new FormControl(null),
       image: new FormControl(null),
+      chapter:new FormControl(null),
 
     });
     this.currentroute.setcurrentroute();
@@ -33,9 +34,7 @@ export class AnswerUploadComponent implements OnInit {
   }
   onFileSelect(event:any) {
     console.log(event.target.files);
-    const file =event.target.files[0]; //(event.target as HTMLInputElement).files[0] | null;
-    //file=files[0];
-    //console.log(file);
+    const file =event.target.files[0]; 
     
     this.form.patchValue({ image: file });
     const allowedMimeTypes = ["image/png", "image/jpeg", "image/jpg","application/pdf","video/mp4"];
@@ -50,7 +49,7 @@ export class AnswerUploadComponent implements OnInit {
 
   onSubmit() {
     console.log("submit");
-    this.answerUploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image);
+    this.answerUploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter);
     alert(
       "Answer uploaded successfully"
     )

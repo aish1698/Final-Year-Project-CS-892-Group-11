@@ -3,4 +3,5 @@ export interface Profile {
    
     name: string;
     imagePath: string;
+    chapter:string;
   }

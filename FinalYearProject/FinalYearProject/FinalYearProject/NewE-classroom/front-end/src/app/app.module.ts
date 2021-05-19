@@ -42,6 +42,7 @@ import { LoginteacherService } from './user/loginteacher/loginteacher.service';
 import { DownloadresultComponent } from './downloadresult/downloadresult.component';
 import { UploadresultComponent } from './uploadresult/uploadresult.component';
 import { ResultdownComponent } from './resultdown/resultdown.component';
+import { TutorialsComponent } from './tutorials/tutorials.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { ResultdownComponent } from './resultdown/resultdown.component';
     AnswerUploadComponent,
     DownloadresultComponent,
     UploadresultComponent,
-    ResultdownComponent
+    ResultdownComponent,
+    TutorialsComponent
   ],
   imports: [
     BrowserModule,
