@@ -32,6 +32,44 @@ export class DownloadresultComponent implements OnInit {
   click()
   {
    
+    var sem= document.forms["RegForm"]["sem"];
+    var subject= document.forms["RegForm"]["subject"];
+    var dept= document.forms["RegForm"]["dept"];
+    var class_roll= document.forms["RegForm"]["class_roll"];
+ 
+    if (sem.value == "")                                  
+  { 
+      window.alert("Semester field is empty."); 
+      sem.focus(); 
+      return false; 
+  } 
+
+  if (!(sem.value>=1 && sem.value<=8)   )                              
+  { 
+      window.alert("Please enter valid semester."); 
+      sem.focus(); 
+      return false; 
+  } 
+
+  if (subject.value == "")                                  
+  { 
+      window.alert("Subject field is empty."); 
+      subject.focus(); 
+     return false; 
+  } 
+  if (dept.value == "")                                  
+  { 
+      window.alert("Department field is empty."); 
+      dept.focus(); 
+      return false; 
+  } 
+  if (class_roll.value == "")                                  
+  { 
+      window.alert("Class Roll field is empty."); 
+      class_roll.focus(); 
+      return false; 
+  } 
+
      this.router.navigate(['/resultdown',this.sem,this.subject,this.dept,this.class_roll]);
     
     

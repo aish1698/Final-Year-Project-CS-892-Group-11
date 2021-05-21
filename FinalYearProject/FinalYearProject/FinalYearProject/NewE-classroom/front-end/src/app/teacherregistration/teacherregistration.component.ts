@@ -77,8 +77,8 @@ export class teacherregistrationComponent implements OnInit {
     var mobile = document.forms["RegForm"]["mobile"];
     var password = document.forms["RegForm"]["password"];
     var securitycode = document.forms["RegForm"]["securitycode"];
-    var ph= /^\d{10}$/;
-    var e=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var ph=  /^\d{10}$/;
+    var e=/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
     if (fullName.value == "")                                  
     { 
         window.alert("Please enter your Full Name."); 
@@ -104,9 +104,9 @@ export class teacherregistrationComponent implements OnInit {
         dept.focus(); 
         return false; 
     } 
-    if (reg_id.value == "")                               
+    if (!(reg_id.value == userid.value)    )                           
     { 
-        window.alert("Please Enter Registration id"); 
+        window.alert("UserID and Registration ID should be same."); 
         reg_id.focus(); 
         return false; 
     } 
@@ -140,12 +140,27 @@ export class teacherregistrationComponent implements OnInit {
     }
 
    
-    if (password.value == "")                        
+    // if (password.value == "")                        
+    // { 
+    //     window.alert("Please enter your password"); 
+    //     password.focus(); 
+    //     return false; 
+    // } 
+
+    if (! (password.value.match("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}"))   )                     
     { 
-        window.alert("Please enter your password"); 
+        window.alert("Your password must contain min 8 letters, with at least a special character,at least one upper and one lower case and a number."); 
         password.focus(); 
         return false; 
     } 
+
+    if (!(securitycode.value.match("^[0-9]{4}")))
+    {
+      window.alert("Security Code should be a FOUR digit number only.");
+      securitycode.focus();
+      return false;
+    }
+
    
     
   return this.service.teacherregistration( this.fullName, this.userid,this.dept,this.reg_id,this.sem,this.subject,this.email,this.mobile,this.password,this.securitycode ).subscribe(() => {console.log('sign up successful!'); this.router.navigateByUrl('/login');}, err =>{console.log(err)})

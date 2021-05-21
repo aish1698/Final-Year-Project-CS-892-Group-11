@@ -82,6 +82,7 @@ export class registerComponent implements OnInit {
     var e=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     
 
+    
     if (fullName.value == "")                                  
     { 
         window.alert("Please enter your Full Name."); 
@@ -95,27 +96,12 @@ export class registerComponent implements OnInit {
     //     userid.focus(); 
     //     return false; 
     // } 
-    if(!(userid.value.match("^[0-9]{2}/[0-9]{3}$")))
-    {
-      window.alert("Please enter valid UserID");
-      userid.focus();
-      return false;
-    }
-    
-    // if (userid.charAt(2) != "/")
-    // {
-    //   window.alert("Please enter valid UserID");
-    //   userid.focus();
-    //   return false;
-    // }
-    // else{
-    //   var batch=/^[1-99]+$/;
-    //   var batchnum=userid.split("/",1);
-    //   if(batchnum.value.match(batch))
-    //   {
-    //     if
-    //   }
-    // }
+    if (!(userid.value.match("^[0-9]{2}/[0-9]{3}$") ))                                   
+    { 
+        window.alert("Please enter valid UserID."); 
+        mobile.focus(); 
+        return false; 
+    } 
     if (dept.value == "")                               
     { 
         window.alert("Please Enter Department"); 
@@ -128,9 +114,23 @@ export class registerComponent implements OnInit {
         class_roll.focus(); 
         return false; 
     } 
-    if (sem.value == "")                               
+    
+    // if (!(isNaN(class_roll.value) )    )                             
+    // { 
+    //     window.alert("Enter valid input for class roll number."); 
+    //     class_roll.focus(); 
+    //     return false; 
+    // } 
+    if (sem.value == "")                                  
     { 
-        window.alert("Please Enter Sem"); 
+        window.alert("Semester field is empty."); 
+        sem.focus(); 
+        return false; 
+    } 
+  
+    if (!(sem.value>=1 && sem.value<=8)   )                              
+    { 
+        window.alert("Please enter valid semester."); 
         sem.focus(); 
         return false; 
     } 
@@ -163,18 +163,27 @@ export class registerComponent implements OnInit {
     }
 
    
-    if (password.value == "")                        
+    // if (password.value == "")                        
+    // { 
+    //     window.alert("Please enter your password"); 
+    //     password.focus(); 
+    //     return false; 
+    // } 
+
+    if (! (password.value.match("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}"))   )                     
     { 
-        window.alert("Please enter your password"); 
+        window.alert("Your password must contain min 8 letters, with at least a special character,at least one upper and one lower case and a number."); 
         password.focus(); 
         return false; 
     } 
-    if (securitycode.value == "")                        
-    { 
-        window.alert("Please enter your securitycode"); 
-        password.focus(); 
-        return false; 
-    } 
+
+    if (!(securitycode.value.match("^[0-9]{4}")))
+    {
+      window.alert("Security Code should be a FOUR digit number only.");
+      securitycode.focus();
+      return false;
+    }
+
     
   return this.service.register( this.fullName, this.userid,this.dept,this.class_roll,this.sem,this.email,this.mobile, this.password ,this.securitycode)
   .subscribe(() => {console.log('sign up successful!'); this.router.navigateByUrl('/home');}, err =>{console.log(err)})
