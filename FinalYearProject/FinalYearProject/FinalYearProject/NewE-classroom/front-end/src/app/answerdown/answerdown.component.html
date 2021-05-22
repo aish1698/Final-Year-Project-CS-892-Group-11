@@ -1,16 +1,18 @@
 <div class="info container" >
+<h1>Get Answers!</h1>
 <form action="/action_page.php">
 <label for="sem">Enter  Semester:</label>
-<input type="text" id="sem" name="sem" required
+
+<input class="nsrch" type="text" id="sem" name="sem" required
 [(ngModel)]="sem"><br><br>
 <label for="subject">Enter  Subject:</label>
-<input type="text" id="subject" name="subject" required
+<input class="nsrch" type="text" id="subject" name="subject" required
 [(ngModel)]="subject"><br><br>
 <label for="subject">Enter  Chapter:</label>
-<input type="text" id="chapter" name="chapter" required
+<input class="nsrch" type="text" id="chapter" name="chapter" required
 [(ngModel)]="chapter"><br><br>
 <div class="search">
-    <input type="submit"(click)="click()" value="Search">
+    <input class="srch" type="submit"(click)="click()" value="Search">
 </div>
 
 </form>

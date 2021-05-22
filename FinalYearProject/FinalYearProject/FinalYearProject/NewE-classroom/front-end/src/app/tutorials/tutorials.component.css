@@ -1,5 +1,40 @@
-.list {
+.list{
     text-align: left;
     max-width: 750px;
     margin: auto;
+
+
+    background-image: url("src\assets\images\vid-lec.jpg");
+    background-repeat: no-repeat;
+opacity:0.6;
+    background-size:100%;
   }
+  h2{
+    font-weight:bolder;
+    font-family: sans-serif;
+
+color:white;
+  font-size:38px;
+  position:relative;
+  left:150px;
+    margin: 30px auto;
+    text-align:center;
+    line-height:normal;
+    font-family: monospace;
+
+  }
+.btn{
+
+  position:absolute;
+  left:230px;
+  top:350px;
+  padding: 14px 20px;
+  margin:  auto;
+  border: none;
+  cursor: pointer;
+  width: 280px;
+  height:68px;
+
+  font-size:18px;
+  font-weight: bold;
+}
