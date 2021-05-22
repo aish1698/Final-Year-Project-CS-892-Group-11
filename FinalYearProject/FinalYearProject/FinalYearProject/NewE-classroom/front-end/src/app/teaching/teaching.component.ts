@@ -1,7 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Profile } from "src/app/models/profile";
 import { TeachingService } from "src/app/teaching/teaching.service";
+import { ApiService } from "../api.service";
 import { CurrentrouteService } from "../currentroute.service";
 import { LoginteacherService } from "../user/loginteacher/loginteacher.service";
 @Component({
@@ -14,10 +17,15 @@ export class TeachingComponent implements OnInit {
   form!: FormGroup;
   profile!: Profile; 
   imageData!: string;
-
-  constructor(private teachingService: TeachingService,private currentroute:CurrentrouteService,private logint:LoginteacherService) {}
+  userid: any;
+  constructor(private teachingService: TeachingService,private currentroute:CurrentrouteService,private logint:LoginteacherService,    private http:HttpClient,
+    private service:ApiService,
+    private route:ActivatedRoute,
+    private router : Router,
+    private ref: ChangeDetectorRef) {}
 
   ngOnInit(): void {
+    this.userid= localStorage.getItem('userid');
     this.form = new FormGroup({
       sem: new FormControl(null),
       subject: new FormControl(null),
@@ -49,7 +57,7 @@ export class TeachingComponent implements OnInit {
 
   onSubmit() {
     console.log("submit");
-    this.teachingService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter);
+    this.teachingService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter,this.userid);
     alert(
       "Material uploaded successfully"
     )

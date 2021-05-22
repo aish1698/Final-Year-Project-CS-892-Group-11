@@ -5,4 +5,5 @@ export class Tutorial {
     name?: string;
     imagePath?: string;
     chapter?:string;
+    userid?:any;
 }

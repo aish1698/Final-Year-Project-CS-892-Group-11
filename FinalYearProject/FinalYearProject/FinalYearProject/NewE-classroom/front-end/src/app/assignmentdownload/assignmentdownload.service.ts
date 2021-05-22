@@ -16,9 +16,9 @@ export class AssignmentdownloadService {
 
     constructor(private http: HttpClient) {}
   
-    getProfiles(s :any,su: any,c:any) {
+    getProfiles(s :any,su: any) {
       return  this.http
-        .post<any>("http://localhost:3000/assignmentdown/assignmentdownload",{sem:s,subject:su,chapter:c})  
+        .post<any>("http://localhost:3000/assignmentdown/assignmentdownload",{sem:s,subject:su})  
     }
   
     getProfilesStream() {

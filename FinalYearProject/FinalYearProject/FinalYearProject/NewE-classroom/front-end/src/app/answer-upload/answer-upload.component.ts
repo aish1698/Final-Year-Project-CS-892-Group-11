@@ -14,11 +14,12 @@ export class AnswerUploadComponent implements OnInit {
   form!: FormGroup;
   profile!: Profile; 
   imageData!: string;
-
+  userid: any;
 
   constructor(private answerUploadService: AnswerUploadService,private currentroute:CurrentrouteService,private login:LoginService) {}
 
   ngOnInit(): void {
+    this.userid= localStorage.getItem('userid');
     this.form = new FormGroup({
       sem: new FormControl(null),
       subject: new FormControl(null),
@@ -52,7 +53,7 @@ export class AnswerUploadComponent implements OnInit {
   
 
     console.log("submit");
-    this.answerUploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter);
+    this.answerUploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter,this.userid);
     alert(
       "Answer uploaded successfully"
     )

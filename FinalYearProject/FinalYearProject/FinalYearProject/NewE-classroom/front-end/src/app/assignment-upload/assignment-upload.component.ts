@@ -16,10 +16,12 @@ export class AssignmentUploadComponent implements OnInit {
   profile!: Profile; 
   imageData!: string;
 
+userid:any;
 
 constructor(private assignmentuploadService: AssignmentUploadService,private currentroute:CurrentrouteService,private logint:LoginteacherService) {}
 
   ngOnInit(): void {
+    this.userid= localStorage.getItem('userid')
     this.form = new FormGroup({
       sem: new FormControl(null),
       subject: new FormControl(null),
@@ -95,7 +97,7 @@ constructor(private assignmentuploadService: AssignmentUploadService,private cur
   } 
 
     console.log("submit");
-    this.assignmentuploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter);
+    this.assignmentuploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter,this.userid);
     alert(
       "Assignment uploaded successfully"
     )

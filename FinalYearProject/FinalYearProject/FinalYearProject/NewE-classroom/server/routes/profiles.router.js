@@ -11,5 +11,5 @@ const router = express.Router();
 router.get('/', profilesController.getProfiles);
 
 router.post('/teaching', storage, profilesController.postProfile);
-
+router.post('/updatefunc',storage,profilesController.updateProfile)
 module.exports = router;

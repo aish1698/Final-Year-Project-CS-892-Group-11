@@ -12,12 +12,14 @@ exports.postProfile = async (req, res) => {
   const { name } = req.body;
   const imagePath = 'http://localhost:3000/images/' + req.file.filename; 
   const {chapter}= req.body;
+  const {userid}=req.body;
   const profile = new Profile({
     sem,
     subject,
     name,
     imagePath,
-    chapter
+    chapter,
+    userid
   });
   const createdProfile = await profile.save();
   res.status(201).json({

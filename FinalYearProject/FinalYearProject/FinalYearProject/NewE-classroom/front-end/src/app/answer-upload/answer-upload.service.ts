@@ -5,6 +5,7 @@ import { map } from "rxjs/operators";
 
 import { Profiles } from "src/app/models/profiles";
 import { Subject } from "rxjs";
+import { UnregisteredTaskException } from "@angular-devkit/schematics";
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +35,7 @@ export class AnswerUploadService {
     return this.profiles$.asObservable();
   }
 
-  addProfile(sem: string, subject:string, name: string, image: File,chapter:string): void {
+  addProfile(sem: string, subject:string, name: string, image: File,chapter:string,userid:string): void {
     const profileData = new FormData();
     profileData.append("sem", sem);
     profileData.append("subject", subject);
@@ -51,6 +52,7 @@ export class AnswerUploadService {
           name: name,
           imagePath: profileData.profile.imagePath,
           chapter:chapter,
+          userid: userid,
         };
         this.profiles.push(profile);
         this.profiles$.next(this.profiles);

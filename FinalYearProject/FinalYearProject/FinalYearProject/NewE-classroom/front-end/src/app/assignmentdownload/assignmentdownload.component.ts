@@ -33,9 +33,9 @@ export class AssignmentdownloadComponent implements OnInit,OnDestroy {
   ngOnInit(): void {
     this.sem= this.route.snapshot.paramMap.get('sem');
     this.subject= this.route.snapshot.paramMap.get('subject');
-    this.chapter= this.route.snapshot.paramMap.get('chapter');
+    
 
-    this.service.getProfiles(this.sem,this.subject,this.chapter)
+    this.service.getProfiles(this.sem,this.subject)
     .subscribe((profiles: any) => {
          
          // console.log(profiles);

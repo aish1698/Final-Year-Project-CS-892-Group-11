@@ -34,13 +34,14 @@ export class AssignmentUploadService {
     return this.profiles$.asObservable();
   }
 
-  addProfile(sem: string, subject:string, name: string, image: File,chapter:string): void {
+  addProfile(sem: string, subject:string, name: string, image: File,chapter:string,userid:string): void {
     const profileData = new FormData();
     profileData.append("sem", sem);
     profileData.append("subject", subject);
     profileData.append("name", name);
     profileData.append("image", image, name);
     profileData.append("chapter",chapter);
+    profileData.append("userid",userid);
     this.http
       .post<{ profile: Profiles }>(this.url, profileData)
       .subscribe((profileData) => {
@@ -52,6 +53,7 @@ export class AssignmentUploadService {
           name: name,
           imagePath: profileData.profile.imagePath,
           chapter:chapter,
+          userid:userid
         };
         this.profiles.push(profile);
         this.profiles$.next(this.profiles);

@@ -138,7 +138,7 @@ const routes: Routes = [
     canActivate:[AuthTeacherGuard]
   },
   {
-    path: 'answerdownload/:sem/:subject/:chapter',
+    path: 'answerdownload/:sem/:subject',
     component: AnswerdownloadComponent,
     canActivate:[AuthTeacherGuard]
   },
