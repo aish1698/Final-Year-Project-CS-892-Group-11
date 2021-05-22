@@ -30,6 +30,37 @@ export class AnswerdownComponent implements OnInit {
    }
   }
   click(){
+    var sem= document.forms["RegForm"]["sem"];
+    var subject= document.forms["RegForm"]["subject"];
+    var chapter= document.forms["RegForm"]["chapter"];
+  if (sem.value == "")                                  
+  { 
+    //console.log("virat kohli");
+      window.alert("Semester field is empty."); 
+      sem.focus(); 
+      return false; 
+  } 
+
+  if (!(sem.value>=1 && sem.value<=8)   )                              
+  { 
+      window.alert("Please enter valid semester."); 
+      sem.focus(); 
+      return false; 
+  } 
+
+  if (subject.value == "")                                  
+  { 
+      window.alert("Subject field is empty."); 
+      subject.focus(); 
+     return false; 
+  }
+
+  if (chapter.value == "")                                  
+  { 
+      window.alert("Chapter field is empty."); 
+      chapter.focus(); 
+     return false; 
+  }
     // console.log(this.sem,this.subject);
     this.router.navigate(['/answerdownload',this.sem,this.subject,this.chapter]);
 }

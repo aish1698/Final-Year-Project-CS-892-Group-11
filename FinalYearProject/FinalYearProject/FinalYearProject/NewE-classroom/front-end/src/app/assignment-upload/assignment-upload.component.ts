@@ -56,45 +56,45 @@ constructor(private assignmentuploadService: AssignmentUploadService,private cur
 
   onSubmit() {
     
-    var sem= document.forms["RegForm"]["sem"];
-    var subject= document.forms["RegForm"]["subject"];
-    var name= document.forms["RegForm"]["name"];
-    var chapter= document.forms["RegForm"]["chapter"];
+  //   var sem= document.forms["RegForm"]["sem"];
+  //   var subject= document.forms["RegForm"]["subject"];
+  //   var name= document.forms["RegForm"]["name"];
+  //   var chapter= document.forms["RegForm"]["chapter"];
  
-    if (sem.value == "")                                  
-  { 
-      window.alert("Semester field is empty."); 
-      sem.focus(); 
-      return false; 
-  } 
+  //   if (sem.value == "")                                  
+  // { 
+  //     window.alert("Semester field is empty."); 
+  //     sem.focus(); 
+  //     return false; 
+  // } 
 
-  if (!(sem.value>=1 && sem.value<=8)   )                              
-  { 
-      window.alert("Please enter valid semester."); 
-      sem.focus(); 
-    return false; 
-  } 
+  // if (!(sem.value>=1 && sem.value<=8)   )                              
+  // { 
+  //     window.alert("Please enter valid semester."); 
+  //     sem.focus(); 
+  //   return false; 
+  // } 
 
-  if (subject.value == "")                                  
-  { 
-      window.alert("Subject field is empty."); 
-      subject.focus(); 
-     return false; 
-  } 
+  // if (subject.value == "")                                  
+  // { 
+  //     window.alert("Subject field is empty."); 
+  //     subject.focus(); 
+  //    return false; 
+  // } 
 
-  if (name.value == "")                                  
-  { 
-      window.alert("Name field is empty."); 
-      name.focus(); 
-     return false; 
-  } 
+  // if (name.value == "")                                  
+  // { 
+  //     window.alert("Name field is empty."); 
+  //     name.focus(); 
+  //    return false; 
+  // } 
 
-  if (chapter.value == "")                                  
-  { 
-      window.alert("Chapter field is empty."); 
-      chapter.focus(); 
-      return false; 
-  } 
+  // if (chapter.value == "")                                  
+  // { 
+  //     window.alert("Chapter field is empty."); 
+  //     chapter.focus(); 
+  //     return false; 
+  // } 
 
     console.log("submit");
     this.assignmentuploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter,this.userid);
