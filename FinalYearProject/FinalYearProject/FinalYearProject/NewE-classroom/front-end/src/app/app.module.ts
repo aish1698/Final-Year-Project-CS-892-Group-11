@@ -44,7 +44,7 @@ import { UploadresultComponent } from './uploadresult/uploadresult.component';
 import { ResultdownComponent } from './resultdown/resultdown.component';
 import { TutorialsComponent } from './tutorials/tutorials.component';
 import { ListComponent } from './list/list.component';
-import { DeletetutorialsComponent } from './deletetutorials/deletetutorials.component';
+
 
 @NgModule({
   declarations: [
@@ -77,7 +77,7 @@ import { DeletetutorialsComponent } from './deletetutorials/deletetutorials.comp
     ResultdownComponent,
     TutorialsComponent,
     ListComponent,
-    DeletetutorialsComponent
+   
   ],
   imports: [
     BrowserModule,

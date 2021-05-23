@@ -70,9 +70,5 @@ export class TeachingComponent implements OnInit {
   onupdate(){
     this.router.navigate(['/updatetutorial']);
   }
-  ondelete(){
-    this.router.navigate(['/deletetutorial']);
-
-  }
-
+  
 }
