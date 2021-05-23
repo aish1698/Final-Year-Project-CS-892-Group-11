@@ -6,6 +6,7 @@ import { Profile } from "src/app/models/profile";
 import { TeachingService } from "src/app/teaching/teaching.service";
 import { ApiService } from "../api.service";
 import { CurrentrouteService } from "../currentroute.service";
+import { ListService } from "../list/list.service";
 import { LoginteacherService } from "../user/loginteacher/loginteacher.service";
 @Component({
   selector: 'app-teaching',
@@ -22,7 +23,8 @@ export class TeachingComponent implements OnInit {
     private service:ApiService,
     private route:ActivatedRoute,
     private router : Router,
-    private ref: ChangeDetectorRef) {}
+    private ref: ChangeDetectorRef,
+    private list:ListService) {}
 
   ngOnInit(): void {
     this.userid= localStorage.getItem('userid');
@@ -63,6 +65,14 @@ export class TeachingComponent implements OnInit {
     )
     this.form.reset();
     this.imageData =" ";
+  }
+  
+  onupdate(){
+    this.router.navigate(['/updatetutorial']);
+  }
+  ondelete(){
+    this.router.navigate(['/deletetutorial']);
+
   }
 
 }

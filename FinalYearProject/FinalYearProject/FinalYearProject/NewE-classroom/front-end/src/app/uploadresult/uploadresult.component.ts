@@ -15,10 +15,7 @@ import { LoginteacherService } from "../user/loginteacher/loginteacher.service";
 })
 export class UploadresultComponent implements OnInit {
 
-  // [x: string]: any;
   
-    // showSucessMessage: boolean | undefined;
-    // serverErrorMessages: string | undefined;
     name = '';
     dept = '';
     class_roll = '';
@@ -34,40 +31,7 @@ export class UploadresultComponent implements OnInit {
       console.log("student");
     }
   }
-  // onSubmit(form: NgForm) {
-  //   console.log(form.value)
-  //   this.resultService.postUser(form.value).subscribe
-  //   (
-  //     (       res: { token: string; }) => {
-  //       this.showSucessMessage = true;
-  //       setTimeout(() => this.showSucessMessage = false, 4000);
-  //       this.resetForm(form);
-  //       localStorage.setItem('token' , res.token)
-  //     },
-  //     (      err: { status: number; error: any[]; }) => {
-  //       if (err.status === 422) {
-  //         this.serverErrorMessages = err.error.join('<br/>');
-  //       }
-  //       else
-  //         this.serverErrorMessages = 'Something went wrong.Please contact admin.';
-  //     }
-  //   );
-
-  // }
-
-  // resetForm(form: NgForm) {
-  //   this.resultService.selectedResult = {
-  //    name : '',
-  //     dept : '',
-  //     class_roll : '',
-  //     sem : '',
-  //     subject : '',
-  //     scores :'', 
-  //   };
-  //   form.resetForm();
-  //   this.serverErrorMessages = '';
-  // }
-
+  
   uploadHandler(){
     var name= document.forms["RegForm"]["name"];
     var sem= document.forms["RegForm"]["sem"];

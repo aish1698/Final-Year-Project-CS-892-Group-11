@@ -43,6 +43,8 @@ import { DownloadresultComponent } from './downloadresult/downloadresult.compone
 import { UploadresultComponent } from './uploadresult/uploadresult.component';
 import { ResultdownComponent } from './resultdown/resultdown.component';
 import { TutorialsComponent } from './tutorials/tutorials.component';
+import { ListComponent } from './list/list.component';
+import { DeletetutorialsComponent } from './deletetutorials/deletetutorials.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,9 @@ import { TutorialsComponent } from './tutorials/tutorials.component';
     DownloadresultComponent,
     UploadresultComponent,
     ResultdownComponent,
-    TutorialsComponent
+    TutorialsComponent,
+    ListComponent,
+    DeletetutorialsComponent
   ],
   imports: [
     BrowserModule,

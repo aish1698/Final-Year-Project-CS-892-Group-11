@@ -1,0 +1,18 @@
+<div  class="container-fluid hi">
+  
+    <h1 style="text-align: center;">Tutorials</h1>
+    <div *ngIf="profiles.length > 0">
+      <div *ngFor="let profile of profiles" class="profile">
+        
+        <a [href]="profile.imagePath" style="color: black">
+           <span><b>{{ profile.name }}</b></span><br></a>
+          
+        <div  style="padding-left: 2px; padding-top: 10px;">
+         
+
+          <button  type="submit" class="btn btn-danger" (click)="del()" >Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="submit" class="btn btn-success" (click)="updation()">Update</button>
+        </div>
+      </div>
+    </div>
+    </div>

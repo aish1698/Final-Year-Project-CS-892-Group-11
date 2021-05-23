@@ -30,12 +30,17 @@ export class LearningComponent implements OnInit {
   }
   click(){
 
+
+    this.router.navigate(['/learningstudent',this.sem,this.subject]);
+
+    
     var sem= document.forms["RegForm"]["sem"];
     var subject= document.forms["RegForm"]["subject"];
 
   if (sem.value == "")                                  
   { 
-    //console.log("virat kohli");
+
+
       window.alert("Semester field is empty."); 
       sem.focus(); 
       return false; 
@@ -54,7 +59,11 @@ export class LearningComponent implements OnInit {
       subject.focus(); 
      return false; 
   }
+
     // console.log(this.sem,this.subject);
-    this.router.navigate(['/learningstudent',this.sem,this.subject]);
+  //  this.router.navigate(['/learningstudent',this.sem,this.subject]);
+    //console.log(this.sem,this.subject);
+   
+
 }
 }

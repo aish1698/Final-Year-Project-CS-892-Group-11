@@ -27,13 +27,21 @@
       <input class="gr" formControlName="chapter" type="text" placeholder="enter name of the chapter" />
     </div>
   </form>
-  <br>
+  
 
-    <div class="endbutton" style="padding-bottom: 50px;">
-      <button  type="submit"  class="btn btn-success" (click)="onSubmit()"><i class="fas fa-upload"></i> Upload</button><br>
+    <div class="endbutton" >
+      <button  type="submit"  class="btn btn-success" (click)="onSubmit()"><i class="fas fa-upload"></i> Upload</button>
 
     </div>
+    <div style="padding-bottom: 50px;" >
+   
+      <button type="submit" class="btn btn-warning" (click)="onupdate()"><i class="fa fa-file" aria-hidden="true"></i>Update Material</button>
+      <button type="submit" class="btn btn-danger" (click)="ondelete()"><i class="fa fa-trash-o" aria-hidden="true"></i>Delete Material</button>
+    
+
+  </div>
 
   </div>
   </div>
+  
 </div>

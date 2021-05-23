@@ -20,7 +20,7 @@ router.post("/learningstudent", (req,res) =>
 
 
 });
-router.post("/update", (req,res) =>
+router.post("/list", (req,res) =>
 {
     let lr=[]
     var userid=req.body.userid;

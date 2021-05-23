@@ -1,16 +1,12 @@
-import { Component, OnInit,ChangeDetectorRef,OnDestroy} from '@angular/core';
-import { Injectable } from '@angular/core';
-import { ActivatedRoute }  from "@angular/router";
-import { Subscription } from "rxjs";
-import { Router} from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
+import { Router } from "@angular/router";
+import { FormGroup,FormControl,Validator}  from "@angular/forms";
 
-import { Profile } from "src/app/models/profile";
+import { NgForm } from '@angular/forms';
+
 import { CurrentrouteService } from '../currentroute.service';
-import { LoginService } from '../user/login/login.service';
-import { TutorialService } from '../tutorial.service';
-import { Tutorial } from '../models/tutorial.model';
-import {Observable} from "rxjs";
+import { LoginteacherService } from "../user/loginteacher/loginteacher.service";
 
 @Component({
   selector: 'app-tutorials',
@@ -18,45 +14,22 @@ import {Observable} from "rxjs";
   styleUrls: ['./tutorials.component.css']
 })
 export class TutorialsComponent implements OnInit {
-  tutorials?: Tutorial[];
-  currentTutorial?: Tutorial;
-  currentIndex = -1;
-  chapter='';
-  constructor(private tutorialservice:TutorialService) { }
+  sem:any;
+  subject:any;
+  userid:any;
+  
+  constructor(private service: ApiService,private router : Router ,private currentroute:CurrentrouteService,private logint:LoginteacherService) { }
 
   ngOnInit(): void {
-    this.retrieveTutorials();
-  }
-
-  retrieveTutorials(): void {
-    this.tutorialservice.getAll()
-      .subscribe(
-        data => {
-          this.tutorials = data;
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-        });
-  }
-  removeAllTutorials(): void {
-    this.tutorialservice.deleteAll()
-      .subscribe(
-        response => {
-          console.log(response);
-          this.refreshList();
-        },
-        error => {
-          console.log(error);
-        });
-  }
-  refreshList(): void {
-    this.retrieveTutorials();
-    this.currentTutorial = undefined;
-    this.currentIndex = -1;
-  }
-
+    this.currentroute.setcurrentroute();
+    if(this.logint.isStudent()){
+      console.log("student");
+    }
   
+  }
+  click()
+  {
 
-
+    this.router.navigate(['/list',this.sem,this.subject,this.userid]); 
+  }
 }

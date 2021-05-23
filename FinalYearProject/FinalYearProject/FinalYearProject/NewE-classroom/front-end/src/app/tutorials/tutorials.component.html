@@ -1,33 +1,22 @@
 
-<div style="padding-top: 5%;" class="list row">
+ <div class="info container" >
+  <form class ="form" name="RegForm" action="/action_page.php" method="post">
+    
+      <label for="sem">Enter  Semester:</label>
+      <input type="text" id="sem" name="sem" required
+      [(ngModel)]="sem"><br><br>
 
-    <div class=" cg col-md-6">
+      <label for="subject">Enter  Subject:</label>
+      <input type="text" id="subject" name="subject" required
+      [(ngModel)]="subject"><br><br>
 
-
-        <h2>Tutorials List</h2>
-
-      <ul class="list-group">
-        <li
-          class="list-group-item"
-          *ngFor="let tutorial of tutorials; let i = index"
-          [class.active]="i == currentIndex"
-          (click)="setActiveTutorial(tutorial, i)"
-        >
-          {{ tutorial.chapter }}
-        </li>
-      </ul>
-
-      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
-        Remove All
-      </button>
-    </div>
-    <div class="col-md-6">
-
-
-        <a class="badge badge-warning" routerLink="/tutorials/{{ currentTutorial._id }}">
-          Edit
-        </a>
+      <label for="userid">Enter  Userid:</label>
+        <input type="text" id="userid" name="userid" required
+        [(ngModel)]="userid"><br><br>
+       
+     
+      <div class="search">
+      <input type="submit"(click)="click()" value="Search">
       </div>
-
-
-    </div>
+      </form>
+      </div>

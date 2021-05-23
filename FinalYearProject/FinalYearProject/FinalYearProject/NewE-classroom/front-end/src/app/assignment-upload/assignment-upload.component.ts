@@ -16,7 +16,7 @@ export class AssignmentUploadComponent implements OnInit {
   profile!: Profile; 
   imageData!: string;
 
-userid:any;
+ userid:any;
 
 constructor(private assignmentuploadService: AssignmentUploadService,private currentroute:CurrentrouteService,private logint:LoginteacherService) {}
 
@@ -33,15 +33,11 @@ constructor(private assignmentuploadService: AssignmentUploadService,private cur
     this.currentroute.setcurrentroute();
     if(this.logint.isStudent()){
       console.log("student");
-    }
-    
-    
+    } 
   }
   onFileSelect(event:any) {
     console.log(event.target.files);
-    const file =event.target.files[0]; //(event.target as HTMLInputElement).files[0] | null;
-    //file=files[0];
-    //console.log(file);
+    const file =event.target.files[0]; 
     
     this.form.patchValue({ image: file });
     const allowedMimeTypes = ["image/png", "image/jpeg", "image/jpg","application/pdf","video/mp4"];
@@ -54,7 +50,16 @@ constructor(private assignmentuploadService: AssignmentUploadService,private cur
     }
   }
 
-  onSubmit() {
+  onSubmit() 
+  {
+
+    console.log("submit");
+    this.assignmentuploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter,this.userid);
+    alert(
+      "Assignment uploaded successfully"
+    )
+    this.form.reset();
+    this.imageData =" ";
     
   //   var sem= document.forms["RegForm"]["sem"];
   //   var subject= document.forms["RegForm"]["subject"];
@@ -96,13 +101,7 @@ constructor(private assignmentuploadService: AssignmentUploadService,private cur
   //     return false; 
   // } 
 
-    console.log("submit");
-    this.assignmentuploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter,this.userid);
-    alert(
-      "Assignment uploaded successfully"
-    )
-    this.form.reset();
-    this.imageData =" ";
+    
   }
 
 }
