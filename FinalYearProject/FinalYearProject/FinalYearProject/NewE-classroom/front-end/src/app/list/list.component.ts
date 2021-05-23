@@ -39,7 +39,7 @@ export class ListComponent implements OnInit {
     
     this.sem= this.route.snapshot.paramMap.get('sem');
     this.subject= this.route.snapshot.paramMap.get('subject');
-    this.userid= this.route.snapshot.paramMap.get('userid');
+    this.userid= localStorage.getItem('userid');
     this.name= this.route.snapshot.paramMap.get('name');
     this.service.getProfiles(this.sem,this.subject,this.userid)
     .subscribe((profiles: any) => {

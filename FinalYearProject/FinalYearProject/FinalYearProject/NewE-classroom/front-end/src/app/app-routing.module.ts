@@ -172,7 +172,7 @@ const routes: Routes = [
     canActivate:[AuthTeacherGuard]
   },
   {
-    path:'list/:sem/:subject/:userid',
+    path:'list/:sem/:subject',
     component:ListComponent,
     canActivate:[AuthTeacherGuard]
   },

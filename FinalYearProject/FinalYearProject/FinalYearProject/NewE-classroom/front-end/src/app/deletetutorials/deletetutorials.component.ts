@@ -32,6 +32,6 @@ export class DeletetutorialsComponent implements OnInit {
    click()
   {
    
-    this.router.navigate(['/list',this.sem,this.subject,this.userid]);
+    this.router.navigate(['/list',this.sem,this.subject]);
 }
 }

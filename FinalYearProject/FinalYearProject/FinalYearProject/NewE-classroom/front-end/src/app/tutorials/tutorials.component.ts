@@ -21,6 +21,7 @@ export class TutorialsComponent implements OnInit {
   constructor(private service: ApiService,private router : Router ,private currentroute:CurrentrouteService,private logint:LoginteacherService) { }
 
   ngOnInit(): void {
+    
     this.currentroute.setcurrentroute();
     if(this.logint.isStudent()){
       console.log("student");
@@ -30,6 +31,6 @@ export class TutorialsComponent implements OnInit {
   click()
   {
 
-    this.router.navigate(['/list',this.sem,this.subject,this.userid]); 
+    this.router.navigate(['/list',this.sem,this.subject]); 
   }
 }
