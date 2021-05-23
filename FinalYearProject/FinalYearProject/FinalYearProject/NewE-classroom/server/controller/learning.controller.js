@@ -2,7 +2,7 @@ const express = require("express");
 var router = express.Router();
 const mongoose = require("mongoose");
 const Profiles = require('../models/profile.model')
-
+var ObjectId= require("mongodb").ObjectID;
 router.post("/learningstudent", (req,res) =>
 {
     let lr=[]
@@ -46,7 +46,7 @@ router.post("/updatedoc", (req,res) =>
     var name=req.body.name;
     Profiles.find({sem:sem ,subject:subject,userid:userid,name:name},function(err,learn){
         if (err) console.log(err)
-        learn.forEach(learn=>lr.push({sem:learn.sem,subject:learn.subject,chapter:learn.chapter,imagePath:learn.imagePath,name:learn.name}))
+        learn.forEach(learn=>lr.push({id:learn._id,sem:learn.sem,subject:learn.subject,chapter:learn.chapter,imagePath:learn.imagePath,name:learn.name}))
         res.send(lr);
         console.log(lr);
         

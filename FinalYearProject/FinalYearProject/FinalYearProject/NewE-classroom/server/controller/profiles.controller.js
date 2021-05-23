@@ -8,6 +8,7 @@ exports.getProfiles = async (req, res) => {
 };
 
 exports.postProfile = async (req, res) => {
+
   const {sem} = req.body;
   const {subject} = req.body;
   const { name } = req.body;
@@ -33,7 +34,7 @@ exports.postProfile = async (req, res) => {
 };
 exports.updateProfile = async (req, res) => {
 
-
+  const {id} =req.id;
   const {sem} = req.body;
   const {subject} = req.body;
   const { name } = req.body;

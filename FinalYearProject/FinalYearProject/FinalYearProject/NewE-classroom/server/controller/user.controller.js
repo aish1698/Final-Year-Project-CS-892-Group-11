@@ -6,6 +6,7 @@ const User = require('../models/user.model');
 const Teacher= require('../models/teacher.model');
 const jwt= require('jsonwebtoken');
 
+
 router.post("/login", (req,res) => {
 
   var userid = req.body.userid; 
