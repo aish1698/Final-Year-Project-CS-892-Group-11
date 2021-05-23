@@ -34,14 +34,14 @@ exports.postProfile = async (req, res) => {
 };
 exports.updateProfile = async (req, res) => {
 
-  const {id} =req.id;
+  
   const {sem} = req.body;
   const {subject} = req.body;
   const { name } = req.body;
   const {chapter}=req.body;
   const {userid}=req.body;
   const imagePath = 'http://localhost:3000/images/' + req.file.filename; 
- var id=req.body.id;
+  var id= req.body.id;
   const profile = new Profile({
     id,
     sem,
@@ -53,7 +53,7 @@ exports.updateProfile = async (req, res) => {
     
   });
   
-  Profile.updateOne({"id":ObjectId(id)},{$set:profile},function(err,profiles){
+  Profile.updateOne({id:ObjectId(id)},{$set:profile},function(err,profiles){
     if (err) console.log(err)
    console.log("updated")
 })

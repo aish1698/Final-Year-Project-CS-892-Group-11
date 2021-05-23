@@ -56,11 +56,8 @@ router.post("/updatedoc", (req,res) =>
 });
 router.post("/delete", (req,res) =>
 {
-    var userid=req.body.userid;
-    var sem= req.body.sem;
-    var subject=req.body.subject;
-    var name=req.body.name;
-    Profiles.deleteOne({name:name,sem:sem,userid:userid,subject:subject},function(err,learn){
+    var id= req.body.id
+    Profiles.deleteOne({_id:id},function(err,learn){
         if (err) console.log(err)
         
         console.log("deleted");
