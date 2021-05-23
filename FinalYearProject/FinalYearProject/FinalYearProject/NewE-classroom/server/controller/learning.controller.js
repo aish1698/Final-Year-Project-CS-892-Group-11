@@ -60,7 +60,7 @@ router.post("/delete", (req,res) =>
     var sem= req.body.sem;
     var subject=req.body.subject;
     var name=req.body.name;
-    Profiles.deleteOne({name:name},function(err,learn){
+    Profiles.deleteOne({name:name,sem:sem,userid:userid,subject:subject},function(err,learn){
         if (err) console.log(err)
         
         console.log("deleted");
