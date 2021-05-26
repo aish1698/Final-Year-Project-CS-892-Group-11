@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
-import { map } from "rxjs/operators";
-
+import { map,catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { Profile } from "src/app/models/profile";
 import { Subject } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { Router } from '@angular/router';
-import { setMaxListeners } from 'process';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListService {
+  private _deleteUrl ="http://localhost:3000/learning/profile/";
   private profiles: Profile[] = [];
     private profiles$ = new Subject<Profile[]>();
+  
+ 
 
-
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient,private router:Router) {}
   
     getProfiles(s :any,su: any,u:any) {
       return  this.http
@@ -24,8 +27,12 @@ export class ListService {
   
     getProfilesStream() {
       return this.profiles$.asObservable();
-    }   
-    delete(){
-     
     }
+   
+
+    deleteProfile(id: any){
+      return this.http.delete("http://localhost:3000/learning/profile/"+id);
+
+     
+  }
 }

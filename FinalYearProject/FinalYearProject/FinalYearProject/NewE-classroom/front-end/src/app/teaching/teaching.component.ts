@@ -8,6 +8,8 @@ import { ApiService } from "../api.service";
 import { CurrentrouteService } from "../currentroute.service";
 import { ListService } from "../list/list.service";
 import { LoginteacherService } from "../user/loginteacher/loginteacher.service";
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-teaching',
   templateUrl: './teaching.component.html',
@@ -24,7 +26,8 @@ export class TeachingComponent implements OnInit {
     private route:ActivatedRoute,
     private router : Router,
     private ref: ChangeDetectorRef,
-    private list:ListService) {}
+    private list:ListService,
+    private toastr: ToastrService) {}
 
   ngOnInit(): void {
     this.userid= localStorage.getItem('userid');
@@ -60,15 +63,18 @@ export class TeachingComponent implements OnInit {
   onSubmit() {
     console.log("submit");
     this.teachingService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter,this.userid);
-    alert(
-      "Material uploaded successfully"
-    )
-    this.form.reset();
+    this.toastr.success('Material Uploaded successfully!', '',
+    {
+      timeOut:2000,
+      progressBar:true,
+    });
     this.imageData =" ";
+    this.form.reset();
+    
   }
   
   onupdate(){
-    this.router.navigate(['/updatetutorial']);
+    this.router.navigate(['/tutorial']);
   }
   
 }

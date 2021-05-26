@@ -44,6 +44,7 @@ import { UploadresultComponent } from './uploadresult/uploadresult.component';
 import { ResultdownComponent } from './resultdown/resultdown.component';
 import { TutorialsComponent } from './tutorials/tutorials.component';
 import { ListComponent } from './list/list.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -87,7 +88,12 @@ import { ListComponent } from './list/list.component';
     HttpClientModule,
    ReactiveFormsModule,
    MatIconModule,
-   MatProgressBarModule
+   MatProgressBarModule,
+   ToastrModule.forRoot({
+    timeOut: 10000,
+    positionClass: 'toast-top-center',
+    preventDuplicates: true,
+  })
   ],
 providers: [AuthGuard,AuthTeacherGuard,AuthHomeGuard,LoginteacherService,LoginService],
 bootstrap: [AppComponent]

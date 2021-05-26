@@ -167,9 +167,10 @@ const routes: Routes = [
   },
   {
 
-    path:'updatetutorial',component:TutorialsComponent,
+    path:'tutorial',component:TutorialsComponent,
     canActivate:[AuthTeacherGuard]
   },
+
   {
     path:'list/:sem/:subject',
     component:ListComponent,

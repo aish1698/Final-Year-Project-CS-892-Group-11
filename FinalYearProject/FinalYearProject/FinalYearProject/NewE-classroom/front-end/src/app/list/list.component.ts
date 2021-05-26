@@ -1,4 +1,4 @@
-import { Component, OnInit,ChangeDetectorRef,OnDestroy} from '@angular/core';
+import { Component, OnInit,ChangeDetectorRef,OnDestroy,EventEmitter} from '@angular/core';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute }  from "@angular/router";
 import { Subscription } from "rxjs";
@@ -8,21 +8,26 @@ import { Profile } from "src/app/models/profile";
 import { CurrentrouteService } from '../currentroute.service';
 import { LoginteacherService } from "../user/loginteacher/loginteacher.service";
 import { ListService } from './list.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
+  
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+  
+  
+  id:any;
   sem :any;
  subject:any;
  userid:any;
  name:any;
- profiles: Profile[] = [];
-  private profileSubscription: Subscription = new Subscription;
+ profiles: any;
+ private profileSubscription: Subscription = new Subscription;
   ApiService: any;  
-
+  data:any;
 
   constructor(
     private http:HttpClient,
@@ -30,17 +35,17 @@ export class ListComponent implements OnInit {
     private route:ActivatedRoute,
     private router : Router,
     private ref: ChangeDetectorRef,
-    private currentroute:CurrentrouteService, private logint:LoginteacherService) { }
+    private currentroute:CurrentrouteService, private logint:LoginteacherService,
+    private toastr: ToastrService) { }
     ngOnDestroy(): void {
       throw new Error('Method not implemented.');
     }
 
   ngOnInit(): void {
-    
     this.sem= this.route.snapshot.paramMap.get('sem');
     this.subject= this.route.snapshot.paramMap.get('subject');
     this.userid= localStorage.getItem('userid');
-    this.name= this.route.snapshot.paramMap.get('name');
+  
     this.service.getProfiles(this.sem,this.subject,this.userid)
     .subscribe((profiles: any) => {
          
@@ -53,16 +58,18 @@ export class ListComponent implements OnInit {
       console.log("student");
     }
   }
-  del(){
-    
-
-
-    
-
-
-
-
-  }
+  deleteProfiles(id: any){
+    alert("Do you really want to delete this material?");
+    this.service.deleteProfile(id).subscribe(res=>{
+     this.data=res;
+     this.toastr.error('',JSON.stringify(this.data.message),
+     {
+       timeOut:2000,
+       progressBar:true,
+     });
+     
+    });
+    }
   updation(){
 
   }

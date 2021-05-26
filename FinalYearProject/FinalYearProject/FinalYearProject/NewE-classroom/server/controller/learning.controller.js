@@ -12,7 +12,7 @@ router.post("/learningstudent", (req,res) =>
    
     Profiles.find({sem:sem ,subject:subject},function(err,learn){
         if (err) console.log(err)
-        learn.forEach(learn=>lr.push({imagePath:learn.imagePath,name:learn.name}))
+        learn.forEach(learn=>lr.push({imagePath:learn.imagePath,name:learn.name,subject:learn.subject}))
         res.send(lr);
         console.log(lr);
         
@@ -29,7 +29,7 @@ router.post("/list", (req,res) =>
    
     Profiles.find({sem:sem ,subject:subject,userid:userid},function(err,learn){
         if (err) console.log(err)
-        learn.forEach(learn=>lr.push({imagePath:learn.imagePath,name:learn.name}))
+        learn.forEach(learn=>lr.push({imagePath:learn.imagePath,name:learn.name,sem:learn.sem,_id:learn._id,subject:learn.subject}))
         res.send(lr);
         console.log(lr);
         
@@ -54,18 +54,32 @@ router.post("/updatedoc", (req,res) =>
 
 
 });
-router.post("/delete", (req,res) =>
-{
-    var id= req.body.id
-    Profiles.deleteOne({_id:id},function(err,learn){
-        if (err) console.log(err)
-        
-        console.log("deleted");
-        
-    })
+router.delete("/profile/:id", (req,res)=> {
+   
+    Profiles.findByIdAndRemove(req.params.id,(err,data)=>{
+        if(!err){
+            res.status(200).json({code: 200, message: 'Material deleted successfully', deleteProfiles: data})
+        }
+        else{
+        console.log(err);
+        }
 
 
+    });
 });
+
+
+// {
+//     var id= req.body.id;
+//     Profiles.deleteOne({_id:id},function(err,learn){
+//         if (err) console.log(err)
+        
+//         console.log("deleted");
+        
+//     })
+
+
+
 
 
 module.exports = router;
