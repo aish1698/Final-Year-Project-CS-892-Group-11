@@ -1,10 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl } from "@angular/forms";
 import { Profile } from "src/app/models/profile";
 import {AssignmentUploadService} from "src/app/assignment-upload/assignment-upload.service";
 import { CurrentrouteService } from "../currentroute.service";
 import { LoginteacherService } from "../user/loginteacher/loginteacher.service";
-
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-assignment-upload',
@@ -23,11 +22,11 @@ constructor(private assignmentuploadService: AssignmentUploadService,private cur
   ngOnInit(): void {
     this.userid= localStorage.getItem('userid')
     this.form = new FormGroup({
-      sem: new FormControl(null),
-      subject: new FormControl(null),
-      name: new FormControl(null),
-      image: new FormControl(null),
-      chapter:new FormControl(null),
+      sem: new FormControl(null, [Validators.required, Validators.max(8), Validators.min(1), Validators.pattern(/^[0-9]\d*$/)]),
+      subject: new FormControl(null, [Validators.required]),
+      name: new FormControl(null, [Validators.required]),
+      image: new FormControl(null, [Validators.required]),
+      chapter:new FormControl(null, [Validators.required]),
 
     });
     this.currentroute.setcurrentroute();
@@ -55,51 +54,21 @@ constructor(private assignmentuploadService: AssignmentUploadService,private cur
 
     console.log("submit");
     this.assignmentuploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter,this.userid);
+   
+    if(!(this.form.valid)){
+      alert("FUCK!!!!")
+      this.form.reset();
+      this.imageData=" ";
+
+    }
+    if((this.form.valid)){
     alert(
       "Assignment uploaded successfully"
     )
     this.form.reset();
     this.imageData =" ";
     
-  //   var sem= document.forms["RegForm"]["sem"];
-  //   var subject= document.forms["RegForm"]["subject"];
-  //   var name= document.forms["RegForm"]["name"];
-  //   var chapter= document.forms["RegForm"]["chapter"];
- 
-  //   if (sem.value == "")                                  
-  // { 
-  //     window.alert("Semester field is empty."); 
-  //     sem.focus(); 
-  //     return false; 
-  // } 
-
-  // if (!(sem.value>=1 && sem.value<=8)   )                              
-  // { 
-  //     window.alert("Please enter valid semester."); 
-  //     sem.focus(); 
-  //   return false; 
-  // } 
-
-  // if (subject.value == "")                                  
-  // { 
-  //     window.alert("Subject field is empty."); 
-  //     subject.focus(); 
-  //    return false; 
-  // } 
-
-  // if (name.value == "")                                  
-  // { 
-  //     window.alert("Name field is empty."); 
-  //     name.focus(); 
-  //    return false; 
-  // } 
-
-  // if (chapter.value == "")                                  
-  // { 
-  //     window.alert("Chapter field is empty."); 
-  //     chapter.focus(); 
-  //     return false; 
-  // } 
+    }
 
     
   }

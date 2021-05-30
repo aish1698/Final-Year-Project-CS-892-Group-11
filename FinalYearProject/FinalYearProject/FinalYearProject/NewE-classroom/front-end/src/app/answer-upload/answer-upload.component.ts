@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl } from "@angular/forms";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Profile } from "src/app/models/profile";
 import {AnswerUploadService} from "src/app/answer-upload/answer-upload.service";
 import { CurrentrouteService } from "../currentroute.service";
@@ -21,11 +21,11 @@ export class AnswerUploadComponent implements OnInit {
   ngOnInit(): void {
     this.userid= localStorage.getItem('userid');
     this.form = new FormGroup({
-      sem: new FormControl(null),
-      subject: new FormControl(null),
-      name: new FormControl(null),
-      image: new FormControl(null),
-      chapter:new FormControl(null),
+      sem: new FormControl(null, [Validators.required, Validators.max(8), Validators.min(1), Validators.pattern(/^[0-9]\d*$/)]),
+      subject: new FormControl(null,[Validators.required]),
+      name: new FormControl(null, [Validators.required]),
+      image: new FormControl(null, [Validators.required]),
+      chapter:new FormControl(null, [Validators.required]),
 
     });
     this.currentroute.setcurrentroute();
@@ -54,11 +54,20 @@ export class AnswerUploadComponent implements OnInit {
 
     console.log("submit");
     this.answerUploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter,this.userid);
+    
+    if(!(this.form.valid)){
+      alert("FUCK!!!!")
+      this.form.reset();
+
+    }
+
+    if((this.form.valid)){
     alert(
       "Answer uploaded successfully"
     )
     this.form.reset();
     this.imageData =" ";
+    }
   }
 
 }

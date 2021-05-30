@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
-import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl } from "@angular/forms";
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormControl, Validators, MaxValidator } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Profile } from "src/app/models/profile";
 import { TeachingService } from "src/app/teaching/teaching.service";
@@ -18,9 +18,10 @@ import { ToastrService } from 'ngx-toastr';
 export class TeachingComponent implements OnInit {
 
   form!: FormGroup;
-  profile!: Profile; 
+  profile!: Profile;
   imageData!: string;
   userid: any;
+<<<<<<< Updated upstream
   constructor(private teachingService: TeachingService,private currentroute:CurrentrouteService,private logint:LoginteacherService,    private http:HttpClient,
     private service:ApiService,
     private route:ActivatedRoute,
@@ -28,29 +29,37 @@ export class TeachingComponent implements OnInit {
     private ref: ChangeDetectorRef,
     private list:ListService,
     private toastr: ToastrService) {}
+=======
+  constructor(
+    private teachingService: TeachingService,
+    private currentroute: CurrentrouteService,
+    private logint: LoginteacherService,
+    private router: Router,
+    private list: ListService) { }
+>>>>>>> Stashed changes
 
   ngOnInit(): void {
-    this.userid= localStorage.getItem('userid');
+    this.userid = localStorage.getItem('userid');
     this.form = new FormGroup({
-      sem: new FormControl(null),
-      subject: new FormControl(null),
-      name: new FormControl(null),
-      image: new FormControl(null),
-      chapter:new FormControl(null),
+      sem: new FormControl(null, [Validators.required, Validators.max(8), Validators.min(1), Validators.pattern(/^[0-9]\d*$/)] ),
+      subject: new FormControl(null,[Validators.required]),
+      name: new FormControl(null,[Validators.required]),
+      image: new FormControl(null,[Validators.required]),
+      chapter: new FormControl(null,[Validators.required]),
 
     });
     this.currentroute.setcurrentroute();
-    if(this.logint.isStudent()){
+    if (this.logint.isStudent()) { 
       console.log("student");
     }
   }
 
-  onFileSelect(event:any) {
+  onFileSelect(event: any) {
     console.log(event.target.files);
-    const file =event.target.files[0]; 
-    
+    const file = event.target.files[0];
+
     this.form.patchValue({ image: file });
-    const allowedMimeTypes = ["image/png", "image/jpeg", "image/jpg","application/pdf","video/mp4"];
+    const allowedMimeTypes = ["image/png", "image/jpeg", "image/jpg", "application/pdf", "video/mp4"];
     if (file && allowedMimeTypes.includes(file.type)) {
       const reader = new FileReader();
       reader.onload = () => {
@@ -62,6 +71,7 @@ export class TeachingComponent implements OnInit {
 
   onSubmit() {
     console.log("submit");
+<<<<<<< Updated upstream
     this.teachingService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter,this.userid);
     this.toastr.success('Material Uploaded successfully!', '',
     {
@@ -75,6 +85,37 @@ export class TeachingComponent implements OnInit {
   
   onupdate(){
     this.router.navigate(['/tutorial']);
+=======
+    this.teachingService.addProfile(
+      this.form.value.sem, 
+      this.form.value.subject,
+      this.form.value.name, 
+      this.form.value.image, 
+      this.form.value.chapter, 
+      this.userid
+      );
+    if(!(this.form.valid)){
+      alert("FUCK!!!!")
+      this.form.reset();
+
+    }
+    if((this.form.valid)){
+      
+    alert(
+      "Material uploaded successfully"
+    )
+    
+    this.form.reset();
+    this.imageData = " ";
+    }
   }
-  
+
+  onupdate() {
+   
+      this.router.navigate(['/updatetutorial']);  
+    
+    
+>>>>>>> Stashed changes
+  }
+
 }

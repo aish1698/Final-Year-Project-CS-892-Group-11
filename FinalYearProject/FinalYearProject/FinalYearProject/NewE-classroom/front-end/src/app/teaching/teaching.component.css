@@ -40,9 +40,10 @@ opacity:0.8;
   margin-bottom:60px;
 
 }
+
 .gr{
-  margin:20px auto;
-  width:125%;
+  margin:20px auto !important;
+  width:125% !important;
   background-color:#D1D0CE;
 }
 .ngr{

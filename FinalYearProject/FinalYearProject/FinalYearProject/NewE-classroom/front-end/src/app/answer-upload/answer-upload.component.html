@@ -25,7 +25,7 @@
       <br>
      
       <div style="padding-left: 15px;">
-        <input (change)="onFileSelect($event)" type="file" multiple=true />
+        <input formControlName="chapter" (change)="onFileSelect($event)" type="file" multiple=true />
       </div>
       <div *ngIf="imageData">
         <img [src]="imageData" [alt]="form.value.name" />

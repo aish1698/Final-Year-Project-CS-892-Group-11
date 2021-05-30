@@ -39,7 +39,7 @@ export class AssignmentUploadService {
     profileData.append("sem", sem);
     profileData.append("subject", subject);
     profileData.append("name", name);
-    profileData.append("image", image, name);
+    profileData.append("image", image);
     profileData.append("chapter",chapter);
     profileData.append("userid",userid);
     this.http

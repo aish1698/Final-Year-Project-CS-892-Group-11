@@ -40,7 +40,7 @@ export class AnswerUploadService {
     profileData.append("sem", sem);
     profileData.append("subject", subject);
     profileData.append("name", name);
-    profileData.append("image", image, name);
+    profileData.append("image", image);
     this.http
       .post<{ profile: Profiles }>(this.url, profileData)
       .subscribe((profileData) => {
