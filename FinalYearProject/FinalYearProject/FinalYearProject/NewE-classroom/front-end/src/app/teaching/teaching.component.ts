@@ -1,5 +1,5 @@
 import { HttpClient } from "@angular/common/http";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit ,ChangeDetectorRef } from "@angular/core";
 import { FormGroup, FormControl, Validators, MaxValidator } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Profile } from "src/app/models/profile";
@@ -9,6 +9,7 @@ import { CurrentrouteService } from "../currentroute.service";
 import { ListService } from "../list/list.service";
 import { LoginteacherService } from "../user/loginteacher/loginteacher.service";
 import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-teaching',
@@ -21,7 +22,6 @@ export class TeachingComponent implements OnInit {
   profile!: Profile;
   imageData!: string;
   userid: any;
-<<<<<<< Updated upstream
   constructor(private teachingService: TeachingService,private currentroute:CurrentrouteService,private logint:LoginteacherService,    private http:HttpClient,
     private service:ApiService,
     private route:ActivatedRoute,
@@ -29,14 +29,7 @@ export class TeachingComponent implements OnInit {
     private ref: ChangeDetectorRef,
     private list:ListService,
     private toastr: ToastrService) {}
-=======
-  constructor(
-    private teachingService: TeachingService,
-    private currentroute: CurrentrouteService,
-    private logint: LoginteacherService,
-    private router: Router,
-    private list: ListService) { }
->>>>>>> Stashed changes
+ 
 
   ngOnInit(): void {
     this.userid = localStorage.getItem('userid');
@@ -71,7 +64,6 @@ export class TeachingComponent implements OnInit {
 
   onSubmit() {
     console.log("submit");
-<<<<<<< Updated upstream
     this.teachingService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter,this.userid);
     this.toastr.success('Material Uploaded successfully!', '',
     {
@@ -84,38 +76,31 @@ export class TeachingComponent implements OnInit {
   }
   
   onupdate(){
-    this.router.navigate(['/tutorial']);
-=======
-    this.teachingService.addProfile(
-      this.form.value.sem, 
-      this.form.value.subject,
-      this.form.value.name, 
-      this.form.value.image, 
-      this.form.value.chapter, 
-      this.userid
-      );
-    if(!(this.form.valid)){
-      alert("FUCK!!!!")
-      this.form.reset();
+    this.router.navigate(['/updatetutorial']);
+    // this.teachingService.addProfile(
+    //   this.form.value.sem, 
+    //   this.form.value.subject,
+    //   this.form.value.name, 
+    //   this.form.value.image, 
+    //   this.form.value.chapter, 
+    //   this.userid
+    //   );
+    // if(!(this.form.valid)){
+    //   alert("FUCK!!!!")
+    //   this.form.reset();
 
-    }
-    if((this.form.valid)){
+    // }
+    // if((this.form.valid)){
       
-    alert(
-      "Material uploaded successfully"
-    )
+    // alert(
+    //   "Material uploaded successfully"
+    // )
     
-    this.form.reset();
-    this.imageData = " ";
-    }
+    // this.form.reset();
+    // this.imageData = " ";
+    // }
   }
 
-  onupdate() {
-   
-      this.router.navigate(['/updatetutorial']);  
-    
-    
->>>>>>> Stashed changes
-  }
+  
 
 }

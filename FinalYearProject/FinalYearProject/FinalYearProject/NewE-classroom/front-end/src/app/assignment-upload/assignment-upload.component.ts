@@ -4,6 +4,7 @@ import {AssignmentUploadService} from "src/app/assignment-upload/assignment-uplo
 import { CurrentrouteService } from "../currentroute.service";
 import { LoginteacherService } from "../user/loginteacher/loginteacher.service";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-assignment-upload',
@@ -17,7 +18,9 @@ export class AssignmentUploadComponent implements OnInit {
 
  userid:any;
 
-constructor(private assignmentuploadService: AssignmentUploadService,private currentroute:CurrentrouteService,private logint:LoginteacherService) {}
+constructor(private assignmentuploadService: AssignmentUploadService,private currentroute:CurrentrouteService,
+  private logint:LoginteacherService,
+  private toastr: ToastrService) {}
 
   ngOnInit(): void {
     this.userid= localStorage.getItem('userid')
@@ -62,9 +65,12 @@ constructor(private assignmentuploadService: AssignmentUploadService,private cur
 
     }
     if((this.form.valid)){
-    alert(
-      "Assignment uploaded successfully"
-    )
+    
+    this.toastr.success('Assignment Uploaded successfully!', '',
+    {
+      timeOut:2000,
+      progressBar:true,
+    });
     this.form.reset();
     this.imageData =" ";
     

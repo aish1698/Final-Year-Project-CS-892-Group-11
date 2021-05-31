@@ -15,7 +15,7 @@ export class AnswerdownComponent implements OnInit {
 
   sem: any;
   subject: any;
-  chapter:any;
+  
 
   constructor(private http:HttpClient,
     private service:ApiService,
@@ -32,7 +32,7 @@ export class AnswerdownComponent implements OnInit {
   click(){
     var sem= document.forms["RegForm"]["sem"];
     var subject= document.forms["RegForm"]["subject"];
-    var chapter= document.forms["RegForm"]["chapter"];
+ 
   if (sem.value == "")                                  
   { 
     //console.log("virat kohli");
@@ -55,13 +55,8 @@ export class AnswerdownComponent implements OnInit {
      return false; 
   }
 
-  if (chapter.value == "")                                  
-  { 
-      window.alert("Chapter field is empty."); 
-      chapter.focus(); 
-     return false; 
-  }
+ 
     // console.log(this.sem,this.subject);
-    this.router.navigate(['/answerdownload',this.sem,this.subject,this.chapter]);
+    this.router.navigate(['/answerdownload',this.sem,this.subject]);
 }
 }

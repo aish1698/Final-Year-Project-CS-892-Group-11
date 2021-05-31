@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute }  from "@angular/router";
@@ -7,11 +6,9 @@ import { Router} from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CurrentrouteService } from '../currentroute.service';
 import { LoginService } from '../user/login/login.service';
-=======
-import { Component, OnInit } from '@angular/core';
+
 import { FormGroup, FormControl } from "@angular/forms";
 
->>>>>>> Stashed changes
 @Component({
   selector: 'app-learning',
   templateUrl: './learning.component.html',
@@ -19,7 +16,6 @@ import { FormGroup, FormControl } from "@angular/forms";
 })
 export class LearningComponent implements OnInit {
 
-<<<<<<< Updated upstream
   sem: any;
   subject: any;
 
@@ -66,18 +62,9 @@ export class LearningComponent implements OnInit {
       subject.focus(); 
      return false; 
   }
-
-    // console.log(this.sem,this.subject);
-  //  this.router.navigate(['/learningstudent',this.sem,this.subject]);
-    //console.log(this.sem,this.subject);
-   
-
 }
-=======
-  constructor() { }
+  
 
-  ngOnInit(): void {
-  }
+  
 
->>>>>>> Stashed changes
 }

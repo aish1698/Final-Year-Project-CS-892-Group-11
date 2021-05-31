@@ -70,7 +70,8 @@ export class ListComponent implements OnInit {
      
     });
     }
-  updation(){
+  updation(id:any){
+    
 
   }
 

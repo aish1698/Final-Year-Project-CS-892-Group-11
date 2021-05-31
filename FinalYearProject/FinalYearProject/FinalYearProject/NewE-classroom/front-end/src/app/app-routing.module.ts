@@ -16,7 +16,6 @@ import { SignupComponent } from './signup/signup.component';
 
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { TeachingComponent } from './teaching/teaching.component';
-<<<<<<< Updated upstream
 import { loginteacherComponent } from './user/loginteacher/loginteacher.component';
 import{ForgotpasswordteacherComponent} from './forgotpasswordteacher/forgotpasswordteacher.component'
 import { LearningComponent } from './learning/learning.component';
@@ -29,9 +28,6 @@ import { AuthHomeGuard } from './auth-home.guard';
 import { AnswerUploadComponent } from './answer-upload/answer-upload.component';
 import { AnswerdownComponent } from './answerdown/answerdown.component';
 import { VideoCallComponent } from './video-call/video-call.component';
-=======
-import { LearningComponent } from './learning/learning.component';
->>>>>>> Stashed changes
 
 import { AnswerdownloadComponent } from './answerdownload/answerdownload.component';
 import { DownloadresultComponent } from './downloadresult/downloadresult.component';
@@ -171,22 +167,16 @@ const routes: Routes = [
   },
   {
 
-    path:'tutorial',component:TutorialsComponent,
+    path:'updatetutorial',component:TutorialsComponent,
     canActivate:[AuthTeacherGuard]
   },
 
   {
-<<<<<<< Updated upstream
     path:'list/:sem/:subject',
     component:ListComponent,
     canActivate:[AuthTeacherGuard]
   },
   
-=======
-    path: 'learning',
-    component: LearningComponent
-  },
->>>>>>> Stashed changes
   {
     path: '**',
     component: HomeComponent

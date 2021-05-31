@@ -28,7 +28,6 @@ import { SigninComponent } from './signin/signin.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { TeachingComponent } from './teaching/teaching.component';
 import { LearningComponent } from './learning/learning.component';
-<<<<<<< Updated upstream
 import { LearningstudentComponent } from './learningstudent/learningstudent.component';
 import { AssignmentUploadComponent } from './assignment-upload/assignment-upload.component';
 import { AnswerUploadComponent } from './answer-upload/answer-upload.component';
@@ -46,10 +45,9 @@ import { ResultdownComponent } from './resultdown/resultdown.component';
 import { TutorialsComponent } from './tutorials/tutorials.component';
 import { ListComponent } from './list/list.component';
 import { ToastrModule } from 'ngx-toastr';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
-=======
->>>>>>> Stashed changes
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +62,6 @@ import { ToastrModule } from 'ngx-toastr';
    StudentComponent,
     SigninComponent,
     ForgotpasswordComponent,
-<<<<<<< Updated upstream
     ForgotpasswordteacherComponent,
     TeachingComponent,
     loginteacherComponent,
@@ -82,11 +79,9 @@ import { ToastrModule } from 'ngx-toastr';
     ResultdownComponent,
     TutorialsComponent,
     ListComponent,
+    EditProfileComponent,
    
-=======
     TeachingComponent,
-    LearningComponent
->>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
