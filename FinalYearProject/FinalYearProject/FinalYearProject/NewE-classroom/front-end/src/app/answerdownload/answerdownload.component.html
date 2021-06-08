@@ -1,14 +1,14 @@
 <div  class="container-fluid hi">
-  
+
   <h1>All Answers</h1>
   <div *ngIf="profiles.length > 0">
     <div *ngFor="let profile of profiles" class="profile">
-      <div>
-        <span>{{ profile.name }}</span>
-      </div>
+      <a [href]="profile.imagePath" style="color: black;"><i class="fa fa-file-pdf-o" style="font-size:48px;color:red;"></i></a>
 
-      <a [href]="profile.imagePath" style="color: black;">click here</a>
+
+        <span><h3>{{ profile.name }}</h3></span>
       
+
     </div>
   </div>
 </div>

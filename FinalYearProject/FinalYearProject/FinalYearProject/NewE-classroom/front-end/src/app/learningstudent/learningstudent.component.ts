@@ -1,3 +1,4 @@
+
 import { Component, OnInit,ChangeDetectorRef,OnDestroy} from '@angular/core';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute }  from "@angular/router";
@@ -18,7 +19,7 @@ export class LearningstudentComponent implements OnInit,OnDestroy {
  subject:any;
  profiles: Profile[] = [];
   private profileSubscription: Subscription = new Subscription;
-  ApiService: any;  
+  ApiService: any;
 
   constructor(private http:HttpClient,
    private service: LearningstudentService,
@@ -34,20 +35,18 @@ export class LearningstudentComponent implements OnInit,OnDestroy {
     this.subject= this.route.snapshot.paramMap.get('subject');
     this.service.getProfiles(this.sem,this.subject)
     .subscribe((profiles: any) => {
-         
+
           console.log(profiles);
            this.profiles = profiles;
-         
+
       });
       this.currentroute.setcurrentroute();
    if(this.login.isStudent()){
      console.log("student");
    }
-    
-  }
 
-     
-    
   }
 
 
+
+  }

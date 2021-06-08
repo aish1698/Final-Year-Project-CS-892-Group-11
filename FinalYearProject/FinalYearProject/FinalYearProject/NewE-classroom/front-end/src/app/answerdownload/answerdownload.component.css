@@ -31,15 +31,34 @@ button:hover {
 }
 
 .profile {
-  width: 400px;
-  margin: 1em auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
+/*  width: 400px;
+  margin: 1em auto;*/
 
+  width: 320px;
+  height: 80px;
+  margin: 2em auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+align-items: center;
+display: flex;
+text-align: center;
+background-color:white;
+color:#A30000;
+border-radius: 15px;
+font-weight: bold;
+position:relative;
+right:270px;
+}
+i{
+  margin-right: 15px;
+padding-top: 7px;
+margin-left: 80px;
+}
 .profile:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-
+h1{
+  margin-bottom: 100px;
+}
 .profile div {
   background-color: #eee;
   font-size: 24px;
