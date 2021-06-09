@@ -1,74 +1,39 @@
 body {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333;
-  }
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+input {
+  width: 200px;
+  margin: 1em;
+  height: 1em;
+}
+button {
+  opacity: 0.7;
+}
 
-  img {
-    width: 400px;
-    height: 267px;
-  }
+button:hover {
+  opacity: 2.0;
+}
 
-  input {
-    width: 400px;
-    margin: 1em;
-    height: 2em;
-  }
-
-  button {
-    background-color: #333;
-    color: #fff;
-    height: 2em;
-    width: 400px;
-    border-radius: 4px;
-    margin: 1em;
-  }
-
-  button:hover {
-    cursor: pointer;
-    background-color: #444;
-    color: #eee;
-  }
-
-  .profile {
-    /*width: 400px;
-    margin: 1em auto;*/
-
-    width: 320px;
-    height: 80px;
-    margin: 2em auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-align-items: center;
-display: flex;
-text-align: center;
-background-color:white;
-color:#A30000;
-border-radius: 15px;
-font-weight: bold;
-position:relative;
-right:270px;
-  }
-  i{
-    margin-right: 15px;
-  padding-top: 7px;
-  margin-left: 80px;
-  }
-
-  .profile:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  }
-
-  .profile div {
-    background-color: #eee;
-    font-size: 24px;
-  }
-  .hi {
-    width: 100%;
-   padding-top: 70px;
-   padding-left: 540px;
-   padding-bottom: 50px;
+.hi {
+  width: 100%;
+ padding-top: 20px;
+ padding-left: 410px;
+ padding-bottom: 50px;
 
 }
-h1{
-  margin-bottom: 100px;
+table, td, th {  
+border: 1px solid #ddd;
+text-align: center;
+}
+
+table {
+border-collapse: collapse;
+width: 70%;
+
+}
+
+th, td {
+padding: 15px;
 }

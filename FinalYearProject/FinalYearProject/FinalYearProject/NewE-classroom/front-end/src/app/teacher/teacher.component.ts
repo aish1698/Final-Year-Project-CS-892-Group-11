@@ -33,6 +33,8 @@ export class TeacherComponent implements OnInit {
   resultHandler(){
     this.router.navigate(['/uploadresult']);
   }
- 
+  videoHandler(){
+    this.router.navigate(['/videolecture']);
+  }
 
 }

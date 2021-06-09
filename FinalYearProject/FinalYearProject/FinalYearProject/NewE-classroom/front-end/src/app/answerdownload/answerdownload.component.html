@@ -1,14 +1,31 @@
-<div  class="container-fluid hi">
 
-  <h1>All Answers</h1>
-  <div *ngIf="profiles.length > 0">
-    <div *ngFor="let profile of profiles" class="profile">
-      <a [href]="profile.imagePath" style="color: black;"><i class="fa fa-file-pdf-o" style="font-size:48px;color:red;"></i></a>
-
-
-        <span><h3>{{ profile.name }}</h3></span>
-      
-
-    </div>
-  </div>
+<div style=" padding-top: 70px;">
+  <h1 style="text-align: center;">Download Answers</h1>
 </div>
+
+<div  class="container-fluid hi">
+   <table>
+     <thead>
+     <tr>
+       <th scope="col">Serial No</th>
+       <th scope="col">Sem</th>
+       <th scope="col">Subject</th>
+      
+       <th scope="col">Name</th>
+     </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let profile of profiles;let i=index">
+    
+        <td>{{i+1}}</td>
+        <td>{{profile.sem}}</td>
+        <td>{{profile.subject}}</td>
+        
+        <td>
+        <a  [href]="profile.imagePath" style="color: blue">
+           <span><b>{{profile.name}}</b></span></a>
+          </td>
+  </tr>
+</tbody>
+   </table>
+    </div>
