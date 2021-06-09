@@ -14,3 +14,6 @@ button {
   button:hover {
     opacity: 1.0;
   }
+  i{
+    display: inline;
+  }
