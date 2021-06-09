@@ -16,7 +16,7 @@ import { LoginService } from '../user/login/login.service';
 export class AssignmentdownloadComponent implements OnInit,OnDestroy {
  sem :any;
  subject:any;
- chapter:any;
+
  profiles: Profile[] = [];
   private profileSubscription: Subscription = new Subscription;
   ApiService: any;

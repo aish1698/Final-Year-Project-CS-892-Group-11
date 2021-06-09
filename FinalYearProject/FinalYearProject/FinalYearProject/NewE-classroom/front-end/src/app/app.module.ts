@@ -45,7 +45,7 @@ import { ResultdownComponent } from './resultdown/resultdown.component';
 import { TutorialsComponent } from './tutorials/tutorials.component';
 import { ListComponent } from './list/list.component';
 import { ToastrModule } from 'ngx-toastr';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
+
 
 
 @NgModule({
@@ -79,7 +79,6 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     ResultdownComponent,
     TutorialsComponent,
     ListComponent,
-    EditProfileComponent,
    
     TeachingComponent,
   ],

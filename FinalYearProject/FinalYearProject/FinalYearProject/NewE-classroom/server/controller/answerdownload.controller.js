@@ -12,7 +12,7 @@ router.post("/answerdownload", (req,res) =>
    
     Profiles.find({sem:sem ,subject:subject,chapter:chapter},function(err,learn){
         if (err) console.log(err)
-        learn.forEach(learn=>lr.push({imagePath:learn.imagePath,name:learn.name,chapter:learn.chapter}))
+        learn.forEach(learn=>lr.push({imagePath:learn.imagePath,name:learn.name,chapter:learn.chapter,sem:learn.sem,subject:learn.subject}))
         res.send(lr);
         console.log(lr);
         

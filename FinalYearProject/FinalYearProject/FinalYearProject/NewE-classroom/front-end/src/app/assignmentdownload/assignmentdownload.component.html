@@ -1,4 +1,4 @@
-<div  class="container-fluid hi">
+<!-- <div  class="container-fluid hi">
   
     <h1>All Assignments</h1>
     <div *ngIf="profiles.length > 0">
@@ -10,4 +10,39 @@
         </div>
       </div>
     </div>
+    </div> -->
+    <div style=" padding-top: 70px;">
+      <h1 style="text-align: center;">Download Assignments</h1>
     </div>
+    
+    <div  class="container-fluid hi">
+       <table>
+         <thead>
+         <tr>
+           <th scope="col">Serial No</th>
+           <th scope="col">Sem</th>
+           <th scope="col">Subject</th>
+           <th scope="col">Chapter</th>
+           <th scope="col">Name</th>
+           
+           <th scope="col">Action</th>
+         </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let profile of profiles;let i=index">
+        
+            <td>{{i+1}}</td>
+            <td>{{profile.sem}}</td>
+            <td>{{profile.subject}}</td>
+            <td>{{profile.chapter}}</td>
+            
+            <td>
+            <a  [href]="profile.imagePath" style="color: blue">
+               <span><b>{{profile.name}}</b></span></a>
+              </td>
+              
+      </tr>
+    </tbody>
+       </table>
+      
+        </div>

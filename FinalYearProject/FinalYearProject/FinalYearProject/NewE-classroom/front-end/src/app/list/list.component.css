@@ -4,16 +4,16 @@ body {
     color: #333;
   }
   input {
-    width: 400px;
+    width: 200px;
     margin: 1em;
-    height: 2em;
+    height: 1em;
   }
   button {
-    opacity: 0.8;
+    opacity: 0.7;
   }
 
   button:hover {
-    opacity: 1.0;
+    opacity: 2.0;
   }
   
   .hi {
@@ -30,7 +30,7 @@ table, td, th {
 
 table {
   border-collapse: collapse;
-  width: 60%;
+  width: 70%;
  
 }
 

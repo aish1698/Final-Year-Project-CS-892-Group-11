@@ -12,7 +12,7 @@ router.post("/learningstudent", (req,res) =>
    
     Profiles.find({sem:sem ,subject:subject},function(err,learn){
         if (err) console.log(err)
-        learn.forEach(learn=>lr.push({imagePath:learn.imagePath,name:learn.name,subject:learn.subject}))
+        learn.forEach(learn=>lr.push({imagePath:learn.imagePath,name:learn.name,sem:learn.sem,_id:learn._id,subject:learn.subject}))
         res.send(lr);
         console.log(lr);
         
@@ -29,7 +29,7 @@ router.post("/list", (req,res) =>
    
     Profiles.find({sem:sem ,subject:subject,userid:userid},function(err,learn){
         if (err) console.log(err)
-        learn.forEach(learn=>lr.push({imagePath:learn.imagePath,name:learn.name,sem:learn.sem,_id:learn._id,subject:learn.subject}))
+        learn.forEach(learn=>lr.push({imagePath:learn.imagePath,name:learn.name,sem:learn.sem,_id:learn._id,subject:learn.subject,chapter:learn.chapter}))
         res.send(lr);
         console.log(lr);
         

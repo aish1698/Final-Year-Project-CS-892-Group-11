@@ -16,6 +16,7 @@ import { LoginService } from '../user/login/login.service';
 export class LearningstudentComponent implements OnInit,OnDestroy {
  sem :any;
  subject:any;
+ imagePath:any;
  profiles: Profile[] = [];
   private profileSubscription: Subscription = new Subscription;
   ApiService: any;  
@@ -30,6 +31,12 @@ export class LearningstudentComponent implements OnInit,OnDestroy {
   }
 
   ngOnInit(): void {
+    this.sem=this.route.snapshot.params.sem;
+    console.log(this.sem);
+    this.imagePath=this.route.snapshot.params.imagePath;
+    console.log(this.imagePath);
+
+
     this.sem= this.route.snapshot.paramMap.get('sem');
     this.subject= this.route.snapshot.paramMap.get('subject');
     this.service.getProfiles(this.sem,this.subject)

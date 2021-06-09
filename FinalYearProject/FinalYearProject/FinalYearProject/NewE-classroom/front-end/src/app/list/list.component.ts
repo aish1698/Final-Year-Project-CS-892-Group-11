@@ -19,11 +19,12 @@ import { ToastrService } from 'ngx-toastr';
 export class ListComponent implements OnInit {
   
   
-  id:any;
+  // id:any;
+  // imagePath:any;
   sem :any;
  subject:any;
  userid:any;
- name:any;
+//  name:any;
  profiles: any;
  private profileSubscription: Subscription = new Subscription;
   ApiService: any;  
@@ -37,29 +38,33 @@ export class ListComponent implements OnInit {
     private ref: ChangeDetectorRef,
     private currentroute:CurrentrouteService, private logint:LoginteacherService,
     private toastr: ToastrService) { }
-    ngOnDestroy(): void {
-      throw new Error('Method not implemented.');
-    }
-
+   
   ngOnInit(): void {
-    this.sem= this.route.snapshot.paramMap.get('sem');
-    this.subject= this.route.snapshot.paramMap.get('subject');
-    this.userid= localStorage.getItem('userid');
-  
-    this.service.getProfiles(this.sem,this.subject,this.userid)
-    .subscribe((profiles: any) => {
-         
-          console.log(profiles);
-           this.profiles = profiles;
-         
-      });
+    
+   this.getProfile();
     this.currentroute.setcurrentroute();
     if(this.logint.isStudent()){
       console.log("student");
     }
   }
-  deleteProfiles(id: any){
-    alert("Do you really want to delete this material?");
+  getProfile(){
+    this.sem= this.route.snapshot.paramMap.get('sem');
+    this.subject= this.route.snapshot.paramMap.get('subject');
+    this.userid= localStorage.getItem('userid');
+  
+    this.service.getProfiles(this.sem,this.subject,this.userid)
+    .subscribe(res => {
+         
+          console.log(res);
+           this.profiles = res;
+         
+      });
+
+  }
+  deleteProfiles(id:any){
+    //alert(id);
+    alert("Are you sure you wanna delete this material?")
+
     this.service.deleteProfile(id).subscribe(res=>{
      this.data=res;
      this.toastr.error('',JSON.stringify(this.data.message),
@@ -68,10 +73,16 @@ export class ListComponent implements OnInit {
        progressBar:true,
      });
      
+     this.getProfile();
     });
-    }
-  updation(id:any){
     
+    }
+  // updation(imagePath:any){
+    updation(id:any){
+
+    // alert(imagePath);
+    alert("Are you sure you wanna update this material?");
+
 
   }
 

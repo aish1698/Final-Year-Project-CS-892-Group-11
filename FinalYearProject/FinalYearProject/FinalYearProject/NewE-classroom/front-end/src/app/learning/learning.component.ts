@@ -26,6 +26,7 @@ export class LearningComponent implements OnInit {
     private ref: ChangeDetectorRef,private currentroute:CurrentrouteService,private login:LoginService) { }
 
   ngOnInit(): void {
+    
     this.currentroute.setcurrentroute();
    if(this.login.isStudent()){
      console.log("student");
