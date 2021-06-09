@@ -78,10 +78,10 @@ export class ListComponent implements OnInit {
     
     }
   // updation(imagePath:any){
-    updation(id:any){
+    updation(imagePath:any){
 
-    // alert(imagePath);
-    alert("Are you sure you wanna update this material?");
+    alert(imagePath);
+   // alert("Are you sure you wanna update this material?");
 
 
   }
