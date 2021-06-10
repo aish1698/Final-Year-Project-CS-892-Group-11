@@ -14,7 +14,7 @@ import { createPublicKey } from 'crypto';
   templateUrl: './chapter.component.html',
   styleUrls: ['./chapter.component.css']
 })
-export class ChapterComponent implements  OnInit,OnDestroy {
+export class ChapterComponent implements  OnInit {
   sem :any;
  subject:any;
  chapter:any;
@@ -27,9 +27,7 @@ export class ChapterComponent implements  OnInit,OnDestroy {
      private route:ActivatedRoute,
      private router : Router,
      private ref: ChangeDetectorRef,private currentroute:CurrentrouteService,private login:LoginService) { }
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
+  
 
   ngOnInit(): void {
     this.sem= this.route.snapshot.paramMap.get('sem');
@@ -46,6 +44,15 @@ export class ChapterComponent implements  OnInit,OnDestroy {
    if(this.login.isStudent()){
      console.log("student");
   }
+
+  }
+  submit(chapter:any){
+    alert(chapter);
+    this.chapter=chapter;
+    this.sem= this.route.snapshot.paramMap.get('sem');
+    this.subject= this.route.snapshot.paramMap.get('subject');
+    this.router.navigate(['/learningstudent',this.sem,this.subject,this.chapter]);
+
 
   }
 }

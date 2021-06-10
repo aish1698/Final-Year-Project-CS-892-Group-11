@@ -12,8 +12,8 @@
             <th>Chapter:</th>
           </tr>
           <tr *ngFor="let res of profiles">
-           <td ><a  [href]="learningstudent/sem/subject/res.chapter" style="color: black">
-            <span><b>{{res.chapter}}</b></span></a></td>
+           <td >
+            <button type="button" class="btn btn-primary btn-sm mx-auto" (click)="submit(res.chapter)"><b>{{res.chapter}}</b></button></td>
            
            
            
