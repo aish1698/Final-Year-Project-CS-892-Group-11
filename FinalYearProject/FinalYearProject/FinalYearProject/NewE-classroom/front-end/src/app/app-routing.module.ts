@@ -37,6 +37,7 @@ import { TutorialsComponent } from './tutorials/tutorials.component';
 import { ListComponent } from './list/list.component';
 import { VideolectureComponent } from './videolecture/videolecture.component';
 import { ChapterComponent } from './chapter/chapter.component';
+import { AssignmentchapterComponent } from './assignmentchapter/assignmentchapter.component';
 
 const routes: Routes = [
   {
@@ -137,6 +138,11 @@ const routes: Routes = [
   {
     path: 'assignmentdownload/:sem/:subject/:chapter',
     component: AssignmentdownloadComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path: 'assignmentchapter/:sem/:subject',
+    component: AssignmentchapterComponent,
     canActivate:[AuthGuard]
   },
   {

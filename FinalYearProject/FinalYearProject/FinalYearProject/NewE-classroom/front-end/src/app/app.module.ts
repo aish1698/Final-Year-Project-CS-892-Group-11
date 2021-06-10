@@ -47,7 +47,7 @@ import { ListComponent } from './list/list.component';
 import { ToastrModule } from 'ngx-toastr';
 import { VideolectureComponent } from './videolecture/videolecture.component';
 import { ChapterComponent } from './chapter/chapter.component';
-
+import { AssignmentchapterComponent } from './assignmentchapter/assignmentchapter.component';
 
 
 @NgModule({
@@ -87,6 +87,7 @@ import { ChapterComponent } from './chapter/chapter.component';
     VideolectureComponent,
    
     ChapterComponent,
+    AssignmentchapterComponent,
   ],
   imports: [
     BrowserModule,

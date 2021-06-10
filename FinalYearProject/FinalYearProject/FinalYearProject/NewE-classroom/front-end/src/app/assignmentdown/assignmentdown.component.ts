@@ -15,7 +15,7 @@ export class AssignmentdownComponent implements OnInit {
 
   sem: any;
   subject: any;
-  chapter:any;
+  
 
   constructor(private http:HttpClient,
     private service:ApiService,
@@ -33,8 +33,7 @@ export class AssignmentdownComponent implements OnInit {
   
     var sem= document.forms["RegForm"]["sem"];
     var subject= document.forms["RegForm"]["subject"];
-    var chapter= document.forms["RegForm"]["chapter"];
-
+    
   if (sem.value == "")                                  
   { 
       window.alert("Semester field is empty."); 
@@ -56,12 +55,7 @@ export class AssignmentdownComponent implements OnInit {
      return false; 
   }
 
-  if (chapter.value == "")                                  
-  { 
-      window.alert("Chapter field is empty."); 
-      chapter.focus(); 
-     return false; 
-  }
-    this.router.navigate(['/assignmentdownload',this.sem,this.subject,this.chapter]);
+ 
+    this.router.navigate(['assignmentchapter',this.sem,this.subject]);
 }
 }

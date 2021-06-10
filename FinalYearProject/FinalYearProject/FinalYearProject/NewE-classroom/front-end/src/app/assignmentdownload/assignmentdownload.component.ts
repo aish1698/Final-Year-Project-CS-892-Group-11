@@ -16,7 +16,7 @@ import { LoginService } from '../user/login/login.service';
 export class AssignmentdownloadComponent implements OnInit,OnDestroy {
  sem :any;
  subject:any;
-
+chapter :any;
  profiles: Profile[] = [];
   private profileSubscription: Subscription = new Subscription;
   ApiService: any;
@@ -33,9 +33,9 @@ export class AssignmentdownloadComponent implements OnInit,OnDestroy {
   ngOnInit(): void {
     this.sem= this.route.snapshot.paramMap.get('sem');
     this.subject= this.route.snapshot.paramMap.get('subject');
-    
+    this.chapter= this.route.snapshot.paramMap.get('chapter');
 
-    this.service.getProfiles(this.sem,this.subject)
+    this.service.getProfiles(this.sem,this.subject,this.chapter)
     .subscribe((profiles: any) => {
          
          // console.log(profiles);

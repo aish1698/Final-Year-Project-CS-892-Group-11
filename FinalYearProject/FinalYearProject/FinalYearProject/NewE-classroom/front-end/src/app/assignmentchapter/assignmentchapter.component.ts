@@ -9,12 +9,13 @@ import { Profile } from "src/app/models/profile";
 import { CurrentrouteService } from '../currentroute.service';
 import { LoginService } from '../user/login/login.service';
 import { createPublicKey } from 'crypto';
+import { AssignmentchapterService } from './assignmentchapter.service';
 @Component({
-  selector: 'app-chapter',
-  templateUrl: './chapter.component.html',
-  styleUrls: ['./chapter.component.css']
+  selector: 'app-assignmentchapter',
+  templateUrl: './assignmentchapter.component.html',
+  styleUrls: ['./assignmentchapter.component.css']
 })
-export class ChapterComponent implements  OnInit {
+export class AssignmentchapterComponent implements  OnInit {
   sem :any;
  subject:any;
  chapter:any;
@@ -23,7 +24,7 @@ export class ChapterComponent implements  OnInit {
   ApiService: any;
 
   constructor(private http:HttpClient,
-    private service: ChapterService,
+    private service: AssignmentchapterService,
      private route:ActivatedRoute,
      private router : Router,
      private ref: ChangeDetectorRef,private currentroute:CurrentrouteService,private login:LoginService) { }
@@ -47,11 +48,11 @@ export class ChapterComponent implements  OnInit {
 
   }
   submit(chapter:any){
-    //alert(chapter);
+   // alert(chapter);
     this.chapter=chapter;
     this.sem= this.route.snapshot.paramMap.get('sem');
     this.subject= this.route.snapshot.paramMap.get('subject');
-    this.router.navigate(['/learningstudent',this.sem,this.subject,this.chapter]);
+    this.router.navigate(['/assignmentdownload',this.sem,this.subject,this.chapter]);
 
 
   }
