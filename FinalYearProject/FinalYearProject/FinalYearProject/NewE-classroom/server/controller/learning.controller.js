@@ -3,6 +3,28 @@ var router = express.Router();
 const mongoose = require("mongoose");
 const Profiles = require('../models/profile.model')
 var ObjectId= require("mongodb").ObjectID;
+
+
+router.post("/chapter", (req,res) =>
+{
+    let lr=[]
+    var sem=req.body.sem;
+    var subject=req.body.subject;
+    
+   
+    Profiles.find({sem:sem ,subject:subject},function(err,learn){
+        if (err) console.log(err)
+        learn.forEach(learn=>lr.push({chapter:learn.chapter}))
+        res.send(lr);
+        console.log(lr);
+        
+    })
+
+
+});
+
+
+
 router.post("/learningstudent", (req,res) =>
 {
     let lr=[]
@@ -10,7 +32,7 @@ router.post("/learningstudent", (req,res) =>
     var subject=req.body.subject;
     var chapter=req.body.chapter;
    
-    Profiles.find({sem:sem ,subject:subject},function(err,learn){
+    Profiles.find({sem:sem ,subject:subject,chapter:chapter},function(err,learn){
         if (err) console.log(err)
         learn.forEach(learn=>lr.push({imagePath:learn.imagePath,name:learn.name,sem:learn.sem,_id:learn._id,subject:learn.subject}))
         res.send(lr);

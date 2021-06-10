@@ -46,6 +46,7 @@ import { TutorialsComponent } from './tutorials/tutorials.component';
 import { ListComponent } from './list/list.component';
 import { ToastrModule } from 'ngx-toastr';
 import { VideolectureComponent } from './videolecture/videolecture.component';
+import { ChapterComponent } from './chapter/chapter.component';
 
 
 
@@ -84,6 +85,8 @@ import { VideolectureComponent } from './videolecture/videolecture.component';
     TeachingComponent,
    
     VideolectureComponent,
+   
+    ChapterComponent,
   ],
   imports: [
     BrowserModule,

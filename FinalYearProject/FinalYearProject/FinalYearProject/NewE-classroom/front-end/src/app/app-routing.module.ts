@@ -36,6 +36,7 @@ import { ResultdownComponent } from './resultdown/resultdown.component';
 import { TutorialsComponent } from './tutorials/tutorials.component';
 import { ListComponent } from './list/list.component';
 import { VideolectureComponent } from './videolecture/videolecture.component';
+import { ChapterComponent } from './chapter/chapter.component';
 
 const routes: Routes = [
   {
@@ -149,8 +150,14 @@ const routes: Routes = [
     canActivate:[AuthTeacherGuard]
   },
   {
-    path: 'learningstudent/:sem/:subject',
+    path: 'learningstudent/:sem/:subject/:chapter',
     component: LearningstudentComponent,
+    canActivate:[AuthGuard]
+
+  },
+  {
+    path: 'chapter/:sem/:subject',
+    component: ChapterComponent,
     canActivate:[AuthGuard]
 
   },

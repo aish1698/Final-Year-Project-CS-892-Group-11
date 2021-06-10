@@ -35,7 +35,7 @@ export class LearningComponent implements OnInit {
   click(){
 
 
-    this.router.navigate(['/learningstudent',this.sem,this.subject]);
+    this.router.navigate(['/chapter',this.sem,this.subject]);
 
     
     var sem= document.forms["RegForm"]["sem"];

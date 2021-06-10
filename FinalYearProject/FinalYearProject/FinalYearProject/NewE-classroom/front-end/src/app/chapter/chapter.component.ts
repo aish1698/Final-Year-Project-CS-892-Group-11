@@ -1,48 +1,41 @@
-
-import { Component, OnInit,ChangeDetectorRef,OnDestroy} from '@angular/core';
+import { Component, OnInit,ChangeDetectorRef,OnDestroy, ɵɵpureFunction1} from '@angular/core';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute }  from "@angular/router";
 import { Subscription } from "rxjs";
 import { Router} from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import{LearningstudentService} from "src/app/learningstudent/learningstudent.service"
+import{ChapterService} from "src/app/chapter/chapter.service"
 import { Profile } from "src/app/models/profile";
 import { CurrentrouteService } from '../currentroute.service';
 import { LoginService } from '../user/login/login.service';
+import { createPublicKey } from 'crypto';
 @Component({
-  selector: 'app-learningstudent',
-  templateUrl: './learningstudent.component.html',
-  styleUrls: ['./learningstudent.component.css']
+  selector: 'app-chapter',
+  templateUrl: './chapter.component.html',
+  styleUrls: ['./chapter.component.css']
 })
-export class LearningstudentComponent implements OnInit,OnDestroy {
- sem :any;
+export class ChapterComponent implements  OnInit,OnDestroy {
+  sem :any;
  subject:any;
- imagePath:any;
  chapter:any;
  profiles: Profile[] = [];
   private profileSubscription: Subscription = new Subscription;
   ApiService: any;
 
   constructor(private http:HttpClient,
-   private service: LearningstudentService,
-    private route:ActivatedRoute,
-    private router : Router,
-    private ref: ChangeDetectorRef,private currentroute:CurrentrouteService,private login:LoginService) { }
+    private service: ChapterService,
+     private route:ActivatedRoute,
+     private router : Router,
+     private ref: ChangeDetectorRef,private currentroute:CurrentrouteService,private login:LoginService) { }
   ngOnDestroy(): void {
     throw new Error('Method not implemented.');
   }
 
   ngOnInit(): void {
-    this.sem=this.route.snapshot.params.sem;
-    console.log(this.sem);
-    this.imagePath=this.route.snapshot.params.imagePath;
-    console.log(this.imagePath);
-
-
     this.sem= this.route.snapshot.paramMap.get('sem');
     this.subject= this.route.snapshot.paramMap.get('subject');
-    this.chapter= this.route.snapshot.paramMap.get('chapter');
-    this.service.getProfiles(this.sem,this.subject,this.chapter)
+    
+    this.service.getProfiles(this.sem,this.subject)
     .subscribe((profiles: any) => {
 
           console.log(profiles);
@@ -52,10 +45,7 @@ export class LearningstudentComponent implements OnInit,OnDestroy {
       this.currentroute.setcurrentroute();
    if(this.login.isStudent()){
      console.log("student");
-   }
-
   }
 
-
-
   }
+}
