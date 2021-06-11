@@ -37,20 +37,54 @@ chapter :any;
 
     this.service.getProfiles(this.sem,this.subject,this.chapter)
     .subscribe((profiles: any) => {
-         
+
          // console.log(profiles);
            this.profiles = profiles;
-         
+alert("Double click on file icon to fetch source-file!");
       });
       this.currentroute.setcurrentroute();
       if(this.login.isStudent()){
         console.log("student");
       }
-    
+
   }
 
-     
-    
+  getExt(ep:any){
+    var k=ep;
+    var ext=ep;
+    var e=ext.split('.').pop();
+  var p=document.getElementById("filepath")as HTMLElement;
+  p.remove();
+  var x=document.getElementById("kk") as HTMLElement;
+  if(e=='pdf'){
+  let string=' <a  href="'+k+'" style="color: black"> <i  class="fa fa-file-pdf-o" style="font-size:48px;color:red; margin-right:5px;"></i></a>';
+  x.innerHTML+=string;
   }
+  else if(e=='mp4'){
+    let string=' <a  href="'+k+'" style="color: black"><i class="fas fa-video  style="font-size:48px;color:blue; margin-right:5px;"></i></a>' ;
+    x.innerHTML+=string;
+  }
+  else if(e=='png'){
+    let s=' <a  href="'+k+'" style="color: black"><i class="far fa-file-image" style="font-size:48px;color:orange; margin-right:5px;"></i></a>';
+    x.innerHTML+=s;
+}
+else if(e=='jpeg'||e=='jpg'){
+  let s=' <a  href="'+k+'" style="color: black"><i class="fas fa-file-image" style="font-size:48px;color:green; margin-right:5px;"></i></a>';
+  x.innerHTML+=s;
+}
+  else if(e=='zip'||e=='rar'){
+    let s=' <a  href="'+k+'" style="color: black"><i class="far fa-file-archive" style="font-size:48px;color:#808080; margin-right:5px;"></i></a>';
+    x.innerHTML+=s;
+  }
+  else if(e=='doc'||e=='docx'){
+    let s=' <a  href="'+k+'" style="color: black"><i class="fas fa-file-word" style="font-size:48px;color:#000080; margin-right:5px;"></i></a>';
+    x.innerHTML+=s;
+  }
+  else{
+    let s=' <a  href="'+k+'" style="color: black"><i class="fas fa-file-alt" style="font-size:48px;color:#BEBEBE;margin-right:5px;"></i></a>';
+    x.innerHTML+=s;
+  }
+  console.log(e);
+    }
 
-
+  }

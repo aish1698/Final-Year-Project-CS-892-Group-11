@@ -2,7 +2,7 @@
     <div style=" padding-top: 70px;">
       <h1 style="text-align: center;">Download Assignments</h1>
     </div>
-    
+
     <div  class="container-fluid hi">
        <table>
          <thead>
@@ -16,18 +16,17 @@
         </thead>
         <tbody>
         <tr *ngFor="let profile of profiles;let i=index">
-        
+
             <td>{{i+1}}</td>
             <td>{{profile.sem}}</td>
             <td>{{profile.subject}}</td>
             <td>{{profile.chapter}}</td>
             <td>
-            <a  [href]="profile.imagePath" style="color: blue">
-               <span><b>{{profile.name}}</b></span></a>
+              <span id="kk"><i (dblclick)="getExt(profile.imagePath)"  id="filepath" class="far fa-file" style="font-size:40px; color:black;"></i></span>
+
+               <span><b>{{profile.name}}</b></span>
               </td>
       </tr>
     </tbody>
        </table>
         </div>
-
-   

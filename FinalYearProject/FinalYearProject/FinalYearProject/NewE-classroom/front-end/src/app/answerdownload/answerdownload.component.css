@@ -15,7 +15,9 @@ button {
 button:hover {
   opacity: 2.0;
 }
-
+i{
+  margin-right: 5px;
+}
 .hi {
   width: 100%;
  padding-top: 20px;
@@ -23,7 +25,7 @@ button:hover {
  padding-bottom: 50px;
 
 }
-table, td, th {  
+table, td, th {
 border: 1px solid #ddd;
 text-align: center;
 }
