@@ -21,12 +21,14 @@
         <div>
           <label for="password"><b > Password</b></label>
           <input
+          id="myInput"
             type="password"
             placeholder="Enter Password"
             name="password"
             required
             [(ngModel)]="password"
-          />
+          >
+          <input type="checkbox" (click)="myFunc()">Show Password
         </div>
 
         <button type="submit" (click)="clickHandler()" type="button" class="btn btn-dark">Login</button>

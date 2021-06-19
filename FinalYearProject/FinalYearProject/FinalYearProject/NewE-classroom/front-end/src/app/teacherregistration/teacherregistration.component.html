@@ -15,10 +15,10 @@
                 placeholder="Enter Full Name"
                 name="fullName"
                 required
-                
+
                 [(ngModel)]="fullName"
               />
-             
+
             </div>
             <div>
               <label for="userid"><b>User-ID</b></label>
@@ -28,11 +28,11 @@
                 name="userid"
                 required
                 [(ngModel)]="userid"
-                
-                
-                
+
+
+
               />
-            
+
             </div>
             <div>
               <label for="dept"><b>Department</b></label>
@@ -41,12 +41,12 @@
                 placeholder="Enter Department"
                 name="dept"
                 required
-                
+
                 [(ngModel)]="dept"
               />
-             
+
             </div>
-  
+
             <div>
               <label for="reg_id"><b>Registration ID</b></label>
               <input
@@ -54,21 +54,21 @@
                 placeholder="Enter Registration ID (This should be same as User-ID)"
                 name="reg_id"
                 required
-                
+
                 [(ngModel)]="reg_id"
               />
-             
+
             </div>
-  
-            
-  
+
+
+
             <div>
               <label for="mobile"><b>Mobile</b></label>
               <input
                 type="text"
                 placeholder="Enter Mobile no."
                 name="mobile"
-                
+
                 required
                 [(ngModel)]="mobile"
               />
@@ -87,13 +87,15 @@
           <div>
             <label for="password"><b>Password</b></label>
             <input
+            id="myInput"
               type="password"
               placeholder="Enter Password"
               name="password"
-            
+
               required
               [(ngModel)]="password"
-            />
+            >
+              <input type="checkbox" (click)="myFunc()">Show Password
           </div>
 
           <div>
@@ -102,7 +104,7 @@
               type="password"
               placeholder="Enter Security Code For Extra Security"
               name="securitycode"
-            
+
               required
               [(ngModel)]="securitycode"
             />
@@ -112,9 +114,9 @@
           <button type="submit" (click)="registerHandler()">Sign Up</button>
         </div><br>
         <span class="psw"><a href="#" style="color: blue; " routerLink="/teacher-sign-in">Already a member?Sign in</a></span>
-  
+
         <div class="link-container">
-          
+
           <p>OR</p>
           <p>Sign Up with</p>
           <div>
@@ -123,14 +125,14 @@
               rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
             />
-  
+
             <!-- Add font awesome icons -->
             <a href="https://www.facebook.com" class="fa fa-facebook"></a>
-  
+
             <a href="https://myaccount.google.com" class="fa fa-google"></a>
             <a href="https://twitter.com" class="fa fa-twitter"></a>
           </div>
         </div>
-      </form> 
+      </form>
     </div>
   </div>

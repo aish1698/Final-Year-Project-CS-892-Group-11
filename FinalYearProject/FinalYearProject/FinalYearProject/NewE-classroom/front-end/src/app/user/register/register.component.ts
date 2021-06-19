@@ -12,7 +12,7 @@ import { Router} from '@angular/router';
 })
 export class registerComponent implements OnInit {
   [x: string]: any;
-  
+
   showSucessMessage: boolean | undefined;
   serverErrorMessages: string | undefined;
   fullName = '';
@@ -26,7 +26,7 @@ export class registerComponent implements OnInit {
     securitycode = '';
 
   constructor(public service: RegisterService ,private router : Router) {
-  
+
    }
 
   ngOnInit() {
@@ -67,93 +67,93 @@ export class registerComponent implements OnInit {
     form.resetForm();
     this.serverErrorMessages = '';
   }
- 
+
   registerHandler(){
-    var fullName = document.forms["RegForm"]["fullName"];               
-    var userid = document.forms["RegForm"]["userid"]; 
-    var dept =   document.forms["RegForm"]["dept"];  
-    var class_roll =   document.forms["RegForm"]["class_roll"]; 
-    var sem =   document.forms["RegForm"]["sem"]; 
-    var email =  document.forms["RegForm"]["email"];  
+    var fullName = document.forms["RegForm"]["fullName"];
+    var userid = document.forms["RegForm"]["userid"];
+    var dept =   document.forms["RegForm"]["dept"];
+    var class_roll =   document.forms["RegForm"]["class_roll"];
+    var sem =   document.forms["RegForm"]["sem"];
+    var email =  document.forms["RegForm"]["email"];
     var mobile = document.forms["RegForm"]["mobile"];
     var password = document.forms["RegForm"]["password"];
     var securitycode = document.forms["RegForm"]["securitycode"];
     var ph= /^\d{10}$/;
     var e=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    
 
-    
-    if (fullName.value == "")                                  
-    { 
-        window.alert("Please enter your Full Name."); 
-        fullName.focus(); 
-        return false; 
-    } 
-   
-    // if (userid.value == "")                               
-    // { 
-    //     window.alert("Please Enter UserID"); 
-    //     userid.focus(); 
-    //     return false; 
-    // } 
-    if (!(userid.value.match("^[0-9]{2}/[0-9]{3}$") ))                                   
-    { 
-        window.alert("Please enter valid UserID."); 
-        mobile.focus(); 
-        return false; 
-    } 
-    if (dept.value == "")                               
-    { 
-        window.alert("Please Enter Department"); 
-        dept.focus(); 
-        return false; 
-    } 
-    if (class_roll.value == "")                               
-    { 
-        window.alert("Please Enter Class Roll"); 
-        class_roll.focus(); 
-        return false; 
-    } 
-    
-    // if (!(isNaN(class_roll.value) )    )                             
-    // { 
-    //     window.alert("Enter valid input for class roll number."); 
-    //     class_roll.focus(); 
-    //     return false; 
-    // } 
-    if (sem.value == "")                                  
-    { 
-        window.alert("Semester field is empty."); 
-        sem.focus(); 
-        return false; 
-    } 
-  
-    if (!(sem.value>=1 && sem.value<=8)   )                              
-    { 
-        window.alert("Please enter valid semester."); 
-        sem.focus(); 
-        return false; 
-    } 
-    if (mobile.value == "")                                   
-    { 
-        window.alert("Please enter phone number."); 
-        mobile.focus(); 
-        return false; 
-    } 
 
-    if (!(mobile.value.match(ph) ))                                   
-    { 
-        window.alert("Please enter valid phone number."); 
-        mobile.focus(); 
-        return false; 
-    } 
-   
-    if (email.value == "")                           
-    { 
-    
-        window.alert("Please enter your EmailID."); 
-        email.focus(); 
-        return false; 
+
+    if (fullName.value == "")
+    {
+        window.alert("Please enter your Full Name.");
+        fullName.focus();
+        return false;
+    }
+
+    // if (userid.value == "")
+    // {
+    //     window.alert("Please Enter UserID");
+    //     userid.focus();
+    //     return false;
+    // }
+    if (!(userid.value.match("^[0-9]{2}/[0-9]{3}$") ))
+    {
+        window.alert("Please enter valid UserID.");
+        mobile.focus();
+        return false;
+    }
+    if (dept.value == "")
+    {
+        window.alert("Please Enter Department");
+        dept.focus();
+        return false;
+    }
+    if (class_roll.value == "")
+    {
+        window.alert("Please Enter Class Roll");
+        class_roll.focus();
+        return false;
+    }
+
+    // if (!(isNaN(class_roll.value) )    )
+    // {
+    //     window.alert("Enter valid input for class roll number.");
+    //     class_roll.focus();
+    //     return false;
+    // }
+    if (sem.value == "")
+    {
+        window.alert("Semester field is empty.");
+        sem.focus();
+        return false;
+    }
+
+    if (!(sem.value>=1 && sem.value<=8)   )
+    {
+        window.alert("Please enter valid semester.");
+        sem.focus();
+        return false;
+    }
+    if (mobile.value == "")
+    {
+        window.alert("Please enter phone number.");
+        mobile.focus();
+        return false;
+    }
+
+    if (!(mobile.value.match(ph) ))
+    {
+        window.alert("Please enter valid phone number.");
+        mobile.focus();
+        return false;
+    }
+
+    if (email.value == "")
+    {
+
+        window.alert("Please enter your EmailID.");
+        email.focus();
+        return false;
     }
     if (!(email.value.match(e)))
     {
@@ -162,20 +162,20 @@ export class registerComponent implements OnInit {
       return false;
     }
 
-   
-    // if (password.value == "")                        
-    // { 
-    //     window.alert("Please enter your password"); 
-    //     password.focus(); 
-    //     return false; 
-    // } 
 
-    if (! (password.value.match("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}"))   )                     
-    { 
-        window.alert("Your password must contain min 8 letters, with at least a special character,at least one upper and one lower case and a number."); 
-        password.focus(); 
-        return false; 
-    } 
+    // if (password.value == "")
+    // {
+    //     window.alert("Please enter your password");
+    //     password.focus();
+    //     return false;
+    // }
+
+    if (! (password.value.match("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}"))   )
+    {
+        window.alert("Your password must contain min 8 letters, with at least a special character,at least one upper and one lower case and a number.");
+        password.focus();
+        return false;
+    }
 
     if (!(securitycode.value.match("^[0-9]{4}")))
     {
@@ -184,12 +184,20 @@ export class registerComponent implements OnInit {
       return false;
     }
 
-    
+
   return this.service.register( this.fullName, this.userid,this.dept,this.class_roll,this.sem,this.email,this.mobile, this.password ,this.securitycode)
   .subscribe(() => {console.log('sign up successful!'); this.router.navigateByUrl('/home');}, err =>{console.log(err)})
-  
+
   };
 
-
+  myFunc(){
+    var x=document.getElementById("myInput") as HTMLInputElement;
+    if(x.type=="password"){
+      x.type="text";
+    }
+    else{
+      x.type="password";
+    }
+  }
 
 }

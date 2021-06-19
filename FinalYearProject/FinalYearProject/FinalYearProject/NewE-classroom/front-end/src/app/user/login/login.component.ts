@@ -19,7 +19,7 @@ export class loginComponent {
 
   constructor(private service: ApiService,private router : Router) { }
 
-  
+
   clickHandler(){
     console.log( this.userid, this.password)
 
@@ -28,14 +28,23 @@ export class loginComponent {
     localStorage.setItem('token', data.token)
     localStorage.setItem('userid',this.userid)
     localStorage.setItem("student","T");
-  }, 
+  },
   err => {console.log(err);
     alert("Wrong UserID or Password. Try again! ");
 
     }
-    
+
     )}
     onPress(){
       this.router.navigate(['/forgotpassword']);
+    }
+    myFunc(){
+      var x=document.getElementById("myInput") as HTMLInputElement;
+      if(x.type=="password"){
+        x.type="text";
+      }
+      else{
+        x.type="password";
+      }
     }
 }

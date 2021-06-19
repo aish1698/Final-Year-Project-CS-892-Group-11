@@ -40,7 +40,7 @@ chapter :any;
 
          // console.log(profiles);
            this.profiles = profiles;
-alert("Double click on file icon to fetch source-file!");
+
       });
       this.currentroute.setcurrentroute();
       if(this.login.isStudent()){
@@ -53,8 +53,7 @@ alert("Double click on file icon to fetch source-file!");
     var k=ep;
     var ext=ep;
     var e=ext.split('.').pop();
-  var p=document.getElementById("filepath")as HTMLElement;
-  p.remove();
+
   var x=document.getElementById("kk") as HTMLElement;
   if(e=='pdf'){
   let string=' <a  href="'+k+'" style="color: black"> <i  class="fa fa-file-pdf-o" style="font-size:48px;color:red; margin-right:5px;"></i></a>';
@@ -85,6 +84,8 @@ else if(e=='jpeg'||e=='jpg'){
     x.innerHTML+=s;
   }
   console.log(e);
+  var  p=document.getElementById("kk") as HTMLElement;
+  p.id="ss";
     }
 
   }

@@ -15,10 +15,10 @@
               placeholder="Enter Full Name"
               name="fullName"
               required
-              
+
               [(ngModel)]="fullName"
             />
-           
+
           </div>
           <div>
             <label for="userid"><b>User-ID</b></label>
@@ -28,7 +28,7 @@
               name="userid"
               required
               [(ngModel)]="userid" />
-          
+
           </div>
           <div>
             <label for="dept"><b>Department</b></label>
@@ -37,10 +37,10 @@
               placeholder="Enter Department"
               name="dept"
               required
-              
+
               [(ngModel)]="dept"
             />
-           
+
           </div>
 
           <div>
@@ -50,10 +50,10 @@
               placeholder="Enter Class Roll"
               name="class_roll"
               required
-              
+
               [(ngModel)]="class_roll"
             />
-           
+
           </div>
 
           <div>
@@ -63,10 +63,10 @@
               placeholder="Enter Sem"
               name="sem"
               required
-              
+
               [(ngModel)]="sem"
             />
-           
+
           </div>
 
           <div>
@@ -75,7 +75,7 @@
               type="text"
               placeholder="Enter Mobile no."
               name="mobile"
-              
+
               required
               [(ngModel)]="mobile"
             />
@@ -94,13 +94,15 @@
         <div>
           <label for="password"><b>Password</b></label>
           <input
+          id="myInput"
             type="password"
             placeholder="Enter Password"
             name="password"
-          
+
             required
             [(ngModel)]="password"
-          />
+          >
+          <input type="checkbox" (click)="myFunc()">Show Password
         </div>
         <div>
           <label for="securitycode"><b>Security Code</b></label>
@@ -108,7 +110,7 @@
             type="password"
             placeholder="Enter Security Code For Extra Security"
             name="securitycode"
-          
+
             required
             [(ngModel)]="securitycode"
           />
@@ -118,14 +120,14 @@
       <span class="psw"><a href="#" style="color: blue; " routerLink="/sign-in">Already a member?Sign in</a></span>
 
       <div class="link-container">
-        
+
 
         <br />
         <p>OR</p>
         <br />
         <p>Sign Up with</p>
         <div>
-          
+
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -138,7 +140,7 @@
           <a href="https://twitter.com" class="fa fa-twitter"></a>
         </div>
       </div>
-      
+
     </form>
   </div>
 </div>

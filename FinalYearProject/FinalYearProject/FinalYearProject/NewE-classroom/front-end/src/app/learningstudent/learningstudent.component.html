@@ -9,10 +9,10 @@
         <th>Lesson's name</th>
         <th>Source</th>
       </tr>
-      <tr *ngFor="let res of profiles ;let i=index" >
+      <tr *ngFor="let res of profiles ;let i=index" (mouseenter)="getExt(res.imagePath)" >
         <td>{{i+1}}</td>
         <td><h4>{{res.name}}</h4></td>
-       <td id="kk"><i (dblclick)="getExt(res.imagePath)"  id="filepath" class="far fa-file" style="font-size:40px; color:black;"></i></td>
+       <td ><span id="kk"></span></td>
       </tr>
     </table>
     </div>

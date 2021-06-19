@@ -15,14 +15,14 @@
          </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let profile of profiles;let i=index">
+        <tr *ngFor="let profile of profiles;let i=index" (mouseenter)="getExt(profile.imagePath)">
 
             <td>{{i+1}}</td>
             <td>{{profile.sem}}</td>
             <td>{{profile.subject}}</td>
             <td>{{profile.chapter}}</td>
             <td>
-              <span id="kk"><i (dblclick)="getExt(profile.imagePath)"  id="filepath" class="far fa-file" style="font-size:40px; color:black;"></i></span>
+              <span id="kk"></span>
 
                <span><b>{{profile.name}}</b></span>
               </td>
