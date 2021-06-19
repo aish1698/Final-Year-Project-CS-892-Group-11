@@ -11,10 +11,10 @@ import { FormGroup, FormControl } from "@angular/forms";
 
 @Component({
   selector: 'app-learning',
-  templateUrl: './learning.component.html',
-  styleUrls: ['./learning.component.css']
+  templateUrl: './downloadvideolec.component.html',
+  styleUrls: ['./downloadvideolec.component.css']
 })
-export class LearningComponent implements OnInit {
+export class DownloadvideolecComponent implements OnInit {
 
   sem: any;
   subject: any;

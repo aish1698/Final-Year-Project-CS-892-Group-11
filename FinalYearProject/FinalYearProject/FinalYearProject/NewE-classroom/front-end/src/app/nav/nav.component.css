@@ -1,12 +1,18 @@
 a {
-    color: #fff;
+    color: rgb(10, 10, 10);
     text-decoration: none;
   }
  
   .example-spacer {
     flex: 1 1 auto;
   }
-  
+ a:hover{
+    text-decoration: underline;
+  }
+ a.active {
+    text-decoration: wavy;
+    color: black;
+  }
   .brand {
     margin-right: 10px;
   }
@@ -19,4 +25,9 @@ a {
     max-height: 45px;
     max-width: 250px;
    
+}
+nav{
+  
+  box-shadow: 5px 5px rgba(58, 55, 55, 0.288);
+
 }

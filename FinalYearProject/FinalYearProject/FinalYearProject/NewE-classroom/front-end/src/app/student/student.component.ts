@@ -34,4 +34,7 @@ export class StudentComponent implements OnInit {
     this.router.navigate(['/downloadresult']);
 
   }
+  videolectureHandler(){
+    this.router.navigate(['/downloadvideolec']);
+  }
 }

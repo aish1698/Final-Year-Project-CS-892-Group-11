@@ -38,6 +38,8 @@ import { ListComponent } from './list/list.component';
 import { VideolectureComponent } from './videolecture/videolecture.component';
 import { ChapterComponent } from './chapter/chapter.component';
 import { AssignmentchapterComponent } from './assignmentchapter/assignmentchapter.component';
+import { DownloadvideolecComponent } from "./downloadvideolec/downloadvideolec.component";
+import { Downloadvideolec2Component } from "./downloadvideolec2/downloadvideolec2.component";
 
 const routes: Routes = [
   {
@@ -193,6 +195,18 @@ const routes: Routes = [
     path:'list/:sem/:subject',
     component:ListComponent,
     canActivate:[AuthTeacherGuard]
+  },
+
+  {
+    path:'downloadvideolec',
+    component:DownloadvideolecComponent,
+    canActivate:[AuthGuard]
+  },
+
+  {
+    path:'downloadvideolec2',
+    component:Downloadvideolec2Component,
+    canActivate:[AuthGuard]
   },
   
   {

@@ -48,6 +48,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { VideolectureComponent } from './videolecture/videolecture.component';
 import { ChapterComponent } from './chapter/chapter.component';
 import { AssignmentchapterComponent } from './assignmentchapter/assignmentchapter.component';
+import { DownloadvideolecComponent } from './downloadvideolec/downloadvideolec.component';
+import { Downloadvideolec2Component } from './downloadvideolec2/downloadvideolec2.component';
 
 
 @NgModule({
@@ -88,6 +90,8 @@ import { AssignmentchapterComponent } from './assignmentchapter/assignmentchapte
    
     ChapterComponent,
     AssignmentchapterComponent,
+    DownloadvideolecComponent,
+    Downloadvideolec2Component,
   ],
   imports: [
     BrowserModule,

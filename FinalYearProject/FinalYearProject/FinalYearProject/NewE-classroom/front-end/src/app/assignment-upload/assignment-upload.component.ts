@@ -59,7 +59,7 @@ constructor(private assignmentuploadService: AssignmentUploadService,private cur
     this.assignmentuploadService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter,this.userid);
    
     if(!(this.form.valid)){
-      alert("FUCK!!!!")
+      alert("ALL FIELDS ARE MANDATORY! Please enter the appropriate details.")
       this.form.reset();
       this.imageData=" ";
 

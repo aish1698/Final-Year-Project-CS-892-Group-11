@@ -8,8 +8,9 @@
           <p style="font-size: 25px;">Hi,Students,
             Let's get you onboarded!</p>
           <p style="font-size: 20px;">Students Sign up</p>
+          <p style="font-size: 18px; color: maroon;">All fields are mandatory.</p>
           <div>
-            <label for="fullName"><b>Name</b></label>
+            <label for="fullName"><b>Name*</b></label>
             <input
               type="text"
               placeholder="Enter Full Name"
@@ -21,7 +22,7 @@
 
           </div>
           <div>
-            <label for="userid"><b>User-ID</b></label>
+            <label for="userid"><b>User-ID*</b></label>
             <input
               type="text"
               placeholder="Enter User-ID"
@@ -31,7 +32,7 @@
 
           </div>
           <div>
-            <label for="dept"><b>Department</b></label>
+            <label for="dept"><b>Department*</b></label>
             <input
               type="text"
               placeholder="Enter Department"
@@ -44,7 +45,7 @@
           </div>
 
           <div>
-            <label for="class_roll"><b>ClassRoll</b></label>
+            <label for="class_roll"><b>ClassRoll*</b></label>
             <input
               type="text"
               placeholder="Enter Class Roll"
@@ -57,7 +58,7 @@
           </div>
 
           <div>
-            <label for="sem"><b>Semester</b></label>
+            <label for="sem"><b>Semester*</b></label>
             <input
               type="text"
               placeholder="Enter Sem"
@@ -70,7 +71,7 @@
           </div>
 
           <div>
-            <label for="mobile"><b>Mobile</b></label>
+            <label for="mobile"><b>Mobile*</b></label>
             <input
               type="text"
               placeholder="Enter Mobile no."
@@ -81,7 +82,7 @@
             />
           </div>
           <div>
-            <label for="email"><b>Email</b></label>
+            <label for="email"><b>Email*</b></label>
             <input
               type="text"
               placeholder="Enter Email ID"
@@ -92,7 +93,7 @@
           </div>
         </div>
         <div>
-          <label for="password"><b>Password</b></label>
+          <label for="password"><b>Password*</b></label>
           <input
           id="myInput"
             type="password"
@@ -104,8 +105,9 @@
           >
           <input type="checkbox" (click)="myFunc()">Show Password
         </div>
+        <br>
         <div>
-          <label for="securitycode"><b>Security Code</b></label>
+          <label for="securitycode"><b>Security Code*</b></label>
           <input
             type="password"
             placeholder="Enter Security Code For Extra Security"
@@ -117,12 +119,13 @@
         </div>
         <button  type="submit" (click)="registerHandler()">Sign Up</button>
       </div><br>
-      <span class="psw"><a href="#" style="color: blue; " routerLink="/sign-in">Already a member?Sign in</a></span>
+      <span class="psw"><a href="#" style="color: blue; " routerLink="/sign-in">Already a member? Sign in</a></span>
 
       <div class="link-container">
 
 
-        <br />
+        <br>
+        <br>
         <p>OR</p>
         <br />
         <p>Sign Up with</p>

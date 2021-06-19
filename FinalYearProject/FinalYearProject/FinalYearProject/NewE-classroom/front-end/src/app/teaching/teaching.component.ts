@@ -66,6 +66,20 @@ export class TeachingComponent implements OnInit {
 
   onSubmit() {
     console.log("submit");
+    this.teachingService.addProfile(
+      this.form.value.sem, 
+      this.form.value.subject,
+      this.form.value.name, 
+      this.form.value.image, 
+      this.form.value.chapter, 
+      this.userid
+      );
+    if(!(this.form.valid)){
+      alert("ALL FIELDS ARE MANDATORY! Please enter appropriate details.")
+      this.form.reset();
+
+    }
+    if((this.form.valid)){
     this.teachingService.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter,this.userid);
     this.toastr.success('Material Uploaded successfully!', '',
     {
@@ -74,7 +88,7 @@ export class TeachingComponent implements OnInit {
     });
     this.imageData =" ";
     this.form.reset();
-    
+  }
   }
   
   onupdate(){
