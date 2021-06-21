@@ -10,12 +10,80 @@
 
 <div id="container">
 
-<button type="button" class="btn btn-primary"(click)="materialdHandler()" ><h3>Download Material</h3></button><br><br>
-<button  type="button" class="btn btn-danger"(click)="assignmentdownloadHandler()"><h3>Download Assignment</h3></button><br><br>
-<button type="button" class="btn btn-info"(click)="videolectureHandler()" ><h3>Download Video Lecture</h3></button><br><br>
-<button  type="button" class="btn btn-success"(click)="answerHandler()"><h3>Upload Answers</h3></button><br><br>
-<button  type="button" class="btn btn-warning"(click)="resultHandler()"><h3>View Result</h3></button><br><br>
-<button  type="button" class="btn btn-dark"(click)="videocallHandler()"><h3>Doubt Clearing Session</h3></button>
+  <div class="row1">
+    <div class="column">
+      <div class="card border-info mb-3" >
+<button class="btn">  <div class="card-header bg-info" (click)="materialdHandler()"><i class="fas fa-book border-info"  style="font-size:38px;color:white;margin-right:5px"></i></div></button>
+  <div class="card-body ">
+    <h5 class="card-title text-info">Download Material</h5>
+    <p class="card-text">Download any study material by clicking here!</p>
+  </div>
+</div>
 
+
+    </div>
+    <div class="column">
+      <div class="card  border-info mb-3" >
+<button class="btn">  <div class="card-header bg-info" (click)="assignmentdownloadHandler()"><i class="fas fa-address-book" style="font-size:38px;color:white;margin-right:5px"></i></div></button>
+  <div class="card-body" >
+    <h5 class="card-title text-info">Download Assignment</h5>
+    <p class="card-text">Download all the scheduled assignments to complete!</p>
+  </div>
+</div>
+
+
+    </div>
+    <div class="column">
+      <div class="card  border-info mb-3" >
+  <button class="btn"><div class="card-header bg-info" (click)="videolectureHandler()" ><i class="far fa-play-circle"   style="font-size:38px;color:white;margin-right:5px"></i></div></button>
+  <div class="card-body ">
+    <h5 class="card-title text-info">Download Video Lecture</h5>
+    <p class="card-text">Download and View the Class Lectures!.</p>
+  </div>
+</div>
+
+
+    </div>
+
+
+
+
+
+  </div>
+  <div class=row2>
+    <div class="column">
+      <div class="card  border-info mb-3" >
+    <button class="btn"><div class="card-header bg-info" (click)="answerHandler()"><i class="far fa-sticky-note" style="font-size:38px;color:white;margin-right:5px"></i></div></button>
+  <div class="card-body">
+    <h5 class="card-title text-info">Upload Answers</h5>
+    <p class="card-text">Upload all the answer-sheets here!</p>
+  </div>
+</div>
+
+
+    </div>
+    <div class="column">
+      <div class="card  border-info mb-3" >
+  <button class="btn"><div class="card-header bg-info" (click)="resultHandler()"><i class="fas fa-id-card" style="font-size:38px;color:white;margin-right:5px"></i></div></button>
+  <div class="card-body">
+    <h5 class="card-title text-info">View Result</h5>
+    <p class="card-text">View your report-card instantly!</p>
+  </div>
+</div>
+
+
+    </div>
+    <div class="column">
+      <div class="card  border-info mb-3" >
+  <button class="btn"><div class="card-header bg-info"(click)="videocallHandler()"><i class="fas fa-video" style="font-size:38px;color:white;margin-right:5px"></i></div></button>
+  <div class="card-body">
+    <h5 class="card-title text-info">Doubt-Clearing Session</h5>
+    <p class="card-text">Clear your doubts through one to one video-call.</p>
+  </div>
+</div>
+
+
+    </div>
+    </div>
 </div>
 </div>

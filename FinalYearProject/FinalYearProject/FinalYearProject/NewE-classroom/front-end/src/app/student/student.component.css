@@ -4,37 +4,64 @@ h2{
   margin-top: 60px;
   margin-bottom: 90px;
   font-size: 60px;
-  font-family: sans-serif;
+  font-family:fantasy;
   font-weight: bolder;
-  color:#1F51FF;
+  color:#454545;
+  word-spacing: 10px;
 }
-
+h5{
+  font-weight: bold;
+  font-size:16px;
+}
 .content{
   padding-top:20px;
     padding-bottom: 40px;
 margin-top:40px;
   margin-bottom: 40px;
 text-align:center;
+background-color: rgb(202, 242, 245);
 
-  background-image: url("src\assets\images\stcet_students.jpg");
-  background-repeat: no-repeat;
-
-  background-size:100%;
-}
-
-.btn{
-margin:auto;
-text-align: center;
-height: 90px;
-width:500px;
-display:block;
-align-items: center;
-border-radius: 35px;
-font-size: 20px;
-font-weight: bolder;
 
 }
+
+
 #container{
   padding-top: 30px;
   padding-bottom: 30px;
+}
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+  margin-left: 100px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row1 {margin-left:50px;
+margin-top:40px;}
+
+/* Clear floats after the columns */
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  width:18rem;
+
+}
+.row2 {margin-left:50px;
+margin-top:40px;
+}
+
+/* Clear floats after the columns */
+.row2:after {
+  content: "";
+  display: table;
+  clear: both;
 }
