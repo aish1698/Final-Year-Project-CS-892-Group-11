@@ -3,19 +3,19 @@
     flex: 1;
     flex-direction: column;
   }
-  
+
   .main {
     display: flex;
     flex: 1;
     flex-direction: column;
   }
-  
+
   .root {
     display: flex;
     flex: 1;
     flex-direction: column;
   }
-  
+
   footer {
     background: #374147;
     color: #ccc;
@@ -27,7 +27,7 @@
     bottom: 0;
     width: 100%;
   }
-  
+
   footer a {
     color: #fff;
     text-decoration: none;
@@ -44,6 +44,5 @@
     margin-left: -50px;
     height: 100px;
     width: 100px;
+    
   }
-  
-  

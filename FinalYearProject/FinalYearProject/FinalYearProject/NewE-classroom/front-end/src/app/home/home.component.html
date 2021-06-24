@@ -5,17 +5,34 @@
 
   </div>
   </div>
-  <div style="padding-bottom: 50px;padding-top: 10px;" class="columns">
+  <div  class="row">
+
+
+
+
+
+
 
   <div class="column">
+    <div class="card  border-info mb-3" >
+  <button class="btn"><div class="card-header bg-info" (click)="loginHandler()"><i class="fas fa-unlock-alt" style="font-size:38px;color:white;margin-right:5px"></i></div></button>
+<div class="card-body">
+  <h5 class="card-title text-info">Sign-in</h5>
+  <p class="card-text">Welcome back!Registered students login here</p>
+</div>
+</div>
 
-  <button type="button" class="btn btn-lg btn-outline-info" (click)="loginHandler()"> <h3><i class="fas fa-unlock-alt"></i>Sign-in</h3></button>
 
   </div>
-
   <div class="column">
+    <div class="card  border-success mb-3" >
+<button class="btn"><div class="card-header bg-success" (click)="signupHandler()"><i class="far fa-edit" style="font-size:38px;color:white;margin-right:5px"></i></div></button>
+<div class="card-body">
+  <h5 class="card-title text-success">Sign-Up</h5>
+  <p class="card-text">New Student?Register here to access the portal</p>
+</div>
+</div>
 
-  <button type="button" class="btn btn-lg btn-outline-success" (click)="signupHandler()"><h3><i class="far fa-edit"></i>  Sign-Up</h3></button>
 
-    </div>
   </div>
+</div>

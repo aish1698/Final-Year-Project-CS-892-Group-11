@@ -11,29 +11,37 @@ body {
   button {
     opacity: 0.7;
   }
-  
+
   button:hover {
     opacity: 2.0;
   }
-  
+
   .hi {
     width: 100%;
    padding-top: 20px;
    padding-left: 410px;
    padding-bottom: 50px;
-  
+
   }
-  table, td, th {  
+  table, td, th {
   border: 1px solid #ddd;
   text-align: center;
   }
-  
+
   table {
   border-collapse: collapse;
+
   width: 40%;
-  
+  margin-left: 110px;
   }
-  
+
   th, td {
   padding: 15px;
+  }
+  h1{
+    font-family: fantasy;
+    word-spacing: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 50px;
   }

@@ -1,5 +1,5 @@
 
-<h2>Welcome to Live Interactive Video Session</h2>
+<h2>Welcome to Live Interactive Video Session!</h2>
 <h3>My unique id is <u> {{mypeerid}} </u></h3>
 <div id="container">
 
@@ -9,11 +9,11 @@
 <input class="inp" type="text" name="" value="" [(ngModel)]="anotherId">
 <br>
 </div>
-<button  class="btn btn-primary" (click)="connect()" >Connect</button>
+<button  class="btn btn-info btn-lg" (click)="connect()" >Connect</button>
 <br>
-<button  class="btn btn-primary" (click)="videoconnect()"(click)="autoConnect()" >Start Video-Call</button>
+<button  class="btn btn-info btn-lg" (click)="videoconnect()"(click)="autoConnect()" >Start Video-Call</button>
 <br>
-<button  class="btn btn-primary" id="dis"  (click)="videoDisconnect()" >Disconnect Video-Call</button>
+<button  class="btn btn-info btn-lg" id="dis"  (click)="videoDisconnect()" >Disconnect Video-Call</button>
 <br>
 
 <video #myvideo class="vid" >

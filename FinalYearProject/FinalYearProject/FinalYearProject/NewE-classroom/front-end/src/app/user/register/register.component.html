@@ -5,10 +5,10 @@
     <form class ="form" name="RegForm" action="/submit.php" method="post">
       <div class="container">
         <div>
-          <p style="font-size: 25px;">Hi,Students,
+          <p style="font-size: 35px;font-family:fantasy; word-spacing:5px;">Hi,Students,
             Let's get you onboarded!</p>
-          <p style="font-size: 20px;">Students Sign up</p>
-          <p style="font-size: 18px; color: maroon;">All fields are mandatory.</p>
+          <p style="font-size: 30px;">Students Sign up</p>
+          <p style="font-size: 18px; color: red;">* All fields are mandatory.</p>
           <div>
             <label for="fullName"><b>Name*</b></label>
             <input
@@ -117,7 +117,7 @@
             [(ngModel)]="securitycode"
           />
         </div>
-        <button  type="submit" (click)="registerHandler()">Sign Up</button>
+        <button class="btn btn-dark btn-lg" type="submit" (click)="registerHandler()">Sign Up</button>
       </div><br>
       <span class="psw"><a href="#" style="color: blue; " routerLink="/sign-in">Already a member? Sign in</a></span>
 

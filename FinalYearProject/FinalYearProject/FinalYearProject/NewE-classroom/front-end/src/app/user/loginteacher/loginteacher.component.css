@@ -18,7 +18,7 @@
     border: none;
     cursor: pointer;
     width: 100%;
-    border-radius:50px;
+  /*  border-radius:50px;*/
   }
   button {
     opacity: 0.8;
@@ -181,3 +181,7 @@
     text-decoration: black;
     justify-self: right;
   }
+#headp{
+  font-family: fantasy;
+  font-weight:bolder;
+}

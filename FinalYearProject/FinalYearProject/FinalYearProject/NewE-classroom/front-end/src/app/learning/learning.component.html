@@ -1,5 +1,10 @@
 <div class="info container" >
+
+
 <form class ="form" name="RegForm" action="/action_page.php" method="post" >
+
+
+
 <label for="sem">Enter  Semester:</label>
 <input type="text" id="sem" name="sem" required
 [(ngModel)]="sem"><br><br>
@@ -7,8 +12,10 @@
 <input type="text" id="subject" name="subject" required
 [(ngModel)]="subject"><br><br>
 <div class="search">
-    <input type="button"(click)="click()" value="Search">
+  <button type="button" class="btn btn-info btn-lg"(click)="click()">Search</button>
+
 </div>
 
 </form>
+
 </div>

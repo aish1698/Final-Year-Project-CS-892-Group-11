@@ -49,5 +49,9 @@ margin-left: 80px;
 
 }
 h1{
+  margin-top: 50px;
   margin-bottom: 100px;
+  font-family: fantasy;
+  word-spacing: 10px;
+  font-size: 50px;
 }
