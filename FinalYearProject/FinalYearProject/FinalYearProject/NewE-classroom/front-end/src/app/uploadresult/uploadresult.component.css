@@ -1,13 +1,13 @@
 
   /* Set a style for all buttons */
-  button {
+  /*button {
 
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 95%;
-    border-radius:50px;
+
   }
   button {
     opacity: 0.8;
@@ -19,11 +19,54 @@
   .info{
     margin-top: 85px;
     margin-left: 35px;
+}*/
+
+.info{
+    margin-top: 200px;
+    margin-left: 410px;
+    margin-right: 0;
+    margin-bottom: 250px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+padding: 16px;
+text-align: center;
+width:35rem;
+height:47rem;
+background-color: #eee;
+
+
 }
- 
-  
- 
-  
-  
-  
-  
+label{
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-right: 25px;
+}
+.btn{
+  margin-top: 60px;
+  margin-bottom: 150px;
+  width:16rem;
+
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+input{
+  width:220px;
+  height: 50px;
+  background-color:#F4F0F1;
+border-color: black;
+border-width: thin;
+margin-top: 20px;
+margin-left:30px;
+}
+.submit{
+
+margin-left: 60px;
+
+}
+#sem{
+  margin-left: 10px;
+}
+#dept{
+  margin-left: 12px;
+}
+#scores{
+  margin-left:48px;
+}

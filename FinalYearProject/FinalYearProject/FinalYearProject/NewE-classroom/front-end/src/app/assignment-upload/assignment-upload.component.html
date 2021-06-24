@@ -1,5 +1,6 @@
 
 <div style="padding-left: 22%;" class="container">
+    <h1>Upload Assignment</h1>
     <div class="row">
       <div class="col-md-6">
 
@@ -7,7 +8,7 @@
     <form [formGroup]="form" >
 
 
-      <label style="padding-top: 20%; padding-left: 25px;"><h1>Upload Assignment</h1></label>
+
       <div >
         <input  class="gr" formControlName="sem" type="text" placeholder="Please enter respective semester " />
       </div>
@@ -32,12 +33,12 @@
         <img [src]="imageData" [alt]="form.value.name" />
       </div>
     </form>
-   
 
-      <div class="endbutton" style="padding-bottom: 50px;">
-        <button  type="submit"  class="btn btn-primary" (click)="onSubmit()"><i class="fas fa-upload"></i> Upload</button><br>
 
-      </div>
+
+        <button  type="submit"  class="btn btn-info btn-lg" (click)="onSubmit()"><i class="fas fa-upload"></i> Upload</button><br>
+
+
 
     </div>
     </div>
