@@ -6,7 +6,7 @@ import { ResultService } from '../shared/result.service';
 import { UploadresultService } from './uploadresult.service';
 import { CurrentrouteService } from "../currentroute.service";
 import { LoginteacherService } from "../user/loginteacher/loginteacher.service";
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-uploadresult',
   templateUrl: './uploadresult.component.html',
@@ -23,7 +23,9 @@ export class UploadresultComponent implements OnInit {
     subject = '';
     scores = '';
 
-  constructor(private up:UploadresultService,private router:Router ,private currentroute:CurrentrouteService,private logint:LoginteacherService) { }
+  constructor(private up:UploadresultService,private router:Router ,private currentroute:CurrentrouteService,
+    private logint:LoginteacherService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.currentroute.setcurrentroute();
@@ -39,6 +41,18 @@ export class UploadresultComponent implements OnInit {
     var dept= document.forms["RegForm"]["department"];
     var class_roll= document.forms["RegForm"]["class_roll"];
     var scores= document.forms["RegForm"]["scores"];
+
+
+  this.up.upload(this.name,this.dept,this.class_roll,this.sem,this.subject,this.scores).subscribe(()=> 
+  {console.log('result upload successful!'); 
+  // this.toastr.success('Result Uploaded successfully!', '',
+  // {
+  //   timeOut:2000,
+  //   progressBar:true,
+  // });
+  this.router.navigateByUrl('/teacher');},
+   err =>{console.log(err)}
+  )
    
     if (name.value == "")                                  
     { 
@@ -93,11 +107,7 @@ export class UploadresultComponent implements OnInit {
 
 
 
-    return this.up.upload(this.name,this.dept,this.class_roll,this.sem,this.subject,this.scores).subscribe(()=> 
-    {console.log('result upload successful!'); 
-    this.router.navigateByUrl('/teacher');},
-     err =>{console.log(err)}
-    )
+    
 
   }
 

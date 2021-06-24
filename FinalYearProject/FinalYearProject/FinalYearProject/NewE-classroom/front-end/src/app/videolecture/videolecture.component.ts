@@ -60,14 +60,14 @@ export class VideolectureComponent implements OnInit {
   onSubmit() {
     console.log("submit");
 
-    this.v.addProfile(
-      this.form.value.sem, 
-      this.form.value.subject,
-      this.form.value.name, 
-      this.form.value.image, 
-      this.form.value.chapter, 
-      this.userid
-      );
+    // this.v.addProfile(
+    //   this.form.value.sem, 
+    //   this.form.value.subject,
+    //   this.form.value.name, 
+    //   this.form.value.image, 
+    //   this.form.value.chapter, 
+    //   this.userid
+    //   );
     if(!(this.form.valid)){
       alert("ALL FIELDS ARE MANDATORY! Please enter appropriate details.")
       this.form.reset();
@@ -75,7 +75,7 @@ export class VideolectureComponent implements OnInit {
     }
     if((this.form.valid)){
     this.v.addProfile(this.form.value.sem,this.form.value.subject, this.form.value.name, this.form.value.image,this.form.value.chapter,this.userid);
-    this.toastr.success('Material Uploaded successfully!', '',
+    this.toastr.success('Video Material Uploaded Successfully!', '',
     {
       timeOut:2000,
       progressBar:true,
