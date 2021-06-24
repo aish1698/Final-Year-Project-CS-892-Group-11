@@ -65,3 +65,9 @@ margin-top:40px;
   display: table;
   clear: both;
 }
+
+.card:hover{
+  background-color: rgb(240, 232, 232);
+  cursor: pointer;
+  color: rgb(48, 46, 46);
+}

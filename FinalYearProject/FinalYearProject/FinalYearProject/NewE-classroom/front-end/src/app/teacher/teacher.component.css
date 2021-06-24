@@ -62,3 +62,8 @@ margin-top:40px;
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
+.card:hover{
+  background-color: rgb(240, 232, 232) ;
+  cursor: pointer;
+}
