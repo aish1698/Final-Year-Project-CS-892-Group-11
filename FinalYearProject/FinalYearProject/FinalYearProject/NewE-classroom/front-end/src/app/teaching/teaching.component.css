@@ -5,14 +5,14 @@ h1{
 
 font-size:50px;
 margin-top:150px;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 margin-left: 80px;
 
 }
 form{
   background-color: #eee;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   padding-left: 60px;
   padding-top: 30px;
   height:450px;
@@ -34,7 +34,7 @@ button {
     padding-top: 14px;
     padding-bottom: 14px;
     margin-left: 145px;
-margin-top: 50px;
+margin-top: 20px;
 
 width:16rem;
 
