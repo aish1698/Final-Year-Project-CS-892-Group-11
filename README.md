@@ -7,6 +7,8 @@ STCET classroom (E-classroom) application has been developed using Mongodb,Expre
   + cd backend to enter into the backend folder
   + nodemon server to start the nodemon server
   + mongod to start the mongoDB shell
+# Development server
+Run ng serve for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
 
 
